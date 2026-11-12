@@ -59,15 +59,38 @@ Three built-in functions help you explore any value:
 ## 2. The 14 built-in data types
 
 ```mermaid
-flowchart TD
-    D(("Python built-in<br/>data types")) --> N["Numbers<br/>int, float, complex"]
-    D --> B["Boolean<br/>bool"]
-    D --> T["Text<br/>str"]
-    D --> BI["Binary<br/>bytes, bytearray"]
-    D --> SQ["Sequences<br/>list, tuple, range"]
-    D --> ST["Sets<br/>set, frozenset"]
-    D --> M["Mapping<br/>dict"]
-    D --> NO["Nothing<br/>None"]
+%%{init: {"theme": "neutral", "themeVariables": {"fontFamily": "Georgia"}}}%%
+classDiagram
+    class Numbers {
+        int
+        float
+        complex
+    }
+    class Boolean {
+        bool
+    }
+    class Text {
+        str
+    }
+    class Binary {
+        bytes
+        bytearray
+    }
+    class Sequences {
+        list
+        tuple
+        range
+    }
+    class Sets {
+        set
+        frozenset
+    }
+    class Mapping {
+        dict
+    }
+    class Nothing {
+        None
+    }
 ```
 
 <table width="100%">
@@ -341,10 +364,14 @@ This is normal in every programming language, not a Python bug. For money and ot
 A complex number has the form **a + bj**:
 
 ```mermaid
-flowchart LR
-    C["a + bj"] --> R["a<br/>real part"]
-    C --> I["bj<br/>imaginary part"]
-    I --> J["j is the square root of -1<br/>so j x j = -1"]
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Courier New"}}}%%
+classDiagram
+    class complex {
+        a + bj
+        real : the number a
+        imag : the number b
+        j x j = -1
+    }
 ```
 
 - `a` and `b` can be ints or floats.
@@ -724,12 +751,19 @@ This is " symbol
 **Type casting** (also called **type coercion** or **type conversion**) means converting a value from one type to another. Python has a built-in function for each fundamental type:
 
 ```mermaid
-flowchart LR
-    V["A value"] --> I["int()"]
-    V --> F["float()"]
-    V --> C["complex()"]
-    V --> B["bool()"]
-    V --> S["str()"]
+%%{init: {"theme": "forest", "themeVariables": {"fontFamily": "Trebuchet MS"}}}%%
+stateDiagram-v2
+    direction LR
+    int --> float: float()
+    float --> int: int() cuts decimals
+    int --> complex: complex()
+    float --> complex: complex()
+    complex --> str: str()
+    str --> int: int() if base-10 whole number
+    str --> float: float() if base-10 number
+    int --> bool: bool()
+    bool --> int: int()
+    note right of complex: complex cannot go back to int or float
 ```
 
 ### int()

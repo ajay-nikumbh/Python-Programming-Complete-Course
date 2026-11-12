@@ -232,12 +232,16 @@ flowchart TD
 Guido van Rossum did not invent everything from zero. He took the best ideas from languages that already existed and combined them.
 
 ```mermaid
-flowchart LR
-    C["C"] -->|"Procedural / functional style<br/>(functions that do one task)"| P(("Python"))
-    CPP["C++"] -->|"Object oriented programming<br/>(classes and objects)"| P
-    PERL["Perl and Shell Script"] -->|"Scripting features<br/>(short programs that automate tasks)"| P
-    MOD["Modula-3"] -->|"Modular programming<br/>(split code into modules)"| P
-    ABC["C and ABC"] -->|"Most of the syntax"| P
+%%{init: {"theme": "forest", "themeVariables": {"fontFamily": "Georgia"}}}%%
+timeline
+    title Languages that shaped Python
+    1972 : C - procedural style and much of the syntax
+    1979 : Shell script - automating tasks
+    1985 : C++ - object oriented programming
+    1987 : Perl - scripting features
+         : ABC - clean, indentation based syntax
+    1988 : Modula-3 - modules
+    1991 : Python - combines all of the above
 ```
 
 <table width="100%">
@@ -260,19 +264,6 @@ flowchart LR
 ## 6. Where we can use Python
 
 We can use Python almost everywhere. The most common application areas are:
-
-```mermaid
-flowchart TD
-    P(("Python")) --> D["Desktop applications"]
-    P --> W["Web applications"]
-    P --> DB["Database applications"]
-    P --> N["Network programming"]
-    P --> G["Game development"]
-    P --> DA["Data analysis"]
-    P --> ML["Machine learning"]
-    P --> AI["Artificial intelligence"]
-    P --> IOT["Internet of Things (IoT)"]
-```
 
 <table width="100%">
 <tr>
@@ -304,18 +295,22 @@ flowchart TD
 Python is popular because of these 11 features.
 
 ```mermaid
-flowchart LR
-    P(("Features of<br/>Python")) --> F1["1. Simple and easy to learn"]
-    P --> F2["2. Freeware and open source"]
-    P --> F3["3. High level"]
-    P --> F4["4. Platform independent"]
-    P --> F5["5. Portable"]
-    P --> F6["6. Dynamically typed"]
-    P --> F7["7. Procedure and object oriented"]
-    P --> F8["8. Interpreted"]
-    P --> F9["9. Extensible"]
-    P --> F10["10. Embedded"]
-    P --> F11["11. Extensive library"]
+%%{init: {"theme": "neutral", "themeVariables": {"fontFamily": "Trebuchet MS"}}}%%
+classDiagram
+    class Python {
+        <<11 features>>
+        1 Simple and easy to learn
+        2 Freeware and open source
+        3 High level
+        4 Platform independent
+        5 Portable
+        6 Dynamically typed
+        7 Procedure and object oriented
+        8 Interpreted
+        9 Extensible
+        10 Embedded
+        11 Extensive library
+    }
 ```
 
 ### Feature 1: Simple and easy to learn
@@ -421,13 +416,19 @@ In C, if you forget `free()`, the program wastes memory. In Python you just crea
 You write a Python program **once**, and it runs on **any platform** (Windows, macOS, Linux) without rewriting it. Internally, the **PVM (Python Virtual Machine)** converts the program into a form that the machine understands.
 
 ```mermaid
-flowchart TD
-    S["hello.py<br/>Written once"] --> W["PVM on Windows"]
-    S --> M["PVM on macOS"]
-    S --> L["PVM on Linux"]
-    W --> WO["Same output"]
-    M --> MO["Same output"]
-    L --> LO["Same output"]
+%%{init: {"theme": "default", "themeVariables": {"fontFamily": "Verdana"}}}%%
+sequenceDiagram
+    participant Dev as You
+    participant W as PVM on Windows
+    participant M as PVM on macOS
+    participant L as PVM on Linux
+    Dev->>W: run hello.py
+    W-->>Dev: Hello World
+    Dev->>M: run the same hello.py
+    M-->>Dev: Hello World
+    Dev->>L: run the same hello.py
+    L-->>Dev: Hello World
+    Note over Dev,L: One file, no changes, same output everywhere
 ```
 
 The same `.py` file works everywhere because each operating system has its own PVM. The PVM hides the differences between the systems.
@@ -610,13 +611,21 @@ No language is perfect. Python has two main limitations:
 A **flavor** (also called an **implementation**) is a version of the Python software built for a particular platform or purpose. The language is the same, but the program that runs it is different.
 
 ```mermaid
-flowchart TD
-    P(("Python language")) --> CP["CPython<br/>Standard, written in C"]
-    P --> JY["Jython / JPython<br/>Runs on the JVM"]
-    P --> IP["IronPython<br/>Runs on .NET"]
-    P --> PP["PyPy<br/>Faster, has a JIT compiler"]
-    P --> RP["RubyPython<br/>For Ruby platforms"]
-    P --> AP["Anaconda Python<br/>For large data processing"]
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Segoe UI"}}}%%
+quadrantChart
+    title Flavors of Python at a glance
+    x-axis General use --> Built for one platform
+    y-axis Normal speed --> Faster
+    quadrant-1 Platform and speed focus
+    quadrant-2 Speed focus
+    quadrant-3 Standard choice
+    quadrant-4 Platform focus
+    CPython: [0.15, 0.3]
+    PyPy: [0.2, 0.85]
+    Anaconda: [0.35, 0.35]
+    Jython: [0.75, 0.3]
+    IronPython: [0.85, 0.25]
+    RubyPython: [0.9, 0.15]
 ```
 
 <table width="100%">

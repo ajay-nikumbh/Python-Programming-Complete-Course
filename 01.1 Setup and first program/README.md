@@ -125,11 +125,20 @@ print(sys.executable)
 There are two ways to run Python code. You will use both.
 
 ```mermaid
-flowchart TD
-    P(("Python")) --> I["Interactive mode (REPL)<br/>Type one line, see the result at once"]
-    P --> S["Script mode<br/>Save many lines in a .py file, run the whole file"]
-    I --> I1["Best for: quick tests,<br/>checking how something works"]
-    S --> S1["Best for: real programs<br/>you want to keep and run again"]
+%%{init: {"theme": "forest", "themeVariables": {"fontFamily": "Courier New"}}}%%
+sequenceDiagram
+    participant You
+    participant REPL as Interactive mode
+    participant Script as Script mode
+    You->>REPL: 2 + 3
+    REPL-->>You: 5 (shown at once)
+    You->>REPL: x = 10
+    REPL-->>You: nothing to show
+    Note over You,REPL: Nothing is saved when you exit
+    You->>Script: python3 hello.py
+    Script->>Script: runs every line, top to bottom
+    Script-->>You: only what print() shows
+    Note over You,Script: The code stays in the .py file
 ```
 
 <table width="100%">
@@ -540,18 +549,18 @@ A **virtual environment** (venv) is a private copy of Python for **one project**
 Imagine two projects on the same computer:
 
 ```mermaid
-flowchart TD
-    subgraph WITHOUT["Without virtual environments"]
-        direction TB
-        G["One shared Python"] --> P1["Old project<br/>needs Django 3.2"]
-        G --> P2["New project<br/>needs Django 5.0"]
-        P2 -.->|"Installing 5.0 removes 3.2"| P1
-    end
-    subgraph WITH["With virtual environments"]
-        direction TB
-        V1["old-project/.venv<br/>Django 3.2"]
-        V2["new-project/.venv<br/>Django 5.0"]
-    end
+%%{init: {"theme": "neutral", "themeVariables": {"fontFamily": "Georgia"}}}%%
+sequenceDiagram
+    participant Old as Old project
+    participant Sys as One shared Python
+    participant New as New project
+    Old->>Sys: pip install Django 3.2
+    Sys-->>Old: works
+    New->>Sys: pip install Django 5.0
+    Sys->>Sys: replaces 3.2 with 5.0
+    Sys-->>New: works
+    Sys--xOld: broken, needs 3.2
+    Note over Old,New: With a .venv in each project, both versions live side by side
 ```
 
 Without a venv, every project shares one set of packages. Installing a new version for one project can break another. This problem is called **dependency hell**. With a venv, each project has its own `.venv` folder, and the projects never affect each other.

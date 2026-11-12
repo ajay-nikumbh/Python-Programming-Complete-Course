@@ -52,11 +52,20 @@ class Student:
 ```
 
 ```mermaid
-flowchart TD
-    I(("Identifier<br/>a name in a program")) --> V["Variable name<br/>student_name"]
-    I --> F["Function name<br/>calculate_total"]
-    I --> C["Class name<br/>Student"]
-    I --> M["Module name<br/>math, tools"]
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Verdana"}}}%%
+classDiagram
+    class VariableName {
+        student_name
+    }
+    class FunctionName {
+        calculate_total
+    }
+    class ClassName {
+        Student
+    }
+    class ModuleName {
+        math, tools
+    }
 ```
 
 A good way to think about it: an identifier is a **label** that you stick on a value, so you can find and use that value later by its name.
@@ -280,11 +289,19 @@ More examples to test yourself:
 Underscores at the start or end of a name send a message about how the name should be used.
 
 ```mermaid
-flowchart LR
-    U(("Underscores<br/>in names")) --> P1["_name<br/>Private<br/>(a convention)"]
-    U --> P2["__name<br/>Strongly private<br/>(name mangling)"]
-    U --> P3["__name__<br/>Special name<br/>(magic method)"]
-    U --> P4["_<br/>Throwaway value"]
+%%{init: {"theme": "forest", "themeVariables": {"fontFamily": "Trebuchet MS"}}}%%
+quadrantChart
+    title Underscore patterns
+    x-axis Public --> Private
+    y-axis Your names --> Python's own names
+    quadrant-1 Python special names
+    quadrant-2 Python special names
+    quadrant-3 Your everyday names
+    quadrant-4 Your private names
+    _ throwaway: [0.15, 0.2]
+    _name: [0.55, 0.25]
+    __name: [0.85, 0.3]
+    __name__: [0.5, 0.85]
 ```
 
 <table width="100%">
