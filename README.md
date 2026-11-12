@@ -104,8 +104,6 @@ flowchart TD
     S7 --> S8
 ```
 
----
-
 ## Notes
 
 Each topic folder has a `README.md` with the notes for that topic. Topics marked **Extra** are not in the syllabus PDFs; they fill gaps in the course.
@@ -124,7 +122,7 @@ Core syntax, data types, control flow and built-in data structures.
 <th align="center" width="8%">Status</th>
 <th align="center" width="8%">Notes</th>
 </tr>
-<tr><td align="center"><b>01</b></td><td align="left">Language fundamentals</td><td align="left">Stage 1: Fundamentals</td><td align="left">Python features, history, versions, how code runs</td><td align="center">Syllabus</td><td align="center">Not started</td><td align="center"><a href="./01.%20Language%20fundamentals/README.md">Open</a></td></tr>
+<tr><td align="center"><b>01</b></td><td align="left">Language fundamentals</td><td align="left">Stage 1: Fundamentals</td><td align="left">Python features, history, versions, how code runs</td><td align="center">Syllabus</td><td align="center">Completed</td><td align="center"><a href="./01.%20Language%20fundamentals/README.md">Open</a></td></tr>
 <tr><td align="center"><b>01.1</b></td><td align="left">Setup and first program</td><td align="left">Stage 1: Fundamentals</td><td align="left">Installing Python, REPL, editors, venv, pip, first script</td><td align="center">Extra</td><td align="center">Not started</td><td align="center"><a href="./01.1%20Setup%20and%20first%20program/README.md">Open</a></td></tr>
 <tr><td align="center"><b>02</b></td><td align="left">Identifiers</td><td align="left">Stage 1: Fundamentals</td><td align="left">Naming rules, reserved words, conventions</td><td align="center">Syllabus</td><td align="center">Not started</td><td align="center"><a href="./02.%20Identifiers/README.md">Open</a></td></tr>
 <tr><td align="center"><b>02.1</b></td><td align="left">Variables and memory model</td><td align="left">Stage 1: Fundamentals</td><td align="left">Names, objects, references, id(), mutability, garbage collection</td><td align="center">Extra</td><td align="center">Not started</td><td align="center"><a href="./02.1%20Variables%20and%20memory%20model/README.md">Open</a></td></tr>

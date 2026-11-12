@@ -21,8 +21,6 @@ This topic answers the first questions every learner has: what Python is, where 
 11. [Quick revision](#11-quick-revision)
 12. [Practice questions](#12-practice-questions)
 
----
-
 ## 1. What is Python?
 
 > **Python is a general purpose, high level programming language.**
@@ -46,8 +44,6 @@ flowchart BT
 
 Python is often recommended as the **first programming language for beginners** because its programs are short and easy to read.
 
----
-
 ## 2. History of Python
 
 - Python was developed by **Guido van Rossum** in **1989**.
@@ -65,13 +61,9 @@ flowchart LR
     F --> G["Today<br/>Python 3.x"]
 ```
 
----
-
 ## 3. Why the name "Python"?
 
 The name has nothing to do with the snake. Guido van Rossum took the name from the BBC comedy TV show **"Monty Python's Flying Circus"**, which was broadcast from **1969 to 1974**. He wanted a name that was short, unique and a little mysterious.
-
----
 
 ## 4. Python compared with Java and C
 
@@ -227,8 +219,6 @@ flowchart TD
 
 **What to notice:** In Java and C we must say that `a` and `b` are `int` before we use them. In Python we just assign the value. Python works out the type by itself. This is called **dynamic typing** (see [feature 6](#feature-6-dynamically-typed)).
 
----
-
 ## 5. Where Python's features came from
 
 Guido van Rossum did not invent everything from zero. He took the best ideas from languages that already existed and combined them.
@@ -251,8 +241,6 @@ flowchart LR
 | Most of the syntax | C and ABC | ABC was a teaching language Guido worked on before Python. Its clean, indentation based style shaped Python. |
 
 > **Note:** C is usually called a *procedural* language. The notes call these "functional programming features" because in C you build a program out of functions. Python also has true functional programming tools such as `lambda`, `map()` and `filter()`, which came from languages like Lisp and Haskell. You will learn them in Topics 10 and 10.1.
-
----
 
 ## 6. Where we can use Python
 
@@ -288,8 +276,6 @@ flowchart TD
 - Google and YouTube use Python internally.
 - NASA and the New York Stock Exchange have built applications with Python.
 - Large software companies such as Google, Microsoft, IBM and Yahoo use Python.
-
----
 
 ## 7. Features of Python
 
@@ -582,8 +568,6 @@ print(max(marks))
 
 **How this program runs:** The two `import` lines load ready-made modules. `math.sqrt()` and `math.factorial()` come from the `math` module. `statistics.mean()` adds the marks (410) and divides by the count (5) to get `82`. `max()` is built into Python, so it needs no import. We wrote no maths logic ourselves. The library did all the work.
 
----
-
 ## 8. Limitations of Python
 
 No language is perfect. Python has two main limitations:
@@ -592,8 +576,6 @@ No language is perfect. Python has two main limitations:
 |-----------|-----|------------------------|
 | **Performance is lower** than C or Java | Python is an interpreted language. The PVM runs bytecode step by step, which is slower than running native machine code. | Use libraries written in C (such as NumPy), or use PyPy (see flavors below) |
 | **Not commonly used for mobile applications** | Android and iOS are built around Java/Kotlin and Swift. | Frameworks such as Kivy and BeeWare can build mobile apps in Python, but they are less common |
-
----
 
 ## 9. Flavors of Python
 
@@ -637,8 +619,6 @@ print(platform.python_implementation())
 ```text
 CPython
 ```
-
----
 
 ## 10. Python versions
 
@@ -695,8 +675,6 @@ print(sys.version_info.major, sys.version_info.minor)
 3 12
 ```
 
----
-
 ## 11. Quick revision
 
 | Question | Answer |
@@ -718,8 +696,6 @@ print(sys.version_info.major, sys.version_info.minor)
 | Flavor with a JIT compiler | PyPy |
 | Is Python 3 backward compatible with Python 2? | No |
 
----
-
 ## 12. Practice questions
 
 1. Explain the meaning of *general purpose* and *high level* with one example each.
@@ -731,8 +707,6 @@ print(sys.version_info.major, sys.version_info.minor)
 7. Which flavor of Python would you choose to work with Java code? Which one for faster execution?
 8. Why might a program written for Python 2 fail in Python 3? Give two examples.
 9. Run `import platform` and `print(platform.python_implementation())` on your computer. What flavor do you have?
-
----
 
 <p align="center">
   <a href="../README.md">Back to course home</a> &nbsp;|&nbsp; <a href="../01.1%20Setup%20and%20first%20program/README.md">Next: 01.1 Setup and first program</a>
