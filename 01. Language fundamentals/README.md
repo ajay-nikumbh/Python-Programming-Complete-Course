@@ -882,13 +882,35 @@ Also, in CPython the **GIL (Global Interpreter Lock)** lets only one thread run 
 
 Yes. Numbers, text, lists, functions and even classes are objects. Every object has a type and can have methods.
 
+**Example: Print the type of the number 10**
+
 ```python
 # Print the type of the number 10
 print(type(10))
+```
 
+**Output**
+
+```text
+<class 'int'>
+```
+
+**Example: Print the type of the built-in print function**
+
+```python
 # Print the type of the built-in print function
 print(type(print))
+```
 
+**Output**
+
+```text
+<class 'builtin_function_or_method'>
+```
+
+**Example: Call a method on the number 10: how many bits are needed to store it**
+
+```python
 # Call a method on the number 10: how many bits are needed to store it
 print((10).bit_length())
 ```
@@ -896,8 +918,6 @@ print((10).bit_length())
 **Output**
 
 ```text
-<class 'int'>
-<class 'builtin_function_or_method'>
 4
 ```
 

@@ -467,6 +467,8 @@ else:
 
 For choosing between **two values**, Python has a short form: `value_if_true if condition else value_if_false`.
 
+**Example: Print the chosen word**
+
 ```python
 # Choose a word in one line
 marks = 55
@@ -476,12 +478,44 @@ result = "Pass" if marks >= 40 else "Fail"
 
 # Print the chosen word
 print(result)
+```
+
+**Output**
+
+```text
+Pass
+```
+
+**Example: Pick the bigger of two numbers in one line**
+
+```python
+# Choose a word in one line
+marks = 55
+
+# The result is "Pass" when the condition is True, otherwise "Fail"
+result = "Pass" if marks >= 40 else "Fail"
 
 # Pick the bigger of two numbers in one line
 a, b = 3, 8
 
 # max-like choice using a conditional expression
 print(a if a > b else b)
+```
+
+**Output**
+
+```text
+8
+```
+
+**Example: Choose singular or plural**
+
+```python
+# Choose a word in one line
+marks = 55
+
+# The result is "Pass" when the condition is True, otherwise "Fail"
+result = "Pass" if marks >= 40 else "Fail"
 
 # Choose singular or plural
 count = 1
@@ -493,8 +527,6 @@ print(count, "item" if count == 1 else "items")
 **Output**
 
 ```text
-Pass
-8
 1 item
 ```
 
@@ -2193,29 +2225,95 @@ Enter number of rows:7
 
 ### More nested loop examples
 
+**Example: Inverted triangle**
+
 ```python
-# 1. Inverted triangle
+# Inverted triangle
 for i in range(4, 0, -1):
     print("1.", "* " * i)
+```
 
-# 2. Number triangle: each row counts up from 1
+**Output**
+
+```text
+1. * * * * 
+1. * * * 
+1. * * 
+1. * 
+```
+
+**Example: Number triangle: each row counts up from 1**
+
+```python
+# Number triangle: each row counts up from 1
 for i in range(1, 5):
     print("2.", " ".join(str(j) for j in range(1, i + 1)))
+```
 
-# 3. Same number repeated on each row
+**Output**
+
+```text
+2. 1
+2. 1 2
+2. 1 2 3
+2. 1 2 3 4
+```
+
+**Example: Same number repeated on each row**
+
+```python
+# Same number repeated on each row
 for i in range(1, 5):
     print("3.", (str(i) + " ") * i)
+```
 
-# 4. A small multiplication grid
+**Output**
+
+```text
+3. 1 
+3. 2 2 
+3. 3 3 3 
+3. 4 4 4 4 
+```
+
+**Example: A small multiplication grid**
+
+```python
+# A small multiplication grid
 for i in range(1, 4):
     print("4.", " ".join(f"{i * j:2}" for j in range(1, 6)))
+```
 
-# 5. Every pair of two lists
+**Output**
+
+```text
+4.  1  2  3  4  5
+4.  2  4  6  8 10
+4.  3  6  9 12 15
+```
+
+**Example: Every pair of two lists**
+
+```python
+# Every pair of two lists
 for colour in ["red", "blue"]:
     for size in ["S", "M"]:
         print("5.", colour, size)
+```
 
-# 6. Hollow square of size 4
+**Output**
+
+```text
+5. red S
+5. red M
+5. blue S
+5. blue M
+```
+
+**Example: Hollow square of size 4**
+
+```python
+# Hollow square of size 4
 size = 4
 
 # Go through each row in range(size)
@@ -2228,8 +2326,21 @@ for row in range(size):
 
     # Print the result
     print("6.", line)
+```
 
-# 7. Count the pairs that add up to 10
+**Output**
+
+```text
+6. * * * * 
+6. *     * 
+6. *     * 
+6. * * * * 
+```
+
+**Example: Count the pairs that add up to 10**
+
+```python
+# Count the pairs that add up to 10
 count = 0
 
 # Go through each a in range(1, 10)
@@ -2245,29 +2356,6 @@ print("7. Pairs adding to 10:", count)
 **Output**
 
 ```text
-1. * * * * 
-1. * * * 
-1. * * 
-1. * 
-2. 1
-2. 1 2
-2. 1 2 3
-2. 1 2 3 4
-3. 1 
-3. 2 2 
-3. 3 3 3 
-3. 4 4 4 4 
-4.  1  2  3  4  5
-4.  2  4  6  8 10
-4.  3  6  9 12 15
-5. red S
-5. red M
-5. blue S
-5. blue M
-6. * * * * 
-6. *     * 
-6. *     * 
-6. * * * * 
 7. Pairs adding to 10: 9
 ```
 
@@ -3036,8 +3124,10 @@ False
 
 ### More del examples
 
+**Example: Print the result**
+
 ```python
-# 1. Delete an item from a list by index
+# Delete an item from a list by index
 nums = [10, 20, 30, 40]
 
 # Delete nums[1]
@@ -3045,6 +3135,22 @@ del nums[1]
 
 # Print the result
 print("1.", nums)
+```
+
+**Output**
+
+```text
+1. [10, 30, 40]
+```
+
+**Example: Delete a slice from a list**
+
+```python
+# Delete an item from a list by index
+nums = [10, 20, 30, 40]
+
+# Delete nums[1]
+del nums[1]
 
 # 2. Delete a slice from a list
 nums = [1, 2, 3, 4, 5, 6]
@@ -3054,6 +3160,22 @@ del nums[1:4]
 
 # Print the result
 print("2.", nums)
+```
+
+**Output**
+
+```text
+2. [1, 5, 6]
+```
+
+**Example: Delete a key from a dictionary**
+
+```python
+# Delete an item from a list by index
+nums = [10, 20, 30, 40]
+
+# Delete nums[1]
+del nums[1]
 
 # 3. Delete a key from a dictionary
 person = {"name": "Asha", "age": 25}
@@ -3063,6 +3185,22 @@ del person["age"]
 
 # Print the result
 print("3.", person)
+```
+
+**Output**
+
+```text
+3. {'name': 'Asha'}
+```
+
+**Example: Delete several names in one statement**
+
+```python
+# Delete an item from a list by index
+nums = [10, 20, 30, 40]
+
+# Delete nums[1]
+del nums[1]
 
 # 4. Delete several names in one statement
 a, b, c = 1, 2, 3
@@ -3072,6 +3210,22 @@ del a, b
 
 # Print the result
 print("4.", c)
+```
+
+**Output**
+
+```text
+4. 3
+```
+
+**Example: Del removes the name, not the object: another name still sees it**
+
+```python
+# Delete an item from a list by index
+nums = [10, 20, 30, 40]
+
+# Delete nums[1]
+del nums[1]
 
 # 5. del removes the name, not the object: another name still sees it
 first = [1, 2]
@@ -3089,10 +3243,6 @@ print("5.", second)
 **Output**
 
 ```text
-1. [10, 30, 40]
-2. [1, 5, 6]
-3. {'name': 'Asha'}
-4. 3
 5. [1, 2]
 ```
 
@@ -3238,39 +3388,171 @@ The character present at positive index 4 and at negative index -1 is a
 - In the **forward** direction, if end is `0`, the result is always empty.
 - In either direction, begin and end can be positive or negative.
 
+**Example: From 1 to 6, step 1**
+
 ```python
 # The string from the notes
 s = "Learning Python is very very easy!!!"
 
 # From 1 to 6, step 1
 print(repr(s[1:7:1]))
+```
+
+**Output**
+
+```text
+'earnin'
+```
+
+**Example: The same, with the default step**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # The same, with the default step
 print(repr(s[1:7]))
+```
+
+**Output**
+
+```text
+'earnin'
+```
+
+**Example: Every second character from 1 to 6**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # Every second character from 1 to 6
 print(repr(s[1:7:2]))
+```
+
+**Output**
+
+```text
+'eri'
+```
+
+**Example: From the start to index 6**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # From the start to index 6
 print(repr(s[:7]))
+```
+
+**Output**
+
+```text
+'Learnin'
+```
+
+**Example: From index 7 to the end**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # From index 7 to the end
 print(repr(s[7:]))
+```
+
+**Output**
+
+```text
+'g Python is very very easy!!!'
+```
+
+**Example: The whole string, two ways**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # The whole string, two ways
 print(repr(s[::]))
+```
+
+**Output**
+
+```text
+'Learning Python is very very easy!!!'
+```
+
+**Example: The whole string with [:]**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # The whole string with [:]
 print(repr(s[:]))
+```
+
+**Output**
+
+```text
+'Learning Python is very very easy!!!'
+```
+
+**Example: Reversed**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # Reversed
 print(repr(s[::-1]))
+```
+
+**Output**
+
+```text
+'!!!ysae yrev yrev si nohtyP gninraeL'
+```
+
+**Example: Backward with end -1: always empty**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # Backward with end -1: always empty
 print(repr(s[5:-1:-1]))
+```
+
+**Output**
+
+```text
+''
+```
+
+**Example: Forward with end 0: always empty**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # Forward with end 0: always empty
 print(repr(s[5:0]))
+```
+
+**Output**
+
+```text
+''
+```
+
+**Example: Backward from index -2 to index -5 (exclusive)**
+
+```python
+# The string from the notes
+s = "Learning Python is very very easy!!!"
 
 # Backward from index -2 to index -5 (exclusive)
 print(repr(s[-2:-5:-1]))
@@ -3279,28 +3561,40 @@ print(repr(s[-2:-5:-1]))
 **Output**
 
 ```text
-'earnin'
-'earnin'
-'eri'
-'Learnin'
-'g Python is very very easy!!!'
-'Learning Python is very very easy!!!'
-'Learning Python is very very easy!!!'
-'!!!ysae yrev yrev si nohtyP gninraeL'
-''
-''
 '!!y'
 ```
 
 ### + and * with strings, and len()
 
+**Example: + joins two strings**
+
 ```python
 # + joins two strings
 print("durga" + "soft")
+```
 
+**Output**
+
+```text
+durgasoft
+```
+
+**Example: * repeats a string**
+
+```python
 # * repeats a string
 print("durga" * 2)
+```
 
+**Output**
+
+```text
+durgadurga
+```
+
+**Example: `len()` counts characters**
+
+```python
 # len() counts characters
 print(len("durga"))
 ```
@@ -3308,8 +3602,6 @@ print(len("durga"))
 **Output**
 
 ```text
-durgasoft
-durgadurga
 5
 ```
 
@@ -3760,24 +4052,14 @@ False
 
 ### split() and join()
 
+**Example: `split()` with the default separator (whitespace) returns a list**
+
 ```python
 # split() with the default separator (whitespace) returns a list
 for x in "durga software solutions".split():
 
     # Print each word
     print(x)
-
-# split() on a dash
-for x in "22-02-2018".split('-'):
-
-    # Print each part
-    print(x)
-
-# join() a tuple with a dash
-print('-'.join(('sunny', 'bunny', 'chinny')))
-
-# join() a list with a colon
-print(':'.join(['hyderabad', 'singapore', 'london', 'dubai']))
 ```
 
 **Output**
@@ -3786,14 +4068,55 @@ print(':'.join(['hyderabad', 'singapore', 'london', 'dubai']))
 durga
 software
 solutions
+```
+
+**Example: `split()` on a dash**
+
+```python
+# split() on a dash
+for x in "22-02-2018".split('-'):
+
+    # Print each part
+    print(x)
+```
+
+**Output**
+
+```text
 22
 02
 2018
+```
+
+**Example: `join()` a tuple with a dash**
+
+```python
+# join() a tuple with a dash
+print('-'.join(('sunny', 'bunny', 'chinny')))
+```
+
+**Output**
+
+```text
 sunny-bunny-chinny
+```
+
+**Example: `join()` a list with a colon**
+
+```python
+# join() a list with a colon
+print(':'.join(['hyderabad', 'singapore', 'london', 'dubai']))
+```
+
+**Output**
+
+```text
 hyderabad:singapore:london:dubai
 ```
 
 ### Changing case and checking start and end
+
+**Example: All capital**
 
 ```python
 # The text from the notes
@@ -3801,24 +4124,115 @@ s = 'learning Python is very Easy'
 
 # All capital
 print(s.upper())
+```
+
+**Output**
+
+```text
+LEARNING PYTHON IS VERY EASY
+```
+
+**Example: All small**
+
+```python
+# The text from the notes
+s = 'learning Python is very Easy'
 
 # All small
 print(s.lower())
+```
+
+**Output**
+
+```text
+learning python is very easy
+```
+
+**Example: Swap each letter's case**
+
+```python
+# The text from the notes
+s = 'learning Python is very Easy'
 
 # Swap each letter's case
 print(s.swapcase())
+```
+
+**Output**
+
+```text
+LEARNING pYTHON IS VERY eASY
+```
+
+**Example: Capitalise every word**
+
+```python
+# The text from the notes
+s = 'learning Python is very Easy'
 
 # Capitalise every word
 print(s.title())
+```
+
+**Output**
+
+```text
+Learning Python Is Very Easy
+```
+
+**Example: Capitalise only the first letter**
+
+```python
+# The text from the notes
+s = 'learning Python is very Easy'
 
 # Capitalise only the first letter
 print(s.capitalize())
+```
+
+**Output**
+
+```text
+Learning python is very easy
+```
+
+**Example: Does it start with "learning"?**
+
+```python
+# The text from the notes
+s = 'learning Python is very Easy'
 
 # Does it start with "learning"?
 print(s.startswith('learning'))
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Does it end with "learning"?**
+
+```python
+# The text from the notes
+s = 'learning Python is very Easy'
 
 # Does it end with "learning"?
 print(s.endswith('learning'))
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: Does it end with "Easy"?**
+
+```python
+# The text from the notes
+s = 'learning Python is very Easy'
 
 # Does it end with "Easy"?
 print(s.endswith('Easy'))
@@ -3827,52 +4241,157 @@ print(s.endswith('Easy'))
 **Output**
 
 ```text
-LEARNING PYTHON IS VERY EASY
-learning python is very easy
-LEARNING pYTHON IS VERY eASY
-Learning Python Is Very Easy
-Learning python is very easy
-True
-False
 True
 ```
 
 ### Checking the type of characters
 
+**Example: Letters and digits only**
+
 ```python
 # Letters and digits only
 print('Durga786'.isalnum())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Not only letters, because of the digits**
+
+```python
 # Not only letters, because of the digits
 print('durga786'.isalpha())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Only letters**
+
+```python
 # Only letters
 print('durga'.isalpha())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Not digits**
+
+```python
 # Not digits
 print('durga'.isdigit())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Only digits**
+
+```python
 # Only digits
 print('786786'.isdigit())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: All letters are small**
+
+```python
 # All letters are small
 print('abc'.islower())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: A capital letter is present**
+
+```python
 # A capital letter is present
 print('Abc'.islower())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Digits are ignored; the letters are all small**
+
+```python
 # Digits are ignored; the letters are all small
 print('abc123'.islower())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: All letters are capital**
+
+```python
 # All letters are capital
 print('ABC'.isupper())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Not every word starts with a capital**
+
+```python
 # Not every word starts with a capital
 print('Learning python is Easy'.istitle())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Every word starts with a capital**
+
+```python
 # Every word starts with a capital
 print('Learning Python Is Easy'.istitle())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Only whitespace**
+
+```python
 # Only whitespace
 print('    '.isspace())
 ```
@@ -3880,17 +4399,6 @@ print('    '.isspace())
 **Output**
 
 ```text
-True
-False
-True
-False
-True
-True
-False
-True
-True
-False
-True
 True
 ```
 
@@ -3925,6 +4433,8 @@ classDiagram
 
 ### Case 1: default, positional and keyword arguments
 
+**Example: Default: filled in order**
+
 ```python
 # Values from the notes
 name = 'durga'
@@ -3937,9 +4447,47 @@ age = 48
 
 # Default: filled in order
 print("{} 's salary is {} and his age is {}".format(name, salary, age))
+```
+
+**Output**
+
+```text
+durga 's salary is 10000 and his age is 48
+```
+
+**Example: Positional: numbers choose the argument**
+
+```python
+# Values from the notes
+name = 'durga'
+
+# Salary value
+salary = 10000
+
+# Age value
+age = 48
 
 # Positional: numbers choose the argument
 print("{0} 's salary is {1} and his age is {2}".format(name, salary, age))
+```
+
+**Output**
+
+```text
+durga 's salary is 10000 and his age is 48
+```
+
+**Example: Keyword: names choose the argument, in any order**
+
+```python
+# Values from the notes
+name = 'durga'
+
+# Salary value
+salary = 10000
+
+# Age value
+age = 48
 
 # Keyword: names choose the argument, in any order
 print("{x} 's salary is {y} and his age is {z}".format(z=age, y=salary, x=name))
@@ -3948,8 +4496,6 @@ print("{x} 's salary is {y} and his age is {z}".format(z=age, y=salary, x=name))
 **Output**
 
 ```text
-durga 's salary is 10000 and his age is 48
-durga 's salary is 10000 and his age is 48
 durga 's salary is 10000 and his age is 48
 ```
 
@@ -3970,16 +4516,48 @@ durga 's salary is 10000 and his age is 48
 <tr><td><code>X</code></td><td>Hexadecimal, capital letters</td><td><code>"{:X}".format(255)</code></td><td><code>FF</code></td></tr>
 </table>
 
+**Example: Plain**
+
 ```python
 # Plain
 print("The integer number is: {}".format(123))
+```
 
+**Output**
+
+```text
+The integer number is: 123
+```
+
+**Example: D: decimal integer**
+
+```python
 # d: decimal integer
 print("The integer number is: {:d}".format(123))
+```
 
+**Output**
+
+```text
+The integer number is: 123
+```
+
+**Example: Minimum width 5, padded with spaces on the left**
+
+```python
 # Minimum width 5, padded with spaces on the left
 print("The integer number is: {:5d}".format(123))
+```
 
+**Output**
+
+```text
+The integer number is:   123
+```
+
+**Example: Minimum width 5, padded with zeros**
+
+```python
 # Minimum width 5, padded with zeros
 print("The integer number is: {:05d}".format(123))
 ```
@@ -3987,28 +4565,77 @@ print("The integer number is: {:05d}".format(123))
 **Output**
 
 ```text
-The integer number is: 123
-The integer number is: 123
-The integer number is:   123
 The integer number is: 00123
 ```
+
+**Example: Plain float**
 
 ```python
 # Plain float
 print("The float number is: {}".format(123.4567))
+```
 
+**Output**
+
+```text
+The float number is: 123.4567
+```
+
+**Example: F: 6 decimal places by default**
+
+```python
 # f: 6 decimal places by default
 print("The float number is: {:f}".format(123.4567))
+```
 
+**Output**
+
+```text
+The float number is: 123.456700
+```
+
+**Example: Width 8 with 3 decimal places, rounded**
+
+```python
 # Width 8 with 3 decimal places, rounded
 print("The float number is: {:8.3f}".format(123.4567))
+```
 
+**Output**
+
+```text
+The float number is:  123.457
+```
+
+**Example: Width 8, 3 decimals, padded with zeros**
+
+```python
 # Width 8, 3 decimals, padded with zeros
 print("The float number is: {:08.3f}".format(123.4567))
+```
 
+**Output**
+
+```text
+The float number is: 0123.457
+```
+
+**Example: Missing decimals are filled with zeros**
+
+```python
 # Missing decimals are filled with zeros
 print("The float number is: {:08.3f}".format(123.45))
+```
 
+**Output**
+
+```text
+The float number is: 0123.450
+```
+
+**Example: A longer number simply uses more than 8 positions**
+
+```python
 # A longer number simply uses more than 8 positions
 print("The float number is: {:08.3f}".format(786786123.45))
 ```
@@ -4016,26 +4643,53 @@ print("The float number is: {:08.3f}".format(786786123.45))
 **Output**
 
 ```text
-The float number is: 123.4567
-The float number is: 123.456700
-The float number is:  123.457
-The float number is: 0123.457
-The float number is: 0123.450
 The float number is: 786786123.450
 ```
 
 **How `{:08.3f}` works:** the total width is **at least** 8, including the decimal point. Exactly 3 digits come after the point (rounded, or filled with 0). If the number is shorter than 8, zeros fill the left side. If it is longer, all its digits are shown.
 
+**Example: The same number in binary, octal and hexadecimal**
+
 ```python
 # The same number in binary, octal and hexadecimal
 print("Binary Form:{0:b}".format(153))
+```
 
+**Output**
+
+```text
+Binary Form:10011001
+```
+
+**Example: Octal**
+
+```python
 # Octal
 print("Octal Form:{0:o}".format(153))
+```
 
+**Output**
+
+```text
+Octal Form:231
+```
+
+**Example: Hexadecimal, small letters**
+
+```python
 # Hexadecimal, small letters
 print("Hexa decimal Form:{0:x}".format(154))
+```
 
+**Output**
+
+```text
+Hexa decimal Form:9a
+```
+
+**Example: Hexadecimal, capital letters**
+
+```python
 # Hexadecimal, capital letters
 print("Hexa decimal Form:{0:X}".format(154))
 ```
@@ -4043,9 +4697,6 @@ print("Hexa decimal Form:{0:X}".format(154))
 **Output**
 
 ```text
-Binary Form:10011001
-Octal Form:231
-Hexa decimal Form:9a
 Hexa decimal Form:9A
 ```
 
@@ -4053,16 +4704,48 @@ Binary, octal and hexadecimal formats work only for **ints**, not floats.
 
 ### Case 3: signed numbers
 
+**Example: + shows the sign for positive numbers**
+
 ```python
 # + shows the sign for positive numbers
 print("int value with sign:{:+d}".format(123))
+```
 
+**Output**
+
+```text
+int value with sign:+123
+```
+
+**Example: Negative numbers always show the minus sign**
+
+```python
 # Negative numbers always show the minus sign
 print("int value with sign:{:+d}".format(-123))
+```
 
+**Output**
+
+```text
+int value with sign:-123
+```
+
+**Example: The same for floats**
+
+```python
 # The same for floats
 print("float value with sign:{:+f}".format(123.456))
+```
 
+**Output**
+
+```text
+float value with sign:+123.456000
+```
+
+**Example: Negative float**
+
+```python
 # Negative float
 print("float value with sign:{:+f}".format(-123.456))
 ```
@@ -4070,9 +4753,6 @@ print("float value with sign:{:+f}".format(-123.456))
 **Output**
 
 ```text
-int value with sign:+123
-int value with sign:-123
-float value with sign:+123.456000
 float value with sign:-123.456000
 ```
 
@@ -4091,31 +4771,113 @@ float value with sign:-123.456000
 <tr><td><code>=</code></td><td>Put the sign at the far left, padding after it</td><td><code>"{:=5d}".format(-12)</code></td><td><code>'-  12'</code></td></tr>
 </table>
 
+**Example: Default for numbers: right aligned**
+
 ```python
 # Default for numbers: right aligned
 print(repr("{:5d}".format(12)))
+```
 
+**Output**
+
+```text
+'   12'
+```
+
+**Example: Left aligned**
+
+```python
 # Left aligned
 print(repr("{:<5d}".format(12)))
+```
 
+**Output**
+
+```text
+'12   '
+```
+
+**Example: Left aligned with 0 as the fill: the zeros go on the RIGHT**
+
+```python
 # Left aligned with 0 as the fill: the zeros go on the RIGHT
 print(repr("{:<05d}".format(12)))
+```
 
+**Output**
+
+```text
+'12000'
+```
+
+**Example: Right aligned**
+
+```python
 # Right aligned
 print(repr("{:>5d}".format(12)))
+```
 
+**Output**
+
+```text
+'   12'
+```
+
+**Example: Right aligned with zeros**
+
+```python
 # Right aligned with zeros
 print(repr("{:>05d}".format(12)))
+```
 
+**Output**
+
+```text
+'00012'
+```
+
+**Example: Centred**
+
+```python
 # Centred
 print(repr("{:^5d}".format(12)))
+```
 
+**Output**
+
+```text
+' 12  '
+```
+
+**Example: Sign at the far left**
+
+```python
 # Sign at the far left
 print(repr("{:=5d}".format(-12)))
+```
 
+**Output**
+
+```text
+'-  12'
+```
+
+**Example: Centred float, width 10, 3 decimals**
+
+```python
 # Centred float, width 10, 3 decimals
 print(repr("{:^10.3f}".format(12.23456)))
+```
 
+**Output**
+
+```text
+'  12.235  '
+```
+
+**Example: Sign at the far left for a float**
+
+```python
 # Sign at the far left for a float
 print(repr("{:=8.3f}".format(-12.23456)))
 ```
@@ -4123,14 +4885,6 @@ print(repr("{:=8.3f}".format(-12.23456)))
 **Output**
 
 ```text
-'   12'
-'12   '
-'12000'
-'   12'
-'00012'
-' 12  '
-'-  12'
-'  12.235  '
 '- 12.235'
 ```
 
@@ -4138,22 +4892,74 @@ print(repr("{:=8.3f}".format(-12.23456)))
 
 ### Case 5: formatting strings
 
+**Example: Numbers are right aligned by default**
+
 ```python
 # Numbers are right aligned by default
 print(repr("{:5d}".format(12)))
+```
 
+**Output**
+
+```text
+'   12'
+```
+
+**Example: Strings are left aligned by default**
+
+```python
 # Strings are left aligned by default
 print(repr("{:5}".format("rat")))
+```
 
+**Output**
+
+```text
+'rat  '
+```
+
+**Example: Right aligned**
+
+```python
 # Right aligned
 print(repr("{:>5}".format("rat")))
+```
 
+**Output**
+
+```text
+'  rat'
+```
+
+**Example: Left aligned**
+
+```python
 # Left aligned
 print(repr("{:<5}".format("rat")))
+```
 
+**Output**
+
+```text
+'rat  '
+```
+
+**Example: Centred**
+
+```python
 # Centred
 print(repr("{:^5}".format("rat")))
+```
 
+**Output**
+
+```text
+' rat '
+```
+
+**Example: Centred with * as the fill (any character works, like +, $ or a)**
+
+```python
 # Centred with * as the fill (any character works, like +, $ or a)
 print(repr("{:*^5}".format("rat")))
 ```
@@ -4161,11 +4967,6 @@ print(repr("{:*^5}".format("rat")))
 **Output**
 
 ```text
-'   12'
-'rat  '
-'  rat'
-'rat  '
-' rat '
 '*rat*'
 ```
 
@@ -4173,19 +4974,61 @@ print(repr("{:*^5}".format("rat")))
 
 A precision on a **string** keeps only that many characters.
 
+**Example: Keep the first 3 characters**
+
 ```python
 # Keep the first 3 characters
 print(repr("{:.3}".format("durgasoftware")))
+```
 
+**Output**
+
+```text
+'dur'
+```
+
+**Example: 3 characters in a width of 5**
+
+```python
 # 3 characters in a width of 5
 print(repr("{:5.3}".format("durgasoftware")))
+```
 
+**Output**
+
+```text
+'dur  '
+```
+
+**Example: Right aligned**
+
+```python
 # Right aligned
 print(repr("{:>5.3}".format("durgasoftware")))
+```
 
+**Output**
+
+```text
+'  dur'
+```
+
+**Example: Centred**
+
+```python
 # Centred
 print(repr("{:^5.3}".format("durgasoftware")))
+```
 
+**Output**
+
+```text
+' dur '
+```
+
+**Example: Centred with a fill character**
+
+```python
 # Centred with a fill character
 print(repr("{:*^5.3}".format("durgasoftware")))
 ```
@@ -4193,10 +5036,6 @@ print(repr("{:*^5.3}".format("durgasoftware")))
 **Output**
 
 ```text
-'dur'
-'dur  '
-'  dur'
-' dur '
 '*dur*'
 ```
 
@@ -4273,18 +5112,59 @@ Ravi's age is :50
 
 The format spec itself can contain placeholders.
 
+**Example: Centre in width 5 with ***
+
 ```python
 # A template whose fill, alignment and width are chosen later
 string = "{:{fill}{align}{width}}"
 
 # Centre in width 5 with *
 print(string.format('cat', fill='*', align='^', width=5))
+```
+
+**Output**
+
+```text
+*cat*
+```
+
+**Example: Centre in width 6: the extra * goes on the right**
+
+```python
+# A template whose fill, alignment and width are chosen later
+string = "{:{fill}{align}{width}}"
 
 # Centre in width 6: the extra * goes on the right
 print(string.format('cat', fill='*', align='^', width=6))
+```
+
+**Output**
+
+```text
+*cat**
+```
+
+**Example: Left align in width 6**
+
+```python
+# A template whose fill, alignment and width are chosen later
+string = "{:{fill}{align}{width}}"
 
 # Left align in width 6
 print(string.format('cat', fill='*', align='<', width=6))
+```
+
+**Output**
+
+```text
+cat***
+```
+
+**Example: Right align in width 6**
+
+```python
+# A template whose fill, alignment and width are chosen later
+string = "{:{fill}{align}{width}}"
 
 # Right align in width 6
 print(string.format('cat', fill='*', align='>', width=6))
@@ -4293,9 +5173,6 @@ print(string.format('cat', fill='*', align='>', width=6))
 **Output**
 
 ```text
-*cat*
-*cat**
-cat***
 ***cat
 ```
 

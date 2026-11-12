@@ -100,6 +100,8 @@ xychart-beta
 
 ### The example from the notes: two ints
 
+**Example: Addition**
+
 ```python
 # The first number
 a = 10
@@ -109,21 +111,117 @@ b = 2
 
 # Addition
 print('a+b=', a + b)
+```
+
+**Output**
+
+```text
+a+b= 12
+```
+
+**Example: Subtraction**
+
+```python
+# The first number
+a = 10
+
+# The second number
+b = 2
 
 # Subtraction
 print('a-b=', a - b)
+```
+
+**Output**
+
+```text
+a-b= 8
+```
+
+**Example: Multiplication**
+
+```python
+# The first number
+a = 10
+
+# The second number
+b = 2
 
 # Multiplication
 print('a*b=', a * b)
+```
+
+**Output**
+
+```text
+a*b= 20
+```
+
+**Example: Division: always a float**
+
+```python
+# The first number
+a = 10
+
+# The second number
+b = 2
 
 # Division: always a float
 print('a/b=', a / b)
+```
+
+**Output**
+
+```text
+a/b= 5.0
+```
+
+**Example: Floor division: both are ints, so the result is an int**
+
+```python
+# The first number
+a = 10
+
+# The second number
+b = 2
 
 # Floor division: both are ints, so the result is an int
 print('a//b=', a // b)
+```
+
+**Output**
+
+```text
+a//b= 5
+```
+
+**Example: Remainder**
+
+```python
+# The first number
+a = 10
+
+# The second number
+b = 2
 
 # Remainder
 print('a%b=', a % b)
+```
+
+**Output**
+
+```text
+a%b= 0
+```
+
+**Example: Power: 10 to the power 2**
+
+```python
+# The first number
+a = 10
+
+# The second number
+b = 2
 
 # Power: 10 to the power 2
 print('a**b=', a ** b)
@@ -132,18 +230,14 @@ print('a**b=', a ** b)
 **Output**
 
 ```text
-a+b= 12
-a-b= 8
-a*b= 20
-a/b= 5.0
-a//b= 5
-a%b= 0
 a**b= 100
 ```
 
 Save this as `test.py` and run it with `python3 test.py` (on Windows: `py test.py` or `python test.py`).
 
 ### The same operators with a float
+
+**Example: Addition**
 
 ```python
 # A float and an int
@@ -154,21 +248,117 @@ b = 2
 
 # Addition
 print('a+b=', a + b)
+```
+
+**Output**
+
+```text
+a+b= 12.5
+```
+
+**Example: Subtraction**
+
+```python
+# A float and an int
+a = 10.5
+
+# The second number
+b = 2
 
 # Subtraction
 print('a-b=', a - b)
+```
+
+**Output**
+
+```text
+a-b= 8.5
+```
+
+**Example: Multiplication**
+
+```python
+# A float and an int
+a = 10.5
+
+# The second number
+b = 2
 
 # Multiplication
 print('a*b=', a * b)
+```
+
+**Output**
+
+```text
+a*b= 21.0
+```
+
+**Example: Division**
+
+```python
+# A float and an int
+a = 10.5
+
+# The second number
+b = 2
 
 # Division
 print('a/b=', a / b)
+```
+
+**Output**
+
+```text
+a/b= 5.25
+```
+
+**Example: Floor division: one operand is a float, so the result is a float**
+
+```python
+# A float and an int
+a = 10.5
+
+# The second number
+b = 2
 
 # Floor division: one operand is a float, so the result is a float
 print('a//b=', a // b)
+```
+
+**Output**
+
+```text
+a//b= 5.0
+```
+
+**Example: Remainder of 10.5 divided by 2**
+
+```python
+# A float and an int
+a = 10.5
+
+# The second number
+b = 2
 
 # Remainder of 10.5 divided by 2
 print('a%b=', a % b)
+```
+
+**Output**
+
+```text
+a%b= 0.5
+```
+
+**Example: Power: 10.5 x 10.5**
+
+```python
+# A float and an int
+a = 10.5
+
+# The second number
+b = 2
 
 # Power: 10.5 x 10.5
 print('a**b=', a ** b)
@@ -177,12 +367,6 @@ print('a**b=', a ** b)
 **Output**
 
 ```text
-a+b= 12.5
-a-b= 8.5
-a*b= 21.0
-a/b= 5.25
-a//b= 5.0
-a%b= 0.5
 a**b= 110.25
 ```
 
@@ -191,28 +375,100 @@ a**b= 110.25
 > `/` **always** performs floating point division, so it always returns a `float`.
 > `//` can return an `int` or a `float`: if **both** operands are ints, the result is an int; if **at least one** is a float, the result is a float.
 
+**Example: True division of two ints: still a float**
+
 ```python
 # True division of two ints: still a float
 print(10 / 2)
+```
 
+**Output**
+
+```text
+5.0
+```
+
+**Example: Floor division of two ints: an int**
+
+```python
 # Floor division of two ints: an int
 print(10 // 2)
+```
 
+**Output**
+
+```text
+5
+```
+
+**Example: True division with a float**
+
+```python
 # True division with a float
 print(10.0 / 2)
+```
 
+**Output**
+
+```text
+5.0
+```
+
+**Example: Floor division with a float: a float**
+
+```python
 # Floor division with a float: a float
 print(10.0 // 2)
+```
 
+**Output**
+
+```text
+5.0
+```
+
+**Example: Floor division rounds DOWN, towards negative infinity**
+
+```python
 # Floor division rounds DOWN, towards negative infinity
 print(7 // 2)
+```
 
+**Output**
+
+```text
+3
+```
+
+**Example: For negative results, "down" means further from zero**
+
+```python
 # For negative results, "down" means further from zero
 print(-7 // 2)
+```
 
+**Output**
+
+```text
+-4
+```
+
+**Example: Compare with int(), which cuts towards zero**
+
+```python
 # Compare with int(), which cuts towards zero
 print(int(-7 / 2))
+```
 
+**Output**
+
+```text
+-3
+```
+
+**Example: Floor division with a negative divisor**
+
+```python
 # Floor division with a negative divisor
 print(7 // -2)
 ```
@@ -220,43 +476,118 @@ print(7 // -2)
 **Output**
 
 ```text
-5.0
-5
-5.0
-5.0
-3
--4
--3
 -4
 ```
 
 ### The remainder operator %
 
+**Example: 17 divided by 5 is 3, remainder 2**
+
 ```python
 # 17 divided by 5 is 3, remainder 2
 print(17 % 5)
+```
 
+**Output**
+
+```text
+2
+```
+
+**Example: An even number has remainder 0 when divided by 2**
+
+```python
 # An even number has remainder 0 when divided by 2
 print(10 % 2)
+```
 
+**Output**
+
+```text
+0
+```
+
+**Example: An odd number has remainder 1 when divided by 2**
+
+```python
 # An odd number has remainder 1 when divided by 2
 print(7 % 2)
+```
 
+**Output**
+
+```text
+1
+```
+
+**Example: The last digit of a number**
+
+```python
 # The last digit of a number
 print(1234 % 10)
+```
 
+**Output**
+
+```text
+4
+```
+
+**Example: The last two digits of a number**
+
+```python
 # The last two digits of a number
 print(1234 % 100)
+```
 
+**Output**
+
+```text
+34
+```
+
+**Example: A smaller number divided by a bigger one: the remainder is the number itself**
+
+```python
 # A smaller number divided by a bigger one: the remainder is the number itself
 print(3 % 7)
+```
 
+**Output**
+
+```text
+3
+```
+
+**Example: With negatives, the result takes the sign of the divisor**
+
+```python
 # With negatives, the result takes the sign of the divisor
 print(-7 % 3)
+```
 
+**Output**
+
+```text
+2
+```
+
+**Example: Remainder works with floats too**
+
+```python
 # Remainder works with floats too
 print(7.5 % 2)
+```
 
+**Output**
+
+```text
+1.5
+```
+
+**Example: `divmod()` gives floor division and remainder together**
+
+```python
 # divmod() gives floor division and remainder together
 print(divmod(17, 5))
 ```
@@ -264,44 +595,118 @@ print(divmod(17, 5))
 **Output**
 
 ```text
-2
-0
-1
-4
-34
-3
-2
-1.5
 (3, 2)
 ```
 
 ### The power operator **
 
+**Example: 2 to the power 10**
+
 ```python
 # 2 to the power 10
 print(2 ** 10)
+```
 
+**Output**
+
+```text
+1024
+```
+
+**Example: Any number to the power 0 is 1**
+
+```python
 # Any number to the power 0 is 1
 print(5 ** 0)
+```
 
+**Output**
+
+```text
+1
+```
+
+**Example: A negative power gives a fraction: 1 / (2 x 2)**
+
+```python
 # A negative power gives a fraction: 1 / (2 x 2)
 print(2 ** -2)
+```
 
+**Output**
+
+```text
+0.25
+```
+
+**Example: A power of 0.5 is the square root**
+
+```python
 # A power of 0.5 is the square root
 print(16 ** 0.5)
+```
 
+**Output**
+
+```text
+4.0
+```
+
+**Example: A power of 1/3 is the cube root**
+
+```python
 # A power of 1/3 is the cube root
 print(27 ** (1 / 3))
+```
 
+**Output**
+
+```text
+3.0
+```
+
+**Example: Very large results are fine, because int has no size limit**
+
+```python
 # Very large results are fine, because int has no size limit
 print(2 ** 100)
+```
 
+**Output**
+
+```text
+1267650600228229401496703205376
+```
+
+**Example: ** is evaluated right to left: 2 ** (3 ** 2) = 2 ** 9**
+
+```python
 # ** is evaluated right to left: 2 ** (3 ** 2) = 2 ** 9
 print(2 ** 3 ** 2)
+```
 
+**Output**
+
+```text
+512
+```
+
+**Example: Unary minus is applied AFTER **: -(2 ** 2)**
+
+```python
 # Unary minus is applied AFTER **: -(2 ** 2)
 print(-2 ** 2)
+```
 
+**Output**
+
+```text
+-4
+```
+
+**Example: Use brackets to square a negative number**
+
+```python
 # Use brackets to square a negative number
 print((-2) ** 2)
 ```
@@ -309,14 +714,6 @@ print((-2) ** 2)
 **Output**
 
 ```text
-1024
-1
-0.25
-4.0
-3.0
-1267650600228229401496703205376
-512
--4
 4
 ```
 
@@ -335,25 +732,87 @@ print((-2) ** 2)
 <tr><td><code>*</code></td><td>String multiplication (repetition) operator</td><td>One operand <code>str</code>, the other <b>int</b></td><td><code>2 * "durga"</code> gives <code>'durgadurga'</code></td></tr>
 </table>
 
+**Example: Join two strings**
+
 ```python
 # Join two strings
 print("durga" + "10")
+```
 
+**Output**
+
+```text
+durga10
+```
+
+**Example: Repeat a string: int on the left**
+
+```python
 # Repeat a string: int on the left
 print(2 * "durga")
+```
 
+**Output**
+
+```text
+durgadurga
+```
+
+**Example: Repeat a string: int on the right**
+
+```python
 # Repeat a string: int on the right
 print("durga" * 2)
+```
 
+**Output**
+
+```text
+durgadurga
+```
+
+**Example: Repeat zero or negative times: empty string**
+
+```python
 # Repeat zero or negative times: empty string
 print(repr("durga" * 0), repr("durga" * -1))
+```
 
+**Output**
+
+```text
+'' ''
+```
+
+**Example: Build a line of 15 dashes**
+
+```python
 # Build a line of 15 dashes
 print("-" * 15)
+```
 
+**Output**
+
+```text
+---------------
+```
+
+**Example: + with two numbers is addition, not joining**
+
+```python
 # + with two numbers is addition, not joining
 print(10 + 20)
+```
 
+**Output**
+
+```text
+30
+```
+
+**Example: Convert the number first if you want to join it**
+
+```python
 # Convert the number first if you want to join it
 print("durga" + str(10))
 ```
@@ -361,12 +820,6 @@ print("durga" + str(10))
 **Output**
 
 ```text
-durga10
-durgadurga
-durgadurga
-'' ''
----------------
-30
 durga10
 ```
 
@@ -448,6 +901,8 @@ ZeroDivisionError: integer modulo by zero
 
 `>`, `>=`, `<`, `<=` compare the **order** of two values and return `True` or `False`.
 
+**Example: Is a greater than b?**
+
 ```python
 # Two numbers
 a = 10
@@ -457,12 +912,60 @@ b = 20
 
 # Is a greater than b?
 print("a > b is ", a > b)
+```
+
+**Output**
+
+```text
+a > b is  False
+```
+
+**Example: Is a greater than or equal to b?**
+
+```python
+# Two numbers
+a = 10
+
+# The second number
+b = 20
 
 # Is a greater than or equal to b?
 print("a >= b is ", a >= b)
+```
+
+**Output**
+
+```text
+a >= b is  False
+```
+
+**Example: Is a less than b?**
+
+```python
+# Two numbers
+a = 10
+
+# The second number
+b = 20
 
 # Is a less than b?
 print("a < b is ", a < b)
+```
+
+**Output**
+
+```text
+a < b is  True
+```
+
+**Example: Is a less than or equal to b?**
+
+```python
+# Two numbers
+a = 10
+
+# The second number
+b = 20
 
 # Is a less than or equal to b?
 print("a <= b is ", a <= b)
@@ -471,15 +974,14 @@ print("a <= b is ", a <= b)
 **Output**
 
 ```text
-a > b is  False
-a >= b is  False
-a < b is  True
 a <= b is  True
 ```
 
 ### Comparing strings
 
 Strings are compared **character by character**, using each character's Unicode number (see [Topic 03.1](../03.1%20Strings/README.md#17-unicode-ord-chr-and-encoding)).
+
+**Example: Equal strings are not greater**
 
 ```python
 # Two equal strings
@@ -490,12 +992,60 @@ b = "durga"
 
 # Equal strings are not greater
 print("a > b is ", a > b)
+```
+
+**Output**
+
+```text
+a > b is  False
+```
+
+**Example: But they are greater than OR equal**
+
+```python
+# Two equal strings
+a = "durga"
+
+# The same text
+b = "durga"
 
 # But they are greater than OR equal
 print("a >= b is ", a >= b)
+```
+
+**Output**
+
+```text
+a >= b is  True
+```
+
+**Example: Not less**
+
+```python
+# Two equal strings
+a = "durga"
+
+# The same text
+b = "durga"
 
 # Not less
 print("a < b is ", a < b)
+```
+
+**Output**
+
+```text
+a < b is  False
+```
+
+**Example: Less than or equal: yes, because they are equal**
+
+```python
+# Two equal strings
+a = "durga"
+
+# The same text
+b = "durga"
 
 # Less than or equal: yes, because they are equal
 print("a <= b is ", a <= b)
@@ -504,28 +1054,77 @@ print("a <= b is ", a <= b)
 **Output**
 
 ```text
-a > b is  False
-a >= b is  True
-a < b is  False
 a <= b is  True
 ```
+
+**Example: "apple" comes before "banana" in alphabetical order**
 
 ```python
 # "apple" comes before "banana" in alphabetical order
 print("apple" < "banana")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: The first different character decides: "t" > "r"**
+
+```python
 # The first different character decides: "t" > "r"
 print("cat" > "car")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: A prefix is smaller than the longer word**
+
+```python
 # A prefix is smaller than the longer word
 print("app" < "apple")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Capital letters (65 to 90) come before small letters (97 to 122)**
+
+```python
 # Capital letters (65 to 90) come before small letters (97 to 122)
 print("Zoo" < "ant")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Digits as text are compared as characters, not as numbers**
+
+```python
 # Digits as text are compared as characters, not as numbers
 print("10" < "9")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Compare as numbers after converting**
+
+```python
 # Compare as numbers after converting
 print(int("10") < int("9"))
 ```
@@ -533,29 +1132,66 @@ print(int("10") < int("9"))
 **Output**
 
 ```text
-True
-True
-True
-True
-True
 False
 ```
 
 ### Comparing booleans and mixed types
 
+**Example: True is 1, so True is not greater than True**
+
 ```python
 # True is 1, so True is not greater than True
 print(True > True)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: But it is greater than or equal**
+
+```python
 # But it is greater than or equal
 print(True >= True)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: 10 is greater than 1 (True)**
+
+```python
 # 10 is greater than 1 (True)
 print(10 > True)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: 0 (False) is not greater than 1 (True)**
+
+```python
 # 0 (False) is not greater than 1 (True)
 print(False > True)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: An int and a float can be compared**
+
+```python
 # An int and a float can be compared
 print(10 > 9.99)
 ```
@@ -563,10 +1199,6 @@ print(10 > 9.99)
 **Output**
 
 ```text
-False
-True
-True
-False
 True
 ```
 
@@ -631,31 +1263,103 @@ sequenceDiagram
     Note over E,P: One False makes the whole chain False
 ```
 
+**Example: A single comparison**
+
 ```python
 # A single comparison
 print(10 < 20)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Two comparisons chained**
+
+```python
 # Two comparisons chained
 print(10 < 20 < 30)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Three comparisons chained**
+
+```python
 # Three comparisons chained
 print(10 < 20 < 30 < 40)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: The last comparison is False, so the result is False**
+
+```python
 # The last comparison is False, so the result is False
 print(10 < 20 < 30 < 40 > 50)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: An age to check**
+
+```python
 # An age to check
 age = 25
 
 # Check that the age is inside a range
 print(18 <= age <= 60)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Outside the range**
+
+```python
 # Outside the range
 print(1 <= 0 <= 10)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Different operators can be mixed in one chain**
+
+```python
 # Different operators can be mixed in one chain
 print(1 < 5 > 3)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: The middle value is used twice, but evaluated only once**
+
+```python
 # The middle value is used twice, but evaluated only once
 print(3 < 4 <= 4)
 ```
@@ -664,56 +1368,171 @@ print(3 < 4 <= 4)
 
 ```text
 True
-True
-True
-False
-True
-False
-True
-True
 ```
 
 ## 4. Equality operators
 
 `==` (equal) and `!=` (not equal) compare **values**. They work for **any** types, even incompatible ones: then they simply return `False` (or `True` for `!=`) instead of raising an error.
 
+**Example: Different numbers**
+
 ```python
 # Different numbers
 print(10 == 20)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Not equal?**
+
+```python
 # Not equal?
 print(10 != 20)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: True is 1, not 10**
+
+```python
 # True is 1, not 10
 print(10 == True)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: True is equal to 1**
+
+```python
 # True is equal to 1
 print(1 == True)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Same Boolean values**
+
+```python
 # Same Boolean values
 print(False == False)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Same text**
+
+```python
 # Same text
 print("durga" == "durga")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Equality is case sensitive**
+
+```python
 # Equality is case sensitive
 print("durga" == "Durga")
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Incompatible types: no error, just False**
+
+```python
 # Incompatible types: no error, just False
 print(10 == "durga")
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: A number and its text form are not equal**
+
+```python
 # A number and its text form are not equal
 print(10 == "10")
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Int and float with the same value are equal**
+
+```python
 # int and float with the same value are equal
 print(10 == 10.0)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Lists with the same items in the same order are equal**
+
+```python
 # Lists with the same items in the same order are equal
 print([1, 2] == [1, 2])
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Order matters for lists**
+
+```python
 # Order matters for lists
 print([1, 2] == [2, 1])
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Order does not matter for sets**
+
+```python
 # Order does not matter for sets
 print({1, 2} == {2, 1})
 ```
@@ -721,30 +1540,40 @@ print({1, 2} == {2, 1})
 **Output**
 
 ```text
-False
-True
-False
-True
-True
-True
-False
-False
-False
-True
-True
-False
 True
 ```
 
 ### Chaining equality operators
 
+**Example: The first comparison is False, so the whole chain is False**
+
 ```python
 # The first comparison is False, so the whole chain is False
 print(10 == 20 == 30 == 40)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: All values are the same**
+
+```python
 # All values are the same
 print(10 == 10 == 10 == 10)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Means: 5 == 5 and 5 != 6**
+
+```python
 # Means: 5 == 5 and 5 != 6
 print(5 == 5 != 6)
 ```
@@ -752,8 +1581,6 @@ print(5 == 5 != 6)
 **Output**
 
 ```text
-False
-True
 True
 ```
 
@@ -798,16 +1625,48 @@ True
 <tr><td>False</td><td>False</td><td>False</td><td>False</td><td>True</td></tr>
 </table>
 
+**Example: And: True only if both are True**
+
 ```python
 # and: True only if both are True
 print(True and False)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Or: True if at least one is True**
+
+```python
 # or: True if at least one is True
 print(True or False)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Not: the complement (opposite)**
+
+```python
 # not: the complement (opposite)
 print(not False)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: An age**
+
+```python
 # An age
 age = 25
 
@@ -816,7 +1675,17 @@ has_id = True
 
 # A typical use: both conditions must be true
 print(age >= 18 and has_id)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Is it a weekend?**
+
+```python
 # Is it a weekend?
 is_weekend = False
 
@@ -830,10 +1699,6 @@ print(is_weekend or is_holiday)
 **Output**
 
 ```text
-False
-True
-True
-True
 True
 ```
 
@@ -873,55 +1738,207 @@ stateDiagram-v2
     RetY --> [*]
 ```
 
+**Example: X is true (10), so and returns y**
+
 ```python
 # x is true (10), so and returns y
 print(10 and 20)
+```
 
+**Output**
+
+```text
+20
+```
+
+**Example: X is false (0), so and returns x**
+
+```python
 # x is false (0), so and returns x
 print(0 and 20)
+```
 
+**Output**
+
+```text
+0
+```
+
+**Example: X is true, so or returns x**
+
+```python
 # x is true, so or returns x
 print(10 or 20)
+```
 
+**Output**
+
+```text
+10
+```
+
+**Example: X is false, so or returns y**
+
+```python
 # x is false, so or returns y
 print(0 or 20)
+```
 
+**Output**
+
+```text
+20
+```
+
+**Example: Not of a non-zero number**
+
+```python
 # not of a non-zero number
 print(not 10)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Not of zero**
+
+```python
 # not of zero
 print(not 0)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Both strings are non-empty, so and returns the second**
+
+```python
 # Both strings are non-empty, so and returns the second
 print("durga" and "durgasoft")
+```
 
+**Output**
+
+```text
+durgasoft
+```
+
+**Example: The first string is empty (false), so and returns it**
+
+```python
 # The first string is empty (false), so and returns it
 print(repr("" and "durga"))
+```
 
+**Output**
+
+```text
+''
+```
+
+**Example: The first is true, so and returns the second, which is empty**
+
+```python
 # The first is true, so and returns the second, which is empty
 print(repr("durga" and ""))
+```
 
+**Output**
+
+```text
+''
+```
+
+**Example: The first is empty, so or returns the second**
+
+```python
 # The first is empty, so or returns the second
 print("" or "durga")
+```
 
+**Output**
+
+```text
+durga
+```
+
+**Example: The first is non-empty, so or returns it**
+
+```python
 # The first is non-empty, so or returns it
 print("durga" or "")
+```
 
+**Output**
+
+```text
+durga
+```
+
+**Example: Not of an empty string**
+
+```python
 # not of an empty string
 print(not "")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Not of a non-empty string**
+
+```python
 # not of a non-empty string
 print(not "durga")
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: A name that was left empty**
+
+```python
 # A name that was left empty
 name = ""
 
 # A useful pattern: a default value when the input is empty
 print(name or "Guest")
+```
 
+**Output**
+
+```text
+Guest
+```
+
+**Example: None is false too**
+
+```python
 # None is false too
 print(None or "no value")
+```
 
+**Output**
+
+```text
+no value
+```
+
+**Example: Chained or returns the first true value**
+
+```python
 # Chained or returns the first true value
 print(0 or "" or [] or "found")
 ```
@@ -929,21 +1946,6 @@ print(0 or "" or [] or "found")
 **Output**
 
 ```text
-20
-0
-10
-20
-False
-True
-durgasoft
-''
-''
-durga
-durga
-True
-False
-Guest
-no value
 found
 ```
 
@@ -1041,34 +2043,126 @@ Bitwise operators work on the individual **bits** (0s and 1s) of whole numbers. 
 <tr><td><b>4 ^ 5</b> (different)</td><td align="center">0</td><td align="center">0</td><td align="center">1</td><td><b>1</b></td></tr>
 </table>
 
+**Example: Bitwise AND**
+
 ```python
 # Bitwise AND
 print(4 & 5)
+```
 
+**Output**
+
+```text
+4
+```
+
+**Example: Bitwise OR**
+
+```python
 # Bitwise OR
 print(4 | 5)
+```
 
+**Output**
+
+```text
+5
+```
+
+**Example: Bitwise XOR**
+
+```python
 # Bitwise XOR
 print(4 ^ 5)
+```
 
+**Output**
+
+```text
+1
+```
+
+**Example: See the bits with bin()**
+
+```python
 # See the bits with bin()
 print(bin(4), bin(5), bin(4 & 5))
+```
 
+**Output**
+
+```text
+0b100 0b101 0b100
+```
+
+**Example: 12 is 1100, 10 is 1010: AND keeps only the shared 1s (1000)**
+
+```python
 # 12 is 1100, 10 is 1010: AND keeps only the shared 1s (1000)
 print(12 & 10)
+```
 
+**Output**
+
+```text
+8
+```
+
+**Example: OR combines all 1s (1110)**
+
+```python
 # OR combines all 1s (1110)
 print(12 | 10)
+```
 
+**Output**
+
+```text
+14
+```
+
+**Example: XOR keeps only the different bits (0110)**
+
+```python
 # XOR keeps only the different bits (0110)
 print(12 ^ 10)
+```
 
+**Output**
+
+```text
+6
+```
+
+**Example: XOR with itself is always 0**
+
+```python
 # XOR with itself is always 0
 print(7 ^ 7)
+```
 
+**Output**
+
+```text
+0
+```
+
+**Example: XOR with 0 gives the same number**
+
+```python
 # XOR with 0 gives the same number
 print(7 ^ 0)
+```
 
+**Output**
+
+```text
+7
+```
+
+**Example: X & 1 is 1 for odd numbers and 0 for even numbers**
+
+```python
 # x & 1 is 1 for odd numbers and 0 for even numbers
 print(7 & 1, 8 & 1)
 ```
@@ -1076,15 +2170,6 @@ print(7 & 1, 8 & 1)
 **Output**
 
 ```text
-4
-5
-1
-0b100 0b101 0b100
-8
-14
-6
-0
-7
 1 0
 ```
 
@@ -1109,19 +2194,61 @@ So `~5` flips `0...0101` into `1...1010`. The sign bit is now 1, so the number i
 
 > **Easy rule:** `~x` is always `-(x + 1)`.
 
+**Example: Complement of 5 is -(5 + 1)**
+
 ```python
 # Complement of 5 is -(5 + 1)
 print(~5)
+```
 
+**Output**
+
+```text
+-6
+```
+
+**Example: Complement of 0**
+
+```python
 # Complement of 0
 print(~0)
+```
 
+**Output**
+
+```text
+-1
+```
+
+**Example: Complement of a negative number**
+
+```python
 # Complement of a negative number
 print(~-6)
+```
 
+**Output**
+
+```text
+5
+```
+
+**Example: Applying ~ twice gives back the original**
+
+```python
 # Applying ~ twice gives back the original
 print(~~5)
+```
 
+**Output**
+
+```text
+5
+```
+
+**Example: Check the easy rule for several numbers**
+
+```python
 # Check the easy rule for several numbers
 print([~x == -(x + 1) for x in [0, 1, 5, 100, -3]])
 ```
@@ -1129,10 +2256,6 @@ print([~x == -(x + 1) for x in [0, 1, 5, 100, -3]])
 **Output**
 
 ```text
--6
--1
-5
-5
 [True, True, True, True, True]
 ```
 
@@ -1150,25 +2273,87 @@ flowchart LR
 
 **Right shift `>>`:** every bit moves right; the empty places on the left are filled with the **sign bit** (0 for positive, 1 for negative). Each shift by 1 **halves** the number, rounding down.
 
+**Example: 10 is 1010; shifted left by 2 it is 101000 = 40**
+
 ```python
 # 10 is 1010; shifted left by 2 it is 101000 = 40
 print(10 << 2)
+```
 
+**Output**
+
+```text
+40
+```
+
+**Example: 10 shifted right by 2: 1010 becomes 10 = 2**
+
+```python
 # 10 shifted right by 2: 1010 becomes 10 = 2
 print(10 >> 2)
+```
 
+**Output**
+
+```text
+2
+```
+
+**Example: Left shift by n multiplies by 2 to the power n**
+
+```python
 # Left shift by n multiplies by 2 to the power n
 print(3 << 4, 3 * 2 ** 4)
+```
 
+**Output**
+
+```text
+48 48
+```
+
+**Example: Right shift by n is floor division by 2 to the power n**
+
+```python
 # Right shift by n is floor division by 2 to the power n
 print(100 >> 3, 100 // 2 ** 3)
+```
 
+**Output**
+
+```text
+12 12
+```
+
+**Example: Shifting right too far gives 0**
+
+```python
 # Shifting right too far gives 0
 print(10 >> 10)
+```
 
+**Output**
+
+```text
+0
+```
+
+**Example: A negative number keeps its sign when shifted right**
+
+```python
 # A negative number keeps its sign when shifted right
 print(-16 >> 2)
+```
 
+**Output**
+
+```text
+-4
+```
+
+**Example: 1 << n is a quick way to get 2 to the power n**
+
+```python
 # 1 << n is a quick way to get 2 to the power n
 print(1 << 10)
 ```
@@ -1176,12 +2361,6 @@ print(1 << 10)
 **Output**
 
 ```text
-40
-2
-48 48
-12 12
-0
--4
 1024
 ```
 
@@ -1189,22 +2368,74 @@ print(1 << 10)
 
 `True` is 1 and `False` is 0, so bitwise operators work on them too:
 
+**Example: AND of True and False**
+
 ```python
 # AND of True and False
 print(True & False)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: OR of True and False**
+
+```python
 # OR of True and False
 print(True | False)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: XOR of True and False**
+
+```python
 # XOR of True and False
 print(True ^ False)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Complement of True (1) is -(1 + 1)**
+
+```python
 # Complement of True (1) is -(1 + 1)
 print(~True)
+```
 
+**Output**
+
+```text
+-2
+```
+
+**Example: 1 shifted left by 2 is 4**
+
+```python
 # 1 shifted left by 2 is 4
 print(True << 2)
+```
 
+**Output**
+
+```text
+4
+```
+
+**Example: 1 shifted right by 2 is 0**
+
+```python
 # 1 shifted right by 2 is 0
 print(True >> 2)
 ```
@@ -1212,11 +2443,6 @@ print(True >> 2)
 **Output**
 
 ```text
-False
-True
-True
--2
-4
 0
 ```
 
@@ -1351,6 +2577,8 @@ print(total)
 
 Compound operators also work on strings and lists:
 
+**Example: Print the message**
+
 ```python
 # Build a message piece by piece
 message = "Hello"
@@ -1360,6 +2588,22 @@ message += ", Asha"
 
 # Print the message
 print(message)
+```
+
+**Output**
+
+```text
+Hello, Asha
+```
+
+**Example: Repeat a string with *=**
+
+```python
+# Build a message piece by piece
+message = "Hello"
+
+# += joins text for strings
+message += ", Asha"
 
 # Repeat a string with *=
 line = "="
@@ -1369,6 +2613,22 @@ line *= 10
 
 # Print the line
 print(line)
+```
+
+**Output**
+
+```text
+==========
+```
+
+**Example: `+=` on a list adds the items of another list**
+
+```python
+# Build a message piece by piece
+message = "Hello"
+
+# += joins text for strings
+message += ", Asha"
 
 # += on a list adds the items of another list
 numbers = [1, 2]
@@ -1383,8 +2643,6 @@ print(numbers)
 **Output**
 
 ```text
-Hello, Asha
-==========
 [1, 2, 3, 4]
 ```
 
@@ -1392,18 +2650,59 @@ Hello, Asha
 
 In C and Java, `x++` adds 1. **Python has no `++` or `--`.** Use `x += 1`.
 
+**Example: ++x is just the unary plus applied twice: +(+x), so x does not change**
+
 ```python
 # Start with 10
 x = 10
 
 # ++x is just the unary plus applied twice: +(+x), so x does not change
 print(++x)
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: --x is minus of minus: -(-x), again no change**
+
+```python
+# Start with 10
+x = 10
 
 # --x is minus of minus: -(-x), again no change
 print(--x)
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: The value of x is still 10**
+
+```python
+# Start with 10
+x = 10
 
 # The value of x is still 10
 print(x)
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: The Python way to increase by 1**
+
+```python
+# Start with 10
+x = 10
 
 # The Python way to increase by 1
 x += 1
@@ -1415,9 +2714,6 @@ print(x)
 **Output**
 
 ```text
-10
-10
-10
 11
 ```
 
@@ -1478,48 +2774,141 @@ print(x)
 30
 ```
 
+**Example: Even or odd**
+
 ```python
 # A number to test
 n = 7
 
 # Even or odd
 print("even" if n % 2 == 0 else "odd")
+```
+
+**Output**
+
+```text
+odd
+```
+
+**Example: An age to test**
+
+```python
+# A number to test
+n = 7
 
 # An age to test
 age = 15
 
 # Adult or minor
 print("adult" if age >= 18 else "minor")
+```
+
+**Output**
+
+```text
+minor
+```
+
+**Example: A mark to test**
+
+```python
+# A number to test
+n = 7
 
 # A mark to test
 marks = 72
 
 # Pass or fail
 print("Pass" if marks >= 40 else "Fail")
+```
+
+**Output**
+
+```text
+Pass
+```
+
+**Example: A negative number**
+
+```python
+# A number to test
+n = 7
 
 # A negative number
 value = -9
 
 # The absolute value of the number, without abs()
 print(value if value >= 0 else -value)
+```
+
+**Output**
+
+```text
+9
+```
+
+**Example: Two numbers**
+
+```python
+# A number to test
+n = 7
 
 # Two numbers
 p, q = 14, 31
 
 # The larger of the two
 print(p if p > q else q)
+```
+
+**Output**
+
+```text
+31
+```
+
+**Example: A count of items**
+
+```python
+# A number to test
+n = 7
 
 # A count of items
 count = 1
 
 # Choose the word "item" or "items"
 print(f"{count} {'item' if count == 1 else 'items'}")
+```
+
+**Output**
+
+```text
+1 item
+```
+
+**Example: A temperature in degrees**
+
+```python
+# A number to test
+n = 7
 
 # A temperature in degrees
 temperature = 34
 
 # A ternary inside an f-string
 print(f"It is {'hot' if temperature > 30 else 'pleasant'} today")
+```
+
+**Output**
+
+```text
+It is hot today
+```
+
+**Example: Whether the customer is a member**
+
+```python
+# A number to test
+n = 7
 
 # Whether the customer is a member
 is_member = True
@@ -1534,13 +2923,6 @@ print(price * (0.9 if is_member else 1.0))
 **Output**
 
 ```text
-odd
-minor
-Pass
-9
-31
-1 item
-It is hot today
 450.0
 ```
 
@@ -1686,6 +3068,8 @@ Identity operators compare **addresses** (identities), not values. You learned t
 <tr><td><code>r1 is not r2</code></td><td>The names point to <b>different objects</b></td><td><code>id(r1) != id(r2)</code></td><td><code>x is not None</code></td></tr>
 </table>
 
+**Example: Same object**
+
 ```python
 # Two names for the small int 10
 a = 10
@@ -1695,6 +3079,22 @@ b = 10
 
 # Same object
 print(a is b)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Two names for True**
+
+```python
+# Two names for the small int 10
+a = 10
+
+# Python reuses the cached 10 object
+b = 10
 
 # Two names for True
 x = True
@@ -1704,6 +3104,22 @@ y = True
 
 # Same object
 print(x is y)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Two names for the same short string**
+
+```python
+# Two names for the small int 10
+a = 10
+
+# Python reuses the cached 10 object
+b = 10
 
 # Two names for the same short string
 s1 = "durga"
@@ -1719,9 +3135,9 @@ print(s1 is s2)
 
 ```text
 True
-True
-True
 ```
+
+**Example: Their identities are different**
 
 ```python
 # Two lists with the same content
@@ -1732,21 +3148,101 @@ list2 = ["one", "two", "three"]
 
 # Their identities are different
 print(id(list1) == id(list2))
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: So they are not the same object**
+
+```python
+# Two lists with the same content
+list1 = ["one", "two", "three"]
+
+# A separate list, created separately
+list2 = ["one", "two", "three"]
 
 # So they are not the same object
 print(list1 is list2)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: Is not gives the opposite**
+
+```python
+# Two lists with the same content
+list1 = ["one", "two", "three"]
+
+# A separate list, created separately
+list2 = ["one", "two", "three"]
 
 # is not gives the opposite
 print(list1 is not list2)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: But their content is equal**
+
+```python
+# Two lists with the same content
+list1 = ["one", "two", "three"]
+
+# A separate list, created separately
+list2 = ["one", "two", "three"]
 
 # But their content is equal
 print(list1 == list2)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: A second name for list1**
+
+```python
+# Two lists with the same content
+list1 = ["one", "two", "three"]
+
+# A separate list, created separately
+list2 = ["one", "two", "three"]
 
 # A second name for list1
 list3 = list1
 
 # Now both names point to the same object
 print(list1 is list3)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: A variable with no value**
+
+```python
+# Two lists with the same content
+list1 = ["one", "two", "three"]
+
+# A separate list, created separately
+list2 = ["one", "two", "three"]
 
 # A variable with no value
 value = None
@@ -1758,11 +3254,6 @@ print(value is None)
 **Output**
 
 ```text
-False
-False
-True
-True
-True
 True
 ```
 
@@ -1783,21 +3274,75 @@ Membership operators check whether an object is **present** in a collection (str
 <tr><td><code>not in</code></td><td>The object is not present in the collection</td><td>Same</td><td>Opposite of <code>in</code></td></tr>
 </table>
 
+**Example: Is the letter h present?**
+
 ```python
 # A sentence
 x = "hello learning Python is very easy!!!"
 
 # Is the letter h present?
 print('h' in x)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Is the letter d present?**
+
+```python
+# A sentence
+x = "hello learning Python is very easy!!!"
 
 # Is the letter d present?
 print('d' in x)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: Is the letter d absent?**
+
+```python
+# A sentence
+x = "hello learning Python is very easy!!!"
 
 # Is the letter d absent?
 print('d' not in x)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Is the word Python present?**
+
+```python
+# A sentence
+x = "hello learning Python is very easy!!!"
 
 # Is the word Python present?
 print('Python' in x)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: In is case sensitive for strings**
+
+```python
+# A sentence
+x = "hello learning Python is very easy!!!"
 
 # in is case sensitive for strings
 print('python' in x)
@@ -1806,10 +3351,6 @@ print('python' in x)
 **Output**
 
 ```text
-True
-False
-True
-True
 False
 ```
 
@@ -1968,6 +3509,8 @@ From **highest** (evaluated first) to **lowest**:
 
 ### Examples from the notes
 
+**Example: `(50` * 10) / 5**
+
 ```python
 # Four values
 a = 30
@@ -1983,9 +3526,53 @@ d = 5
 
 # (50 * 10) / 5
 print((a + b) * c / d)
+```
+
+**Output**
+
+```text
+100.0
+```
+
+**Example: 50 * (10 / 5)**
+
+```python
+# Four values
+a = 30
+
+# Second value
+b = 20
+
+# Third value
+c = 10
+
+# Fourth value
+d = 5
 
 # 50 * (10 / 5)
 print((a + b) * (c / d))
+```
+
+**Output**
+
+```text
+100.0
+```
+
+**Example: 30 + (200 / 5)**
+
+```python
+# Four values
+a = 30
+
+# Second value
+b = 20
+
+# Third value
+c = 10
+
+# Fourth value
+d = 5
 
 # 30 + (200 / 5)
 print(a + (b * c) / d)
@@ -1994,8 +3581,6 @@ print(a + (b * c) / d)
 **Output**
 
 ```text
-100.0
-100.0
 70.0
 ```
 
@@ -2010,19 +3595,61 @@ flowchart LR
     S4 -- "+ and -, left to right" --> S5[["15.0"]]
 ```
 
+**Example: The full expression from the notes**
+
 ```python
 # The full expression from the notes
 print(3 / 2 * 4 + 3 + (10 / 5) ** 3 - 2)
+```
 
+**Output**
+
+```text
+15.0
+```
+
+**Example: Step 1: brackets**
+
+```python
 # Step 1: brackets
 print(3 / 2 * 4 + 3 + 2.0 ** 3 - 2)
+```
 
+**Output**
+
+```text
+15.0
+```
+
+**Example: Step 2: power**
+
+```python
 # Step 2: power
 print(3 / 2 * 4 + 3 + 8.0 - 2)
+```
 
+**Output**
+
+```text
+15.0
+```
+
+**Example: Step 3: division and multiplication, left to right**
+
+```python
 # Step 3: division and multiplication, left to right
 print(1.5 * 4 + 3 + 8.0 - 2)
+```
 
+**Output**
+
+```text
+15.0
+```
+
+**Example: Step 4: addition and subtraction, left to right**
+
+```python
 # Step 4: addition and subtraction, left to right
 print(6.0 + 3 + 8.0 - 2)
 ```
@@ -2031,48 +3658,156 @@ print(6.0 + 3 + 8.0 - 2)
 
 ```text
 15.0
-15.0
-15.0
-15.0
-15.0
 ```
 
 ### More precedence and associativity examples
 
+**Example: Left to right for / and *: (20 / 2) * 5**
+
 ```python
 # Left to right for / and *: (20 / 2) * 5
 print(20 / 2 * 5)
+```
 
+**Output**
+
+```text
+50.0
+```
+
+**Example: Left to right for -: (10 - 3) - 2**
+
+```python
 # Left to right for -: (10 - 3) - 2
 print(10 - 3 - 2)
+```
 
+**Output**
+
+```text
+5
+```
+
+**Example: Right to left for **: 2 ** (3 ** 2)**
+
+```python
 # Right to left for **: 2 ** (3 ** 2)
 print(2 ** 3 ** 2)
+```
 
+**Output**
+
+```text
+512
+```
+
+**Example: Brackets change the order: (2 ** 3) ** 2**
+
+```python
 # Brackets change the order: (2 ** 3) ** 2
 print((2 ** 3) ** 2)
+```
 
+**Output**
+
+```text
+64
+```
+
+**Example: Unary minus after **: -(2 ** 2)**
+
+```python
 # Unary minus after **: -(2 ** 2)
 print(-2 ** 2)
+```
 
+**Output**
+
+```text
+-4
+```
+
+**Example: + runs before <<: (1 + 1) << 2**
+
+```python
 # + runs before <<: (1 + 1) << 2
 print(1 + 1 << 2)
+```
 
+**Output**
+
+```text
+8
+```
+
+**Example: Comparison runs before not: not (1 == 2)**
+
+```python
 # Comparison runs before not: not (1 == 2)
 print(not 1 == 2)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: And runs before or: True or (False and False)**
+
+```python
 # and runs before or: True or (False and False)
 print(True or False and False)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Brackets change it: (True or False) and False**
+
+```python
 # Brackets change it: (True or False) and False
 print((True or False) and False)
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: % has the same level as *, so left to right: (10 * 3) % 7**
+
+```python
 # % has the same level as *, so left to right: (10 * 3) % 7
 print(10 * 3 % 7)
+```
 
+**Output**
+
+```text
+2
+```
+
+**Example: Arithmetic runs before comparison: (2 + 3) > 4**
+
+```python
 # Arithmetic runs before comparison: (2 + 3) > 4
 print(2 + 3 > 4)
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Arithmetic, then comparisons, then and**
+
+```python
 # Arithmetic, then comparisons, then and
 print(1 + 1 == 2 and 3 * 3 == 9)
 ```
@@ -2080,17 +3815,6 @@ print(1 + 1 == 2 and 3 * 3 == 9)
 **Output**
 
 ```text
-50.0
-5
-512
-64
--4
-8
-True
-True
-False
-2
-True
 True
 ```
 
@@ -2224,48 +3948,219 @@ NameError: name 'math' is not defined. Did you forget to import 'math'
 <tr><td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td><td>Trigonometry</td><td><code>math.sin(math.pi / 2)</code></td><td><code>1.0</code></td><td>x is in radians</td></tr>
 </table>
 
+**Example: Square root**
+
 ```python
 # Load the math module
 import math
 
 # Square root
 print(math.sqrt(144))
+```
+
+**Output**
+
+```text
+12.0
+```
+
+**Example: Round up**
+
+```python
+# Load the math module
+import math
 
 # Round up
 print(math.ceil(4.1))
+```
+
+**Output**
+
+```text
+5
+```
+
+**Example: Round up a negative number: up means towards zero here**
+
+```python
+# Load the math module
+import math
 
 # Round up a negative number: up means towards zero here
 print(math.ceil(-4.1))
+```
+
+**Output**
+
+```text
+-4
+```
+
+**Example: Round down**
+
+```python
+# Load the math module
+import math
 
 # Round down
 print(math.floor(4.9))
+```
+
+**Output**
+
+```text
+4
+```
+
+**Example: Round down a negative number: down means away from zero**
+
+```python
+# Load the math module
+import math
 
 # Round down a negative number: down means away from zero
 print(math.floor(-4.9))
+```
+
+**Output**
+
+```text
+-5
+```
+
+**Example: `trunc()` always cuts towards zero**
+
+```python
+# Load the math module
+import math
 
 # trunc() always cuts towards zero
 print(math.trunc(4.9), math.trunc(-4.9))
+```
+
+**Output**
+
+```text
+4 -4
+```
+
+**Example: `math.pow()` always returns a float**
+
+```python
+# Load the math module
+import math
 
 # math.pow() always returns a float
 print(math.pow(2, 3))
+```
+
+**Output**
+
+```text
+8.0
+```
+
+**Example: The ** operator keeps ints as ints**
+
+```python
+# Load the math module
+import math
 
 # The ** operator keeps ints as ints
 print(2 ** 3)
+```
+
+**Output**
+
+```text
+8
+```
+
+**Example: Factorial: 5 x 4 x 3 x 2 x 1**
+
+```python
+# Load the math module
+import math
 
 # Factorial: 5 x 4 x 3 x 2 x 1
 print(math.factorial(5))
+```
+
+**Output**
+
+```text
+120
+```
+
+**Example: Greatest common divisor of 12 and 18**
+
+```python
+# Load the math module
+import math
 
 # Greatest common divisor of 12 and 18
 print(math.gcd(12, 18))
+```
+
+**Output**
+
+```text
+6
+```
+
+**Example: Sine of 90 degrees (pi / 2 radians)**
+
+```python
+# Load the math module
+import math
 
 # Sine of 90 degrees (pi / 2 radians)
 print(math.sin(math.pi / 2))
+```
+
+**Output**
+
+```text
+1.0
+```
+
+**Example: Cosine of 0**
+
+```python
+# Load the math module
+import math
 
 # Cosine of 0
 print(math.cos(0))
+```
+
+**Output**
+
+```text
+1.0
+```
+
+**Example: Convert degrees to radians first, then take the tangent of 45 degrees**
+
+```python
+# Load the math module
+import math
 
 # Convert degrees to radians first, then take the tangent of 45 degrees
 print(round(math.tan(math.radians(45)), 2))
+```
+
+**Output**
+
+```text
+1.0
+```
+
+**Example: The built-in round() rounds to the nearest value (halves go to the even number)**
+
+```python
+# Load the math module
+import math
 
 # The built-in round() rounds to the nearest value (halves go to the even number)
 print(round(2.5), round(3.5), round(3.14159, 2))
@@ -2274,23 +4169,12 @@ print(round(2.5), round(3.5), round(3.14159, 2))
 **Output**
 
 ```text
-12.0
-5
--4
-4
--5
-4 -4
-8.0
-8
-120
-6
-1.0
-1.0
-1.0
 2 4 3.14
 ```
 
 ### Important variables of the math module
+
+**Example: Pi: the ratio of a circle's circumference to its diameter**
 
 ```python
 # Load the math module
@@ -2298,18 +4182,83 @@ import math
 
 # pi: the ratio of a circle's circumference to its diameter
 print(math.pi)
+```
+
+**Output**
+
+```text
+3.141592653589793
+```
+
+**Example: E: the base of natural logarithms**
+
+```python
+# Load the math module
+import math
 
 # e: the base of natural logarithms
 print(math.e)
+```
+
+**Output**
+
+```text
+2.718281828459045
+```
+
+**Example: Inf: infinity, bigger than every number**
+
+```python
+# Load the math module
+import math
 
 # inf: infinity, bigger than every number
 print(math.inf, math.inf > 10 ** 100)
+```
+
+**Output**
+
+```text
+inf True
+```
+
+**Example: Nan: "not a number", the result of undefined calculations**
+
+```python
+# Load the math module
+import math
 
 # nan: "not a number", the result of undefined calculations
 print(math.nan)
+```
+
+**Output**
+
+```text
+nan
+```
+
+**Example: Nan is not even equal to itself**
+
+```python
+# Load the math module
+import math
 
 # nan is not even equal to itself
 print(math.nan == math.nan)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: Check for nan with isnan()**
+
+```python
+# Load the math module
+import math
 
 # Check for nan with isnan()
 print(math.isnan(math.nan))
@@ -2318,11 +4267,6 @@ print(math.isnan(math.nan))
 **Output**
 
 ```text
-3.141592653589793
-2.718281828459045
-inf True
-nan
-False
 True
 ```
 
@@ -2556,21 +4500,75 @@ The Sum is : 51.2
 
 `eval()` takes a string and **evaluates it as a Python expression**.
 
+**Example: Print the result**
+
 ```python
 # Evaluate an expression written as text
 x = eval("10+20+30")
 
 # Print the result
 print(x)
+```
+
+**Output**
+
+```text
+60
+```
+
+**Example: `eval()` follows normal precedence: 10 + ((2 * 3) / 4)**
+
+```python
+# Evaluate an expression written as text
+x = eval("10+20+30")
 
 # eval() follows normal precedence: 10 + ((2 * 3) / 4)
 print(eval("10+2*3/4"))
+```
+
+**Output**
+
+```text
+11.5
+```
+
+**Example: `eval()` can build a list from text**
+
+```python
+# Evaluate an expression written as text
+x = eval("10+20+30")
 
 # eval() can build a list from text
 print(eval("[10, 20, 30]"), type(eval("[10, 20, 30]")))
+```
+
+**Output**
+
+```text
+[10, 20, 30] <class 'list'>
+```
+
+**Example: A tuple**
+
+```python
+# Evaluate an expression written as text
+x = eval("10+20+30")
 
 # a tuple
 print(eval("(1, 2)"))
+```
+
+**Output**
+
+```text
+(1, 2)
+```
+
+**Example: Or a set**
+
+```python
+# Evaluate an expression written as text
+x = eval("10+20+30")
 
 # or a set
 print(eval("{5, 6}"))
@@ -2579,10 +4577,6 @@ print(eval("{5, 6}"))
 **Output**
 
 ```text
-60
-11.5
-[10, 20, 30] <class 'list'>
-(1, 2)
 {5, 6}
 ```
 
@@ -2844,18 +4838,59 @@ Hello World
 
 ### Form 3: many arguments and sep
 
+**Example: Values are separated by a space by default**
+
 ```python
 # Three values in one line
 a, b, c = 10, 20, 30
 
 # Values are separated by a space by default
 print("The Values are :", a, b, c)
+```
+
+**Output**
+
+```text
+The Values are : 10 20 30
+```
+
+**Example: Choose a comma as the separator**
+
+```python
+# Three values in one line
+a, b, c = 10, 20, 30
 
 # Choose a comma as the separator
 print(a, b, c, sep=',')
+```
+
+**Output**
+
+```text
+10,20,30
+```
+
+**Example: Choose a colon as the separator**
+
+```python
+# Three values in one line
+a, b, c = 10, 20, 30
 
 # Choose a colon as the separator
 print(a, b, c, sep=':')
+```
+
+**Output**
+
+```text
+10:20:30
+```
+
+**Example: No separator at all**
+
+```python
+# Three values in one line
+a, b, c = 10, 20, 30
 
 # No separator at all
 print(a, b, c, sep='')
@@ -2864,9 +4899,6 @@ print(a, b, c, sep='')
 **Output**
 
 ```text
-The Values are : 10 20 30
-10,20,30
-10:20:30
 102030
 ```
 
@@ -2874,25 +4906,87 @@ The Values are : 10 20 30
 
 By default, every `print()` ends with `\n` (a new line). The `end` argument changes that.
 
+**Example: Each print() ends with a new line by default**
+
 ```python
 # Each print() ends with a new line by default
 print("Hello")
+```
 
+**Output**
+
+```text
+Hello
+```
+
+**Example: The second word on its own line**
+
+```python
 # The second word on its own line
 print("Durga")
+```
 
+**Output**
+
+```text
+Durga
+```
+
+**Example: The third word on its own line**
+
+```python
 # The third word on its own line
 print("Soft")
+```
 
+**Output**
+
+```text
+Soft
+```
+
+**Example: `end='` ' replaces the new line with a space**
+
+```python
 # end=' ' replaces the new line with a space
 print("Hello", end=' ')
+```
 
+**Output**
+
+```text
+Hello 
+```
+
+**Example: The second word follows on the same line**
+
+```python
 # The second word follows on the same line
 print("Durga", end=' ')
+```
 
+**Output**
+
+```text
+Durga 
+```
+
+**Example: The last print() ends the line normally**
+
+```python
 # The last print() ends the line normally
 print("Soft")
+```
 
+**Output**
+
+```text
+Soft
+```
+
+**Example: Sep and end can be used together**
+
+```python
 # sep and end can be used together
 print("a", "b", "c", sep="-", end=".\n")
 ```
@@ -2900,10 +4994,6 @@ print("a", "b", "c", sep="-", end=".\n")
 **Output**
 
 ```text
-Hello
-Durga
-Soft
-Hello Durga Soft
 a-b-c.
 ```
 
@@ -2967,6 +5057,8 @@ You are teaching java and Python
 
 **Syntax:** `print("formatted string" % (variable list))`
 
+**Example: One value: no brackets needed**
+
 ```python
 # Three values
 a = 10
@@ -2979,9 +5071,47 @@ c = 30
 
 # One value: no brackets needed
 print("a value is %i" % a)
+```
+
+**Output**
+
+```text
+a value is 10
+```
+
+**Example: Two values: put them in a tuple**
+
+```python
+# Three values
+a = 10
+
+# Second value
+b = 20
+
+# Third value
+c = 30
 
 # Two values: put them in a tuple
 print("b value is %d and c value is %d" % (b, c))
+```
+
+**Output**
+
+```text
+b value is 20 and c value is 30
+```
+
+**Example: A name**
+
+```python
+# Three values
+a = 10
+
+# Second value
+b = 20
+
+# Third value
+c = 30
 
 # A name
 s = "Durga"
@@ -2991,6 +5121,25 @@ items = [10, 20, 30, 40]
 
 # %s works for any object
 print("Hello %s ...The List of Items are %s" % (s, items))
+```
+
+**Output**
+
+```text
+Hello Durga ...The List of Items are [10, 20, 30, 40]
+```
+
+**Example: %f with 2 decimal places**
+
+```python
+# Three values
+a = 10
+
+# Second value
+b = 20
+
+# Third value
+c = 30
 
 # %f with 2 decimal places
 print("Price: %.2f" % 99.5)
@@ -2999,13 +5148,12 @@ print("Price: %.2f" % 99.5)
 **Output**
 
 ```text
-a value is 10
-b value is 20 and c value is 30
-Hello Durga ...The List of Items are [10, 20, 30, 40]
 Price: 99.50
 ```
 
 ### Form 8: replacement operator {} with format()
+
+**Example: Numbered placeholders: {0}, {1}, {2}**
 
 ```python
 # A name
@@ -3019,9 +5167,47 @@ gf = "Sunny"
 
 # Numbered placeholders: {0}, {1}, {2}
 print("Hello {0} your salary is {1} and Your Friend {2} is waiting".format(name, salary, gf))
+```
+
+**Output**
+
+```text
+Hello Durga your salary is 10000 and Your Friend Sunny is waiting
+```
+
+**Example: Named placeholders: {x}, {y}, {z}**
+
+```python
+# A name
+name = "Durga"
+
+# A salary
+salary = 10000
+
+# A friend's name
+gf = "Sunny"
 
 # Named placeholders: {x}, {y}, {z}
 print("Hello {x} your salary is {y} and Your Friend {z} is waiting".format(x=name, y=salary, z=gf))
+```
+
+**Output**
+
+```text
+Hello Durga your salary is 10000 and Your Friend Sunny is waiting
+```
+
+**Example: The modern way: an f-string**
+
+```python
+# A name
+name = "Durga"
+
+# A salary
+salary = 10000
+
+# A friend's name
+gf = "Sunny"
 
 # The modern way: an f-string
 print(f"Hello {name} your salary is {salary} and Your Friend {gf} is waiting")
@@ -3030,8 +5216,6 @@ print(f"Hello {name} your salary is {salary} and Your Friend {gf} is waiting")
 **Output**
 
 ```text
-Hello Durga your salary is 10000 and Your Friend Sunny is waiting
-Hello Durga your salary is 10000 and Your Friend Sunny is waiting
 Hello Durga your salary is 10000 and Your Friend Sunny is waiting
 ```
 

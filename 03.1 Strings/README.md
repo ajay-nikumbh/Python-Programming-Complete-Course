@@ -64,41 +64,154 @@ The word `"Python"` is a chain of 6 characters, one after another. Everything in
 
 There are many ways to create a string. All of these produce the same type, `str`.
 
+**Example: Single quotes**
+
 ```python
 # Single quotes
 print('Hello')
+```
 
+**Output**
+
+```text
+Hello
+```
+
+**Example: Double quotes**
+
+```python
 # Double quotes
 print("Hello")
+```
 
+**Output**
+
+```text
+Hello
+```
+
+**Example: Single and double quotes give the same string**
+
+```python
 # Single and double quotes give the same string
 print('Hello' == "Hello")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Double quotes let you use a single quote inside**
+
+```python
 # Double quotes let you use a single quote inside
 print("It's a sunny day")
+```
 
+**Output**
+
+```text
+It's a sunny day
+```
+
+**Example: Single quotes let you use double quotes inside**
+
+```python
 # Single quotes let you use double quotes inside
 print('She said "yes"')
+```
 
+**Output**
+
+```text
+She said "yes"
+```
+
+**Example: Triple quotes allow both kinds of quotes inside**
+
+```python
 # Triple quotes allow both kinds of quotes inside
 print('''He said "it's fine"''')
+```
 
+**Output**
+
+```text
+He said "it's fine"
+```
+
+**Example: Triple quotes allow text over several lines**
+
+```python
 # Triple quotes allow text over several lines
 print("""Line one
 Line two""")
+```
 
+**Output**
+
+```text
+Line one
+Line two
+```
+
+**Example: An empty string has no characters**
+
+```python
 # An empty string has no characters
 print(repr(""))
+```
 
+**Output**
+
+```text
+''
+```
+
+**Example: `str()` turns a number into a string**
+
+```python
 # str() turns a number into a string
 print(str(2026))
+```
 
+**Output**
+
+```text
+2026
+```
+
+**Example: `str()` turns a list into its text form**
+
+```python
 # str() turns a list into its text form
 print(str([1, 2, 3]))
+```
 
+**Output**
+
+```text
+[1, 2, 3]
+```
+
+**Example: Strings written next to each other are joined automatically**
+
+```python
 # Strings written next to each other are joined automatically
 print("Py" "thon")
+```
 
+**Output**
+
+```text
+Python
+```
+
+**Example: Check the type of a string**
+
+```python
 # Check the type of a string
 print(type("Hello"))
 ```
@@ -106,18 +219,6 @@ print(type("Hello"))
 **Output**
 
 ```text
-Hello
-Hello
-True
-It's a sunny day
-She said "yes"
-He said "it's fine"
-Line one
-Line two
-''
-2026
-[1, 2, 3]
-Python
 <class 'str'>
 ```
 
@@ -144,36 +245,155 @@ Every character has a position number called an **index**.
 <tr><td align="center"><b>Negative index</b></td><td align="center">-6</td><td align="center">-5</td><td align="center">-4</td><td align="center">-3</td><td align="center">-2</td><td align="center">-1</td></tr>
 </table>
 
+**Example: First character**
+
 ```python
 # The word we will index
 word = "Python"
 
 # First character
 print(word[0])
+```
+
+**Output**
+
+```text
+P
+```
+
+**Example: Second character**
+
+```python
+# The word we will index
+word = "Python"
 
 # Second character
 print(word[1])
+```
+
+**Output**
+
+```text
+y
+```
+
+**Example: Fourth character**
+
+```python
+# The word we will index
+word = "Python"
 
 # Fourth character
 print(word[3])
+```
+
+**Output**
+
+```text
+h
+```
+
+**Example: Last character, the easy way**
+
+```python
+# The word we will index
+word = "Python"
 
 # Last character, the easy way
 print(word[-1])
+```
+
+**Output**
+
+```text
+n
+```
+
+**Example: Second last character**
+
+```python
+# The word we will index
+word = "Python"
 
 # Second last character
 print(word[-2])
+```
+
+**Output**
+
+```text
+o
+```
+
+**Example: First character, counted from the right**
+
+```python
+# The word we will index
+word = "Python"
 
 # First character, counted from the right
 print(word[-6])
+```
+
+**Output**
+
+```text
+P
+```
+
+**Example: Last character, using the length**
+
+```python
+# The word we will index
+word = "Python"
 
 # Last character, using the length
 print(word[len(word) - 1])
+```
+
+**Output**
+
+```text
+n
+```
+
+**Example: The middle character of the word (index 6 // 2 = 3)**
+
+```python
+# The word we will index
+word = "Python"
 
 # The middle character of the word (index 6 // 2 = 3)
 print(word[len(word) // 2])
+```
+
+**Output**
+
+```text
+h
+```
+
+**Example: Indexing works on a string literal directly**
+
+```python
+# The word we will index
+word = "Python"
 
 # Indexing works on a string literal directly
 print("Hello"[1])
+```
+
+**Output**
+
+```text
+e
+```
+
+**Example: An index can come from a variable**
+
+```python
+# The word we will index
+word = "Python"
 
 # An index can come from a variable
 position = 2
@@ -185,15 +405,6 @@ print(word[position + 1])
 **Output**
 
 ```text
-P
-y
-h
-n
-o
-P
-n
-h
-e
 h
 ```
 
@@ -243,54 +454,251 @@ flowchart LR
 
 The highlighted characters show `word[1:4]`: it starts at index 1 and stops **before** index 4, giving `"yth"`.
 
+**Example: From index 1 up to (not including) 4**
+
 ```python
 # The word we will slice
 word = "Python"
 
 # From index 1 up to (not including) 4
 print(word[1:4])
+```
+
+**Output**
+
+```text
+yth
+```
+
+**Example: From the start up to index 2**
+
+```python
+# The word we will slice
+word = "Python"
 
 # From the start up to index 2
 print(word[:3])
+```
+
+**Output**
+
+```text
+Pyt
+```
+
+**Example: From index 2 to the end**
+
+```python
+# The word we will slice
+word = "Python"
 
 # From index 2 to the end
 print(word[2:])
+```
+
+**Output**
+
+```text
+thon
+```
+
+**Example: The whole string**
+
+```python
+# The word we will slice
+word = "Python"
 
 # The whole string
 print(word[:])
+```
+
+**Output**
+
+```text
+Python
+```
+
+**Example: The last 3 characters**
+
+```python
+# The word we will slice
+word = "Python"
 
 # The last 3 characters
 print(word[-3:])
+```
+
+**Output**
+
+```text
+hon
+```
+
+**Example: Everything except the last character**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Everything except the last character
 print(word[:-1])
+```
+
+**Output**
+
+```text
+Pytho
+```
+
+**Example: Everything except the first and last characters**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Everything except the first and last characters
 print(word[1:-1])
+```
+
+**Output**
+
+```text
+ytho
+```
+
+**Example: Every second character**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Every second character
 print(word[::2])
+```
+
+**Output**
+
+```text
+Pto
+```
+
+**Example: Every second character, starting at index 1**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Every second character, starting at index 1
 print(word[1::2])
+```
+
+**Output**
+
+```text
+yhn
+```
+
+**Example: Every third character**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Every third character
 print(word[::3])
+```
+
+**Output**
+
+```text
+Ph
+```
+
+**Example: The string reversed**
+
+```python
+# The word we will slice
+word = "Python"
 
 # The string reversed
 print(word[::-1])
+```
+
+**Output**
+
+```text
+nohtyP
+```
+
+**Example: Backwards from index 4 down to index 1 (not included)**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Backwards from index 4 down to index 1 (not included)
 print(word[4:1:-1])
+```
+
+**Output**
+
+```text
+oht
+```
+
+**Example: A stop past the end is fine: slicing never raises IndexError**
+
+```python
+# The word we will slice
+word = "Python"
 
 # A stop past the end is fine: slicing never raises IndexError
 print(word[2:100])
+```
+
+**Output**
+
+```text
+thon
+```
+
+**Example: Start after stop gives an empty string**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Start after stop gives an empty string
 print(repr(word[4:2]))
+```
+
+**Output**
+
+```text
+''
+```
+
+**Example: Slicing with negative indexes**
+
+```python
+# The word we will slice
+word = "Python"
 
 # Slicing with negative indexes
 print(word[-5:-2])
+```
+
+**Output**
+
+```text
+yth
+```
+
+**Example: The first 4 characters of a date string**
+
+```python
+# The word we will slice
+word = "Python"
 
 # The first 4 characters of a date string
 print("2026-11-12"[:4])
@@ -299,21 +707,6 @@ print("2026-11-12"[:4])
 **Output**
 
 ```text
-yth
-Pyt
-thon
-Python
-hon
-Pytho
-ytho
-Pto
-yhn
-Ph
-nohtyP
-oht
-thon
-''
-yth
 2026
 ```
 
@@ -337,49 +730,191 @@ yth
 <tr><td><code>&lt;</code>, <code>&gt;</code></td><td>Alphabetical order</td><td><code>"apple" &lt; "banana"</code></td><td><code>True</code></td><td>Compares character codes</td></tr>
 </table>
 
+**Example: Join two strings**
+
 ```python
 # Join two strings
 print("Py" + "thon")
+```
 
+**Output**
+
+```text
+Python
+```
+
+**Example: Join three strings with a space in the middle**
+
+```python
 # Join three strings with a space in the middle
 print("Hello" + " " + "World")
+```
 
+**Output**
+
+```text
+Hello World
+```
+
+**Example: Repeat a string**
+
+```python
 # Repeat a string
 print("ab" * 3)
+```
 
+**Output**
+
+```text
+ababab
+```
+
+**Example: Repeat to draw a line**
+
+```python
 # Repeat to draw a line
 print("-" * 20)
+```
 
+**Output**
+
+```text
+--------------------
+```
+
+**Example: Repeating zero times gives an empty string**
+
+```python
 # Repeating zero times gives an empty string
 print(repr("ab" * 0))
+```
 
+**Output**
+
+```text
+''
+```
+
+**Example: Check if a piece is inside the string**
+
+```python
 # Check if a piece is inside the string
 print("th" in "Python")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: In is case sensitive**
+
+```python
 # in is case sensitive
 print("TH" in "Python")
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Check that a piece is not inside**
+
+```python
 # Check that a piece is not inside
 print("z" not in "Python")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: An empty string is inside every string**
+
+```python
 # An empty string is inside every string
 print("" in "Python")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Equality is case sensitive**
+
+```python
 # Equality is case sensitive
 print("python" == "Python")
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Compare in alphabetical order**
+
+```python
 # Compare in alphabetical order
 print("apple" < "banana")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Capital letters come before small letters**
+
+```python
 # Capital letters come before small letters
 print("Zebra" < "apple")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Comparison goes character by character**
+
+```python
 # Comparison goes character by character
 print("cat" < "car")
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: A shorter string that matches the start comes first**
+
+```python
 # A shorter string that matches the start comes first
 print("app" < "apple")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: `len()` counts characters, including spaces**
+
+```python
 # len() counts characters, including spaces
 print(len("Hi there"))
 ```
@@ -387,20 +922,6 @@ print(len("Hi there"))
 **Output**
 
 ```text
-Python
-Hello World
-ababab
---------------------
-''
-True
-False
-True
-True
-False
-True
-True
-False
-True
 8
 ```
 
@@ -717,52 +1238,204 @@ These methods change capital and small letters. They all return a **new** string
 <tr><td><code>casefold()</code></td><td>Like <code>lower()</code>, but stronger for other languages</td><td><code>"Straße".casefold()</code></td><td><code>'strasse'</code></td></tr>
 </table>
 
+**Example: `upper()`: every letter becomes capital**
+
 ```python
 # upper(): every letter becomes capital
 print("hello world".upper())
+```
 
+**Output**
+
+```text
+HELLO WORLD
+```
+
+**Example: `upper()` leaves digits and symbols alone**
+
+```python
 # upper() leaves digits and symbols alone
 print("order #42 shipped".upper())
+```
 
+**Output**
+
+```text
+ORDER #42 SHIPPED
+```
+
+**Example: `lower()`: every letter becomes small**
+
+```python
 # lower(): every letter becomes small
 print("HELLO World".lower())
+```
 
+**Output**
+
+```text
+hello world
+```
+
+**Example: `lower()` is useful to compare text without caring about case**
+
+```python
 # lower() is useful to compare text without caring about case
 print("YES".lower() == "yes")
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: `title()`: first letter of each word becomes capital**
+
+```python
 # title(): first letter of each word becomes capital
 print("the quick brown fox".title())
+```
 
+**Output**
+
+```text
+The Quick Brown Fox
+```
+
+**Example: `title()` also fixes words that were all capital**
+
+```python
 # title() also fixes words that were all capital
 print("THE QUICK BROWN FOX".title())
+```
 
+**Output**
+
+```text
+The Quick Brown Fox
+```
+
+**Example: `title()` treats an apostrophe as a word break, which can look odd**
+
+```python
 # title() treats an apostrophe as a word break, which can look odd
 print("it's asha's book".title())
+```
 
+**Output**
+
+```text
+It'S Asha'S Book
+```
+
+**Example: `capitalize()`: only the first character becomes capital**
+
+```python
 # capitalize(): only the first character becomes capital
 print("python is FUN".capitalize())
+```
 
+**Output**
+
+```text
+Python is fun
+```
+
+**Example: `capitalize()` does nothing visible if the string starts with a digit**
+
+```python
 # capitalize() does nothing visible if the string starts with a digit
 print("3 apples".capitalize())
+```
 
+**Output**
+
+```text
+3 apples
+```
+
+**Example: `swapcase()`: every letter flips its case**
+
+```python
 # swapcase(): every letter flips its case
 print("Hello World".swapcase())
+```
 
+**Output**
+
+```text
+hELLO wORLD
+```
+
+**Example: `swapcase()` twice gives back the original**
+
+```python
 # swapcase() twice gives back the original
 print("Hello World".swapcase().swapcase())
+```
 
+**Output**
+
+```text
+Hello World
+```
+
+**Example: `casefold()`: like lower(), but also handles special letters**
+
+```python
 # casefold(): like lower(), but also handles special letters
 print("Straße".casefold())
+```
 
+**Output**
+
+```text
+strasse
+```
+
+**Example: `lower()` keeps the special German letter as it is**
+
+```python
 # lower() keeps the special German letter as it is
 print("Straße".lower())
+```
 
+**Output**
+
+```text
+straße
+```
+
+**Example: `casefold()` is the safest way to compare words in any language**
+
+```python
 # casefold() is the safest way to compare words in any language
 print("STRASSE".casefold() == "Straße".casefold())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Methods can be chained: strip spaces first, then capitalise**
+
+```python
 # Methods can be chained: strip spaces first, then capitalise
 print("   asha patil  ".strip().title())
+```
 
+**Output**
+
+```text
+Asha Patil
+```
+
+**Example: Case methods on an empty string return an empty string**
+
+```python
 # Case methods on an empty string return an empty string
 print(repr("".upper()))
 ```
@@ -770,21 +1443,6 @@ print(repr("".upper()))
 **Output**
 
 ```text
-HELLO WORLD
-ORDER #42 SHIPPED
-hello world
-True
-The Quick Brown Fox
-The Quick Brown Fox
-It'S Asha'S Book
-Python is fun
-3 apples
-hELLO wORLD
-Hello World
-strasse
-straße
-True
-Asha Patil
 ''
 ```
 
@@ -832,54 +1490,251 @@ quadrantChart
     rindex: [0.85, 0.7]
 ```
 
+**Example: `find()`: index of the first "an"**
+
 ```python
 # The text we will search
 text = "banana bandana"
 
 # find(): index of the first "an"
 print(text.find("an"))
+```
+
+**Output**
+
+```text
+1
+```
+
+**Example: `rfind()`: index of the last "an"**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # rfind(): index of the last "an"
 print(text.rfind("an"))
+```
+
+**Output**
+
+```text
+11
+```
+
+**Example: `find()` returns -1 when the text is not there**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # find() returns -1 when the text is not there
 print(text.find("xyz"))
+```
+
+**Output**
+
+```text
+-1
+```
+
+**Example: `find()` with a start position: search from index 5 onwards**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # find() with a start position: search from index 5 onwards
 print(text.find("an", 5))
+```
+
+**Output**
+
+```text
+8
+```
+
+**Example: `find()` with start and end positions: search only in text[0:4]**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # find() with start and end positions: search only in text[0:4]
 print(text.find("na", 0, 4))
+```
+
+**Output**
+
+```text
+2
+```
+
+**Example: `index()` works like find() when the text is found**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # index() works like find() when the text is found
 print(text.index("band"))
+```
+
+**Output**
+
+```text
+7
+```
+
+**Example: `count()`: how many times "an" appears**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # count(): how many times "an" appears
 print(text.count("an"))
+```
+
+**Output**
+
+```text
+4
+```
+
+**Example: `count()` of a single letter**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # count() of a single letter
 print(text.count("a"))
+```
+
+**Output**
+
+```text
+6
+```
+
+**Example: `count()` does not count overlapping matches**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # count() does not count overlapping matches
 print("aaaa".count("aa"))
+```
+
+**Output**
+
+```text
+2
+```
+
+**Example: `count()` returns 0 when nothing matches**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # count() returns 0 when nothing matches
 print(text.count("z"))
+```
+
+**Output**
+
+```text
+0
+```
+
+**Example: `startswith()`: does the text begin with "ban"?**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # startswith(): does the text begin with "ban"?
 print(text.startswith("ban"))
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: `endswith()`: does the text end with "na"?**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # endswith(): does the text end with "na"?
 print(text.endswith("na"))
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: `startswith()` is case sensitive**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # startswith() is case sensitive
 print(text.startswith("Ban"))
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: `startswith()` can check several options at once using a tuple**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # startswith() can check several options at once using a tuple
 print("report.pdf".endswith((".pdf", ".docx")))
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: A real use: check a file type**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # A real use: check a file type
 print("photo.JPG".lower().endswith(".jpg"))
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: The in operator is the simplest yes/no search**
+
+```python
+# The text we will search
+text = "banana bandana"
 
 # The in operator is the simplest yes/no search
 print("band" in text)
@@ -888,21 +1743,6 @@ print("band" in text)
 **Output**
 
 ```text
-1
-11
--1
-8
-2
-7
-4
-6
-2
-0
-True
-True
-False
-True
-True
 True
 ```
 
@@ -947,58 +1787,230 @@ These methods check what kind of characters a string contains. They always retur
 <tr><td><code>isidentifier()</code></td><td>A valid Python name (see Topic 02)</td><td><code>"total_1"</code></td><td><code>"1total"</code></td></tr>
 </table>
 
+**Example: `isalpha()`: only letters**
+
 ```python
 # isalpha(): only letters
 print("Asha".isalpha())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: A space is not a letter**
+
+```python
 # A space is not a letter
 print("Asha Patil".isalpha())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: Letters from other languages count as letters**
+
+```python
 # Letters from other languages count as letters
 print("café".isalpha())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: `isdigit()`: only digits**
+
+```python
 # isdigit(): only digits
 print("2026".isdigit())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: A decimal point is not a digit**
+
+```python
 # A decimal point is not a digit
 print("20.5".isdigit())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: A minus sign is not a digit**
+
+```python
 # A minus sign is not a digit
 print("-5".isdigit())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: `isalnum()`: letters and digits only**
+
+```python
 # isalnum(): letters and digits only
 print("Room101".isalnum())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: An underscore is neither a letter nor a digit**
+
+```python
 # An underscore is neither a letter nor a digit
 print("room_101".isalnum())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: `isspace()`: only whitespace characters**
+
+```python
 # isspace(): only whitespace characters
 print(" \t\n".isspace())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: `isupper()`: letters must all be capital; digits are ignored**
+
+```python
 # isupper(): letters must all be capital; digits are ignored
 print("ABC123".isupper())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: `islower()`: letters must all be small**
+
+```python
 # islower(): letters must all be small
 print("hello world".islower())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: `isupper()` needs at least one letter**
+
+```python
 # isupper() needs at least one letter
 print("123".isupper())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: `istitle()`: every word starts with a capital letter**
+
+```python
 # istitle(): every word starts with a capital letter
 print("Hello World".istitle())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: A small first letter in any word makes it False**
+
+```python
 # A small first letter in any word makes it False
 print("Hello world".istitle())
+```
 
+**Output**
+
+```text
+False
+```
+
+**Example: `isdecimal()` vs isnumeric() with a fraction character**
+
+```python
 # isdecimal() vs isnumeric() with a fraction character
 print("½".isdecimal(), "½".isnumeric())
+```
 
+**Output**
+
+```text
+False True
+```
+
+**Example: `isidentifier()`: a valid Python name**
+
+```python
 # isidentifier(): a valid Python name
 print("total_1".isidentifier())
+```
 
+**Output**
+
+```text
+True
+```
+
+**Example: Every test method returns False for an empty string**
+
+```python
 # Every test method returns False for an empty string
 print("".isalpha(), "".isdigit(), "".isspace())
+```
 
+**Output**
+
+```text
+False False False
+```
+
+**Example: A real use: some text that should be a whole number**
+
+```python
 # A real use: some text that should be a whole number
 age_text = "34"
 
@@ -1009,23 +2021,6 @@ print(int(age_text) + 1 if age_text.isdigit() else "Please type digits only")
 **Output**
 
 ```text
-True
-False
-True
-True
-False
-False
-True
-False
-True
-True
-True
-False
-True
-False
-False True
-True
-False False False
 35
 ```
 
@@ -1035,34 +2030,126 @@ False False False
 
 These remove characters from the **ends** of a string. With no argument, they remove **whitespace** (spaces, tabs and new lines). They never touch the middle.
 
+**Example: `strip()`: remove spaces from both ends**
+
 ```python
 # strip(): remove spaces from both ends
 print(repr("   hello   ".strip()))
+```
 
+**Output**
+
+```text
+'hello'
+```
+
+**Example: `lstrip()`: remove from the left end only**
+
+```python
 # lstrip(): remove from the left end only
 print(repr("   hello   ".lstrip()))
+```
 
+**Output**
+
+```text
+'hello   '
+```
+
+**Example: `rstrip()`: remove from the right end only**
+
+```python
 # rstrip(): remove from the right end only
 print(repr("   hello   ".rstrip()))
+```
 
+**Output**
+
+```text
+'   hello'
+```
+
+**Example: Spaces in the middle are kept**
+
+```python
 # Spaces in the middle are kept
 print(repr("  good   day  ".strip()))
+```
 
+**Output**
+
+```text
+'good   day'
+```
+
+**Example: Tabs and new lines are whitespace too**
+
+```python
 # Tabs and new lines are whitespace too
 print(repr("\t hello \n".strip()))
+```
 
+**Output**
+
+```text
+'hello'
+```
+
+**Example: Remove specific characters instead of whitespace**
+
+```python
 # Remove specific characters instead of whitespace
 print("***Sale***".strip("*"))
+```
 
+**Output**
+
+```text
+Sale
+```
+
+**Example: The argument is a SET of characters, not a word: any of x, y, z is removed**
+
+```python
 # The argument is a SET of characters, not a word: any of x, y, z is removed
 print("xyzHELLOzyx".strip("xyz"))
+```
 
+**Output**
+
+```text
+HELLO
+```
+
+**Example: Remove leading zeros**
+
+```python
 # Remove leading zeros
 print("000123".lstrip("0"))
+```
 
+**Output**
+
+```text
+123
+```
+
+**Example: Remove trailing punctuation**
+
+```python
 # Remove trailing punctuation
 print("Really?!?!".rstrip("?!"))
+```
 
+**Output**
+
+```text
+Really
+```
+
+**Example: A typical use: clean a line read from a file**
+
+```python
 # A typical use: clean a line read from a file
 print(repr("Asha,34\n".rstrip("\n")))
 ```
@@ -1070,15 +2157,6 @@ print(repr("Asha,34\n".rstrip("\n")))
 **Output**
 
 ```text
-'hello'
-'hello   '
-'   hello'
-'good   day'
-'hello'
-Sale
-HELLO
-123
-Really
 'Asha,34'
 ```
 
@@ -1086,34 +2164,126 @@ Really
 
 `replace(old, new)` swaps every `old` with `new`. An optional third number limits how many are replaced.
 
+**Example: Replace one word with another**
+
 ```python
 # Replace one word with another
 print("I like tea".replace("tea", "coffee"))
+```
 
+**Output**
+
+```text
+I like coffee
+```
+
+**Example: Every match is replaced**
+
+```python
 # Every match is replaced
 print("one one one".replace("one", "two"))
+```
 
+**Output**
+
+```text
+two two two
+```
+
+**Example: Replace only the first 2 matches**
+
+```python
 # Replace only the first 2 matches
 print("one one one".replace("one", "two", 2))
+```
 
+**Output**
+
+```text
+two two one
+```
+
+**Example: Replace is case sensitive**
+
+```python
 # Replace is case sensitive
 print("Tea or tea".replace("tea", "milk"))
+```
 
+**Output**
+
+```text
+Tea or milk
+```
+
+**Example: Remove characters by replacing them with an empty string**
+
+```python
 # Remove characters by replacing them with an empty string
 print("9876-543-210".replace("-", ""))
+```
 
+**Output**
+
+```text
+9876543210
+```
+
+**Example: Replace a single space with an underscore**
+
+```python
 # Replace a single space with an underscore
 print("my file name.txt".replace(" ", "_"))
+```
 
+**Output**
+
+```text
+my_file_name.txt
+```
+
+**Example: Replacing something that is not there changes nothing**
+
+```python
 # Replacing something that is not there changes nothing
 print("hello".replace("z", "y"))
+```
 
+**Output**
+
+```text
+hello
+```
+
+**Example: Chain replace() calls to replace several things**
+
+```python
 # Chain replace() calls to replace several things
 print("a-b_c d".replace("-", " ").replace("_", " "))
+```
 
+**Output**
+
+```text
+a b c d
+```
+
+**Example: Replace with a longer string**
+
+```python
 # Replace with a longer string
 print("Hi NAME".replace("NAME", "Asha Patil"))
+```
 
+**Output**
+
+```text
+Hi Asha Patil
+```
+
+**Example: A string to test immutability**
+
+```python
 # A string to test immutability
 text = "red car"
 
@@ -1127,15 +2297,6 @@ print(text)
 **Output**
 
 ```text
-I like coffee
-two two two
-two two one
-Tea or milk
-9876543210
-my_file_name.txt
-hello
-a b c d
-Hi Asha Patil
 red car
 ```
 
@@ -1143,34 +2304,126 @@ red car
 
 Added in Python 3.9. They remove an **exact** piece from the start or end, only if it is there. Unlike `strip()`, they work with whole words, not sets of characters.
 
+**Example: Remove an exact prefix**
+
 ```python
 # Remove an exact prefix
 print("unhappy".removeprefix("un"))
+```
 
+**Output**
+
+```text
+happy
+```
+
+**Example: If the prefix is not there, nothing changes**
+
+```python
 # If the prefix is not there, nothing changes
 print("happy".removeprefix("un"))
+```
 
+**Output**
+
+```text
+happy
+```
+
+**Example: Remove an exact suffix**
+
+```python
 # Remove an exact suffix
 print("report.txt".removesuffix(".txt"))
+```
 
+**Output**
+
+```text
+report
+```
+
+**Example: Compare with rstrip(): it removes ANY of the characters . t x**
+
+```python
 # Compare with rstrip(): it removes ANY of the characters . t x
 print("context.txt".rstrip(".txt"))
+```
 
+**Output**
+
+```text
+conte
+```
+
+**Example: `removesuffix()` removes only the exact ending**
+
+```python
 # removesuffix() removes only the exact ending
 print("context.txt".removesuffix(".txt"))
+```
 
+**Output**
+
+```text
+context
+```
+
+**Example: Remove a title before a name**
+
+```python
 # Remove a title before a name
 print("Dr. Asha".removeprefix("Dr. "))
+```
 
+**Output**
+
+```text
+Asha
+```
+
+**Example: It is case sensitive**
+
+```python
 # It is case sensitive
 print("Dr. Asha".removeprefix("dr. "))
+```
 
+**Output**
+
+```text
+Dr. Asha
+```
+
+**Example: Remove a currency sign before converting to a number**
+
+```python
 # Remove a currency sign before converting to a number
 print(float("Rs.450".removeprefix("Rs.")))
+```
 
+**Output**
+
+```text
+450.0
+```
+
+**Example: Only one copy is removed, not repeated copies**
+
+```python
 # Only one copy is removed, not repeated copies
 print("abab-x".removeprefix("ab"))
+```
 
+**Output**
+
+```text
+ab-x
+```
+
+**Example: Remove a trailing slash from a web address**
+
+```python
 # Remove a trailing slash from a web address
 print("https://python.org/".removesuffix("/"))
 ```
@@ -1178,15 +2431,6 @@ print("https://python.org/".removesuffix("/"))
 **Output**
 
 ```text
-happy
-happy
-report
-conte
-context
-Asha
-Dr. Asha
-450.0
-ab-x
 https://python.org
 ```
 
@@ -1209,43 +2453,165 @@ These methods add characters to reach a given **width**. They are useful for tab
 <tr><td><code>zfill(width)</code></td><td>Zeros on the left</td><td><code>"42".zfill(5)</code></td><td><code>'00042'</code></td></tr>
 </table>
 
+**Example: Left align in a width of 10**
+
 ```python
 # Left align in a width of 10
 print(repr("Asha".ljust(10)))
+```
 
+**Output**
+
+```text
+'Asha      '
+```
+
+**Example: Right align in a width of 10**
+
+```python
 # Right align in a width of 10
 print(repr("Asha".rjust(10)))
+```
 
+**Output**
+
+```text
+'      Asha'
+```
+
+**Example: Centre in a width of 10**
+
+```python
 # Centre in a width of 10
 print(repr("Asha".center(10)))
+```
 
+**Output**
+
+```text
+'   Asha   '
+```
+
+**Example: Use a different fill character**
+
+```python
 # Use a different fill character
 print("Asha".center(12, "*"))
+```
 
+**Output**
+
+```text
+****Asha****
+```
+
+**Example: Right align with dots, like a table of contents**
+
+```python
 # Right align with dots, like a table of contents
 print("Chapter 1".ljust(20, ".") + "5")
+```
 
+**Output**
+
+```text
+Chapter 1...........5
+```
+
+**Example: If the text is already longer than the width, nothing is added**
+
+```python
 # If the text is already longer than the width, nothing is added
 print("Python".ljust(3))
+```
 
+**Output**
+
+```text
+Python
+```
+
+**Example: `zfill()`: pad a number with zeros**
+
+```python
 # zfill(): pad a number with zeros
 print("7".zfill(3))
+```
 
+**Output**
+
+```text
+007
+```
+
+**Example: `zfill()` keeps a minus sign in front**
+
+```python
 # zfill() keeps a minus sign in front
 print("-42".zfill(5))
+```
 
+**Output**
+
+```text
+-0042
+```
+
+**Example: Make invoice numbers of the same length**
+
+```python
 # Make invoice numbers of the same length
 print("INV" + str(58).zfill(5))
+```
 
+**Output**
+
+```text
+INV00058
+```
+
+**Example: Build a simple aligned table: the header row**
+
+```python
 # Build a simple aligned table: the header row
 print("Item".ljust(10) + "Price".rjust(8))
+```
 
+**Output**
+
+```text
+Item         Price
+```
+
+**Example: First row: name on the left, price on the right**
+
+```python
 # First row: name on the left, price on the right
 print("Tea".ljust(10) + "20".rjust(8))
+```
 
+**Output**
+
+```text
+Tea             20
+```
+
+**Example: Second row, lined up with the first**
+
+```python
 # Second row, lined up with the first
 print("Sandwich".ljust(10) + "120".rjust(8))
+```
 
+**Output**
+
+```text
+Sandwich       120
+```
+
+**Example: A heading in the middle of a line**
+
+```python
 # A heading in the middle of a line
 print(" REPORT ".center(30, "="))
 ```
@@ -1253,18 +2619,6 @@ print(" REPORT ".center(30, "="))
 **Output**
 
 ```text
-'Asha      '
-'      Asha'
-'   Asha   '
-****Asha****
-Chapter 1...........5
-Python
-007
--0042
-INV00058
-Item         Price
-Tea             20
-Sandwich       120
 =========== REPORT ===========
 ```
 
@@ -1282,40 +2636,152 @@ flowchart LR
 
 ### split and rsplit
 
+**Example: With no argument, split() breaks on any whitespace**
+
 ```python
 # With no argument, split() breaks on any whitespace
 print("Python is easy to learn".split())
+```
 
+**Output**
+
+```text
+['Python', 'is', 'easy', 'to', 'learn']
+```
+
+**Example: Extra spaces are ignored when no argument is given**
+
+```python
 # Extra spaces are ignored when no argument is given
 print("  a   b    c  ".split())
+```
 
+**Output**
+
+```text
+['a', 'b', 'c']
+```
+
+**Example: Split on a comma**
+
+```python
 # Split on a comma
 print("red,green,blue".split(","))
+```
 
+**Output**
+
+```text
+['red', 'green', 'blue']
+```
+
+**Example: Split on a comma followed by a space**
+
+```python
 # Split on a comma followed by a space
 print("red, green, blue".split(", "))
+```
 
+**Output**
+
+```text
+['red', 'green', 'blue']
+```
+
+**Example: With a separator given, empty pieces are kept**
+
+```python
 # With a separator given, empty pieces are kept
 print("a,,b".split(","))
+```
 
+**Output**
+
+```text
+['a', '', 'b']
+```
+
+**Example: Maxsplit: split only at the first 1 comma**
+
+```python
 # maxsplit: split only at the first 1 comma
 print("name,age,city".split(",", 1))
+```
 
+**Output**
+
+```text
+['name', 'age,city']
+```
+
+**Example: `rsplit()`: split from the right side**
+
+```python
 # rsplit(): split from the right side
 print("name,age,city".rsplit(",", 1))
+```
 
+**Output**
+
+```text
+['name,age', 'city']
+```
+
+**Example: Split a date into parts**
+
+```python
 # Split a date into parts
 print("2026-11-12".split("-"))
+```
 
+**Output**
+
+```text
+['2026', '11', '12']
+```
+
+**Example: Split a file name from its extension at the LAST dot**
+
+```python
 # Split a file name from its extension at the LAST dot
 print("archive.tar.gz".rsplit(".", 1))
+```
 
+**Output**
+
+```text
+['archive.tar', 'gz']
+```
+
+**Example: Split a sentence into words, then count them**
+
+```python
 # Split a sentence into words, then count them
 print(len("the cat sat on the mat".split()))
+```
 
+**Output**
+
+```text
+6
+```
+
+**Example: Split a string that does not contain the separator**
+
+```python
 # Split a string that does not contain the separator
 print("hello".split(","))
+```
 
+**Output**
+
+```text
+['hello']
+```
+
+**Example: Split and convert each piece to a number**
+
+```python
 # Split and convert each piece to a number
 print([int(n) for n in "10 20 30".split()])
 ```
@@ -1323,32 +2789,53 @@ print([int(n) for n in "10 20 30".split()])
 **Output**
 
 ```text
-['Python', 'is', 'easy', 'to', 'learn']
-['a', 'b', 'c']
-['red', 'green', 'blue']
-['red', 'green', 'blue']
-['a', '', 'b']
-['name', 'age,city']
-['name,age', 'city']
-['2026', '11', '12']
-['archive.tar', 'gz']
-6
-['hello']
 [10, 20, 30]
 ```
 
 ### splitlines
 
+**Example: Split text into lines**
+
 ```python
 # Split text into lines
 print("line 1\nline 2\nline 3".splitlines())
+```
 
+**Output**
+
+```text
+['line 1', 'line 2', 'line 3']
+```
+
+**Example: Keep the line endings with keepends=True**
+
+```python
 # Keep the line endings with keepends=True
 print("a\nb\n".splitlines(keepends=True))
+```
 
+**Output**
+
+```text
+['a\n', 'b\n']
+```
+
+**Example: Windows line endings (\r\n) are handled too**
+
+```python
 # Windows line endings (\r\n) are handled too
 print("first\r\nsecond".splitlines())
+```
 
+**Output**
+
+```text
+['first', 'second']
+```
+
+**Example: Compare: split("\n") leaves an empty piece at the end**
+
+```python
 # Compare: split("\n") leaves an empty piece at the end
 print("a\nb\n".split("\n"))
 ```
@@ -1356,9 +2843,6 @@ print("a\nb\n".split("\n"))
 **Output**
 
 ```text
-['line 1', 'line 2', 'line 3']
-['a\n', 'b\n']
-['first', 'second']
 ['a', 'b', '']
 ```
 
@@ -1366,19 +2850,61 @@ print("a\nb\n".split("\n"))
 
 `partition(sep)` splits at the **first** separator into exactly **3** parts: before, the separator, after.
 
+**Example: Split an email address into user and domain**
+
 ```python
 # Split an email address into user and domain
 print("asha@example.com".partition("@"))
+```
 
+**Output**
+
+```text
+('asha', '@', 'example.com')
+```
+
+**Example: Split a key=value pair**
+
+```python
 # Split a key=value pair
 print("color=blue".partition("="))
+```
 
+**Output**
+
+```text
+('color', '=', 'blue')
+```
+
+**Example: `rpartition()` splits at the LAST separator**
+
+```python
 # rpartition() splits at the LAST separator
 print("a.b.c".rpartition("."))
+```
 
+**Output**
+
+```text
+('a.b', '.', 'c')
+```
+
+**Example: If the separator is missing, you still get 3 parts**
+
+```python
 # If the separator is missing, you still get 3 parts
 print("hello".partition(":"))
+```
 
+**Output**
+
+```text
+('hello', '', '')
+```
+
+**Example: Unpack the 3 parts into names**
+
+```python
 # Unpack the 3 parts into names
 user, at, domain = "ravi@site.org".partition("@")
 
@@ -1389,10 +2915,6 @@ print(user, domain)
 **Output**
 
 ```text
-('asha', '@', 'example.com')
-('color', '=', 'blue')
-('a.b', '.', 'c')
-('hello', '', '')
 ravi site.org
 ```
 
@@ -1400,34 +2922,127 @@ ravi site.org
 
 `separator.join(list_of_strings)` puts the separator **between** the items.
 
+**Example: Join words with a space**
+
 ```python
 # Join words with a space
 print(" ".join(["Python", "is", "fun"]))
+```
 
+**Output**
+
+```text
+Python is fun
+```
+
+**Example: Join with a comma and a space**
+
+```python
 # Join with a comma and a space
 print(", ".join(["red", "green", "blue"]))
+```
 
+**Output**
+
+```text
+red, green, blue
+```
+
+**Example: Join with nothing between**
+
+```python
 # Join with nothing between
 print("".join(["P", "y", "t", "h", "o", "n"]))
+```
 
+**Output**
+
+```text
+Python
+```
+
+**Example: Join with a new line to make several lines**
+
+```python
 # Join with a new line to make several lines
 print("\n".join(["line 1", "line 2"]))
+```
 
+**Output**
+
+```text
+line 1
+line 2
+```
+
+**Example: Join the characters of a string with dashes**
+
+```python
 # Join the characters of a string with dashes
 print("-".join("abc"))
+```
 
+**Output**
+
+```text
+a-b-c
+```
+
+**Example: Build a file path**
+
+```python
 # Build a file path
 print("/".join(["home", "asha", "notes.txt"]))
+```
 
+**Output**
+
+```text
+home/asha/notes.txt
+```
+
+**Example: Join a single item: no separator is added**
+
+```python
 # Join a single item: no separator is added
 print(", ".join(["only"]))
+```
 
+**Output**
+
+```text
+only
+```
+
+**Example: Join an empty list: an empty string**
+
+```python
 # Join an empty list: an empty string
 print(repr(", ".join([])))
+```
 
+**Output**
+
+```text
+''
+```
+
+**Example: Numbers must be converted to strings first**
+
+```python
 # Numbers must be converted to strings first
 print(", ".join(str(n) for n in [1, 2, 3]))
+```
 
+**Output**
+
+```text
+1, 2, 3
+```
+
+**Example: Split and join together: remove extra spaces from a sentence**
+
+```python
 # Split and join together: remove extra spaces from a sentence
 print(" ".join("  too    many   spaces ".split()))
 ```
@@ -1435,16 +3050,6 @@ print(" ".join("  too    many   spaces ".split()))
 **Output**
 
 ```text
-Python is fun
-red, green, blue
-Python
-line 1
-line 2
-a-b-c
-home/asha/notes.txt
-only
-''
-1, 2, 3
 too many spaces
 ```
 
@@ -1480,6 +3085,8 @@ sequenceDiagram
 
 ### Putting values in
 
+**Example: Put variables inside the text**
+
 ```python
 # A name to use
 name = "Asha"
@@ -1489,36 +3096,180 @@ age = 25
 
 # Put variables inside the text
 print(f"{name} is {age} years old")
+```
+
+**Output**
+
+```text
+Asha is 25 years old
+```
+
+**Example: Any expression works inside the braces**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # Any expression works inside the braces
 print(f"Next year: {age + 1}")
+```
+
+**Output**
+
+```text
+Next year: 26
+```
+
+**Example: Call methods inside the braces**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # Call methods inside the braces
 print(f"Shout: {name.upper()}")
+```
+
+**Output**
+
+```text
+Shout: ASHA
+```
+
+**Example: Call functions inside the braces**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # Call functions inside the braces
 print(f"Name length: {len(name)}")
+```
+
+**Output**
+
+```text
+Name length: 4
+```
+
+**Example: A conditional expression inside the braces**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # A conditional expression inside the braces
 print(f"Status: {'adult' if age >= 18 else 'minor'}")
+```
+
+**Output**
+
+```text
+Status: adult
+```
+
+**Example: A list of marks**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # A list of marks
 marks = [78, 85, 92]
 
 # Index into the list inside the braces
 print(f"First mark: {marks[0]}")
+```
+
+**Output**
+
+```text
+First mark: 78
+```
+
+**Example: A dictionary**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # A dictionary
 student = {"city": "Pune"}
 
 # Look up a key inside the braces (use the other kind of quotes inside)
 print(f"City: {student['city']}")
+```
+
+**Output**
+
+```text
+City: Pune
+```
+
+**Example: The = sign shows the expression and its value, useful for debugging**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # The = sign shows the expression and its value, useful for debugging
 print(f"{age = }")
+```
+
+**Output**
+
+```text
+age = 25
+```
+
+**Example: Double braces show a literal brace**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # Double braces show a literal brace
 print(f"{{name}} is written as {name}")
+```
+
+**Output**
+
+```text
+{name} is written as Asha
+```
+
+**Example: Capital F works too**
+
+```python
+# A name to use
+name = "Asha"
+
+# An age to use
+age = 25
 
 # Capital F works too
 print(F"Hello {name}")
@@ -1527,15 +3278,6 @@ print(F"Hello {name}")
 **Output**
 
 ```text
-Asha is 25 years old
-Next year: 26
-Shout: ASHA
-Name length: 4
-Status: adult
-First mark: 78
-City: Pune
-age = 25
-{name} is written as Asha
 Hello Asha
 ```
 
@@ -1562,61 +3304,233 @@ After a colon inside the braces, you can control **how** the value looks: `{valu
 <tr><td><code>e</code></td><td>Scientific notation</td><td><code>f"{123456:.2e}"</code></td><td><code>'1.23e+05'</code></td></tr>
 </table>
 
+**Example: Round to 2 decimal places**
+
 ```python
 # Round to 2 decimal places
 print(f"{3.14159:.2f}")
+```
 
+**Output**
+
+```text
+3.14
+```
+
+**Example: Round to 0 decimal places**
+
+```python
 # Round to 0 decimal places
 print(f"{2.71828:.0f}")
+```
 
+**Output**
+
+```text
+3
+```
+
+**Example: Thousands separator**
+
+```python
 # Thousands separator
 print(f"{1234567:,}")
+```
 
+**Output**
+
+```text
+1,234,567
+```
+
+**Example: Thousands separator and 2 decimals, for money**
+
+```python
 # Thousands separator and 2 decimals, for money
 print(f"Rs. {1234567.891:,.2f}")
+```
 
+**Output**
+
+```text
+Rs. 1,234,567.89
+```
+
+**Example: Underscore as the thousands separator**
+
+```python
 # Underscore as the thousands separator
 print(f"{1234567:_}")
+```
 
+**Output**
+
+```text
+1_234_567
+```
+
+**Example: Percentage with 1 decimal place**
+
+```python
 # Percentage with 1 decimal place
 print(f"{0.256:.1%}")
+```
 
+**Output**
+
+```text
+25.6%
+```
+
+**Example: Right align in a width of 10**
+
+```python
 # Right align in a width of 10
 print(f"[{'ab':>10}]")
+```
 
+**Output**
+
+```text
+[        ab]
+```
+
+**Example: Left align in a width of 10**
+
+```python
 # Left align in a width of 10
 print(f"[{'ab':<10}]")
+```
 
+**Output**
+
+```text
+[ab        ]
+```
+
+**Example: Centre in a width of 10**
+
+```python
 # Centre in a width of 10
 print(f"[{'ab':^10}]")
+```
 
+**Output**
+
+```text
+[    ab    ]
+```
+
+**Example: Centre with a fill character**
+
+```python
 # Centre with a fill character
 print(f"[{'ab':*^10}]")
+```
 
+**Output**
+
+```text
+[****ab****]
+```
+
+**Example: Pad a whole number with zeros**
+
+```python
 # Pad a whole number with zeros
 print(f"{42:05d}")
+```
 
+**Output**
+
+```text
+00042
+```
+
+**Example: Show a plus sign for positive numbers**
+
+```python
 # Show a plus sign for positive numbers
 print(f"{42:+d}")
+```
 
+**Output**
+
+```text
++42
+```
+
+**Example: Binary, octal and hexadecimal**
+
+```python
 # Binary, octal and hexadecimal
 print(f"{255:b} {255:o} {255:x} {255:X}")
+```
 
+**Output**
+
+```text
+11111111 377 ff FF
+```
+
+**Example: Hexadecimal with the 0x prefix**
+
+```python
 # Hexadecimal with the 0x prefix
 print(f"{255:#x}")
+```
 
+**Output**
+
+```text
+0xff
+```
+
+**Example: Scientific notation with 2 decimals**
+
+```python
 # Scientific notation with 2 decimals
 print(f"{123456:.2e}")
+```
 
+**Output**
+
+```text
+1.23e+05
+```
+
+**Example: Width and decimals together: width 10, 2 decimals, right aligned**
+
+```python
 # Width and decimals together: width 10, 2 decimals, right aligned
 print(f"[{3.14159:10.2f}]")
+```
 
+**Output**
+
+```text
+[      3.14]
+```
+
+**Example: A width stored in a variable**
+
+```python
 # A width stored in a variable
 width = 8
 
 # The width can come from the variable, using nested braces
 print(f"[{'hi':>{width}}]")
+```
 
+**Output**
+
+```text
+[      hi]
+```
+
+**Example: Load the date type from the datetime module**
+
+```python
 # Load the date type from the datetime module
 from datetime import date
 
@@ -1627,27 +3541,12 @@ print(f"{date(2026, 11, 12):%d %B %Y}")
 **Output**
 
 ```text
-3.14
-3
-1,234,567
-Rs. 1,234,567.89
-1_234_567
-25.6%
-[        ab]
-[ab        ]
-[    ab    ]
-[****ab****]
-00042
-+42
-11111111 377 ff FF
-0xff
-1.23e+05
-[      3.14]
-[      hi]
 12 November 2026
 ```
 
 ### A formatted table with f-strings
+
+**Example: Print the header row: name left aligned, numbers right aligned**
 
 ```python
 # Items as (name, quantity, price) tuples
@@ -1655,9 +3554,35 @@ items = [("Tea", 2, 20.0), ("Sandwich", 1, 120.5), ("Juice", 3, 45.0)]
 
 # Print the header row: name left aligned, numbers right aligned
 print(f"{'Item':<10}{'Qty':>5}{'Price':>10}{'Total':>10}")
+```
+
+**Output**
+
+```text
+Item        Qty     Price     Total
+```
+
+**Example: Print a line under the header**
+
+```python
+# Items as (name, quantity, price) tuples
+items = [("Tea", 2, 20.0), ("Sandwich", 1, 120.5), ("Juice", 3, 45.0)]
 
 # Print a line under the header
 print("-" * 35)
+```
+
+**Output**
+
+```text
+-----------------------------------
+```
+
+**Example: Print one row for each item**
+
+```python
+# Items as (name, quantity, price) tuples
+items = [("Tea", 2, 20.0), ("Sandwich", 1, 120.5), ("Juice", 3, 45.0)]
 
 # Print one row for each item
 for name, qty, price in items:
@@ -1669,8 +3594,6 @@ for name, qty, price in items:
 **Output**
 
 ```text
-Item        Qty     Price     Total
------------------------------------
 Tea           2     20.00     40.00
 Sandwich      1    120.50    120.50
 Juice         3     45.00    135.00
@@ -1690,6 +3613,8 @@ timeline
     2025 : t-strings (template strings) in Python 3.14
 ```
 
+**Example: Style 1: the % operator (oldest style)**
+
 ```python
 # A name to use
 name = "Asha"
@@ -1699,21 +3624,117 @@ score = 92.456
 
 # Style 1: the % operator (oldest style)
 print("Name: %s, Score: %.1f" % (name, score))
+```
+
+**Output**
+
+```text
+Name: Asha, Score: 92.5
+```
+
+**Example: Style 2: str.format() with empty braces filled in order**
+
+```python
+# A name to use
+name = "Asha"
+
+# A score to use
+score = 92.456
 
 # Style 2: str.format() with empty braces filled in order
 print("Name: {}, Score: {:.1f}".format(name, score))
+```
+
+**Output**
+
+```text
+Name: Asha, Score: 92.5
+```
+
+**Example: `str.format()` with position numbers**
+
+```python
+# A name to use
+name = "Asha"
+
+# A score to use
+score = 92.456
 
 # str.format() with position numbers
 print("{1} scored {0:.1f}".format(score, name))
+```
+
+**Output**
+
+```text
+Asha scored 92.5
+```
+
+**Example: `str.format()` with names**
+
+```python
+# A name to use
+name = "Asha"
+
+# A score to use
+score = 92.456
 
 # str.format() with names
 print("{n} scored {s:.1f}".format(n=name, s=score))
+```
+
+**Output**
+
+```text
+Asha scored 92.5
+```
+
+**Example: Style 3: f-string (newest and recommended)**
+
+```python
+# A name to use
+name = "Asha"
+
+# A score to use
+score = 92.456
 
 # Style 3: f-string (newest and recommended)
 print(f"Name: {name}, Score: {score:.1f}")
+```
+
+**Output**
+
+```text
+Name: Asha, Score: 92.5
+```
+
+**Example: The % style codes: %s text, %d whole number, %f decimal number**
+
+```python
+# A name to use
+name = "Asha"
+
+# A score to use
+score = 92.456
 
 # The % style codes: %s text, %d whole number, %f decimal number
 print("%s is %d years old and %.2f m tall" % ("Ravi", 30, 1.756))
+```
+
+**Output**
+
+```text
+Ravi is 30 years old and 1.76 m tall
+```
+
+**Example: `format()` as a built-in function for one value**
+
+```python
+# A name to use
+name = "Asha"
+
+# A score to use
+score = 92.456
 
 # format() as a built-in function for one value
 print(format(1234.5, ",.2f"))
@@ -1722,12 +3743,6 @@ print(format(1234.5, ",.2f"))
 **Output**
 
 ```text
-Name: Asha, Score: 92.5
-Name: Asha, Score: 92.5
-Asha scored 92.5
-Asha scored 92.5
-Name: Asha, Score: 92.5
-Ravi is 30 years old and 1.76 m tall
 1,234.50
 ```
 
@@ -1750,37 +3765,139 @@ Every character has a unique number called its **Unicode code point**.
 - `ord(character)` gives the number of a character.
 - `chr(number)` gives the character for a number.
 
+**Example: The code of capital A**
+
 ```python
 # The code of capital A
 print(ord("A"))
+```
 
+**Output**
+
+```text
+65
+```
+
+**Example: The code of small a**
+
+```python
 # The code of small a
 print(ord("a"))
+```
 
+**Output**
+
+```text
+97
+```
+
+**Example: The code of the digit 0 (not the number 0)**
+
+```python
 # The code of the digit 0 (not the number 0)
 print(ord("0"))
+```
 
+**Output**
+
+```text
+48
+```
+
+**Example: The code of a space**
+
+```python
 # The code of a space
 print(ord(" "))
+```
 
+**Output**
+
+```text
+32
+```
+
+**Example: The character with code 66**
+
+```python
 # The character with code 66
 print(chr(66))
+```
 
+**Output**
+
+```text
+B
+```
+
+**Example: `chr()` and ord() undo each other**
+
+```python
 # chr() and ord() undo each other
 print(chr(ord("z")))
+```
 
+**Output**
+
+```text
+z
+```
+
+**Example: Capital and small letters are exactly 32 apart**
+
+```python
 # Capital and small letters are exactly 32 apart
 print(ord("a") - ord("A"))
+```
 
+**Output**
+
+```text
+32
+```
+
+**Example: Move a letter forward by 1**
+
+```python
 # Move a letter forward by 1
 print(chr(ord("c") + 1))
+```
 
+**Output**
+
+```text
+d
+```
+
+**Example: Characters from other languages have bigger codes**
+
+```python
 # Characters from other languages have bigger codes
 print(ord("é"), ord("क"))
+```
 
+**Output**
+
+```text
+233 2325
+```
+
+**Example: Build the alphabet from codes 97 to 122**
+
+```python
 # Build the alphabet from codes 97 to 122
 print("".join(chr(code) for code in range(97, 123)))
+```
 
+**Output**
+
+```text
+abcdefghijklmnopqrstuvwxyz
+```
+
+**Example: A Unicode escape in a string: \u followed by 4 hex digits**
+
+```python
 # A Unicode escape in a string: \u followed by 4 hex digits
 print("café")
 ```
@@ -1788,16 +3905,6 @@ print("café")
 **Output**
 
 ```text
-65
-97
-48
-32
-B
-z
-32
-d
-233 2325
-abcdefghijklmnopqrstuvwxyz
 café
 ```
 
@@ -1815,6 +3922,8 @@ stateDiagram-v2
     Bytes --> Text: decode("utf-8")
 ```
 
+**Example: Print the bytes; é takes 2 bytes**
+
 ```python
 # A string with an accented letter
 text = "café"
@@ -1824,15 +3933,79 @@ data = text.encode("utf-8")
 
 # Print the bytes; é takes 2 bytes
 print(data)
+```
+
+**Output**
+
+```text
+b'caf\xc3\xa9'
+```
+
+**Example: 4 characters**
+
+```python
+# A string with an accented letter
+text = "café"
+
+# Encode the string into UTF-8 bytes
+data = text.encode("utf-8")
 
 # 4 characters
 print(len(text))
+```
+
+**Output**
+
+```text
+4
+```
+
+**Example: But 5 bytes**
+
+```python
+# A string with an accented letter
+text = "café"
+
+# Encode the string into UTF-8 bytes
+data = text.encode("utf-8")
 
 # but 5 bytes
 print(len(data))
+```
+
+**Output**
+
+```text
+5
+```
+
+**Example: Decode the bytes back into a string**
+
+```python
+# A string with an accented letter
+text = "café"
+
+# Encode the string into UTF-8 bytes
+data = text.encode("utf-8")
 
 # Decode the bytes back into a string
 print(data.decode("utf-8"))
+```
+
+**Output**
+
+```text
+café
+```
+
+**Example: Plain English letters take 1 byte each in UTF-8**
+
+```python
+# A string with an accented letter
+text = "café"
+
+# Encode the string into UTF-8 bytes
+data = text.encode("utf-8")
 
 # Plain English letters take 1 byte each in UTF-8
 print(len("hello".encode("utf-8")))
@@ -1841,10 +4014,6 @@ print(len("hello".encode("utf-8")))
 **Output**
 
 ```text
-b'caf\xc3\xa9'
-4
-5
-café
 5
 ```
 

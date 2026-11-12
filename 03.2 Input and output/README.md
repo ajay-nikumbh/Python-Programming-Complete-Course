@@ -160,24 +160,78 @@ None
 
 `print()` uses `str()`, the friendly form for people. `repr()` gives the exact form a programmer would type, which is useful for spotting spaces and quotes.
 
+**Example: `print()` shows the friendly form: the trailing space is invisible**
+
 ```python
 # A string with a space at the end
 text = "Asha "
 
 # print() shows the friendly form: the trailing space is invisible
 print(text)
+```
+
+**Output**
+
+```text
+Asha 
+```
+
+**Example: `repr()` shows the quotes, so the space is visible**
+
+```python
+# A string with a space at the end
+text = "Asha "
 
 # repr() shows the quotes, so the space is visible
 print(repr(text))
+```
+
+**Output**
+
+```text
+'Asha '
+```
+
+**Example: A string with a tab and a new line inside**
+
+```python
+# A string with a space at the end
+text = "Asha "
 
 # A string with a tab and a new line inside
 code = "a\tb\n"
 
 # repr() shows the escape characters instead of acting on them
 print(repr(code))
+```
+
+**Output**
+
+```text
+'a\tb\n'
+```
+
+**Example: For numbers, both forms look the same**
+
+```python
+# A string with a space at the end
+text = "Asha "
 
 # For numbers, both forms look the same
 print(str(42), repr(42))
+```
+
+**Output**
+
+```text
+42 42
+```
+
+**Example: F-strings: !r means use repr()**
+
+```python
+# A string with a space at the end
+text = "Asha "
 
 # f-strings: !r means use repr()
 print(f"{text!r}")
@@ -186,10 +240,6 @@ print(f"{text!r}")
 **Output**
 
 ```text
-Asha 
-'Asha '
-'a\tb\n'
-42 42
 'Asha '
 ```
 
@@ -197,46 +247,180 @@ Asha
 
 `sep` (separator) is the text placed **between** the values. The default is a single space.
 
+**Example: Default separator: one space**
+
 ```python
 # Default separator: one space
 print("a", "b", "c")
+```
 
+**Output**
+
+```text
+a b c
+```
+
+**Example: No separator at all**
+
+```python
 # No separator at all
 print("a", "b", "c", sep="")
+```
 
+**Output**
+
+```text
+abc
+```
+
+**Example: A comma and a space**
+
+```python
 # A comma and a space
 print("red", "green", "blue", sep=", ")
+```
 
+**Output**
+
+```text
+red, green, blue
+```
+
+**Example: A dash, to build a date**
+
+```python
 # A dash, to build a date
 print(2026, 11, 12, sep="-")
+```
 
+**Output**
+
+```text
+2026-11-12
+```
+
+**Example: A slash, to build a date in another style**
+
+```python
 # A slash, to build a date in another style
 print(12, 11, 2026, sep="/")
+```
 
+**Output**
+
+```text
+12/11/2026
+```
+
+**Example: A colon, to build a time**
+
+```python
 # A colon, to build a time
 print(9, 30, 0, sep=":")
+```
 
+**Output**
+
+```text
+9:30:0
+```
+
+**Example: A new line: each value on its own line**
+
+```python
 # A new line: each value on its own line
 print("line 1", "line 2", "line 3", sep="\n")
+```
 
+**Output**
+
+```text
+line 1
+line 2
+line 3
+```
+
+**Example: A tab: values in columns**
+
+```python
 # A tab: values in columns
 print("Name", "Age", "City", sep="\t")
+```
 
+**Output**
+
+```text
+Name	Age	City
+```
+
+**Example: A longer separator**
+
+```python
 # A longer separator
 print("Home", "Products", "Laptops", sep=" > ")
+```
 
+**Output**
+
+```text
+Home > Products > Laptops
+```
+
+**Example: Sep works with numbers too**
+
+```python
 # sep works with numbers too
 print(1, 2, 3, 4, 5, sep=" + ")
+```
 
+**Output**
+
+```text
+1 + 2 + 3 + 4 + 5
+```
+
+**Example: With only one value, sep is never used**
+
+```python
 # With only one value, sep is never used
 print("alone", sep="***")
+```
 
+**Output**
+
+```text
+alone
+```
+
+**Example: Combine sep with unpacking a list**
+
+```python
 # Combine sep with unpacking a list
 print(*["2026", "11", "12"], sep=".")
+```
 
+**Output**
+
+```text
+2026.11.12
+```
+
+**Example: Build a file path**
+
+```python
 # Build a file path
 print("home", "asha", "notes.txt", sep="/")
+```
 
+**Output**
+
+```text
+home/asha/notes.txt
+```
+
+**Example: An email address from its parts**
+
+```python
 # An email address from its parts
 print("asha", "example.com", sep="@")
 ```
@@ -244,21 +428,6 @@ print("asha", "example.com", sep="@")
 **Output**
 
 ```text
-a b c
-abc
-red, green, blue
-2026-11-12
-12/11/2026
-9:30:0
-line 1
-line 2
-line 3
-Name	Age	City
-Home > Products > Laptops
-1 + 2 + 3 + 4 + 5
-alone
-2026.11.12
-home/asha/notes.txt
 asha@example.com
 ```
 
@@ -380,15 +549,43 @@ for row in range(1, 4):
 
 By default, `print()` writes to `sys.stdout`, the screen. With `file=` you can send the text somewhere else, such as a file or the error stream.
 
+**Example: These two lines do exactly the same thing**
+
 ```python
 # Load the sys module to reach the standard streams
 import sys
 
 # These two lines do exactly the same thing
 print("to the screen")
+```
+
+**Output**
+
+```text
+to the screen
+```
+
+**Example: Writing to sys.stdout is what print() does by default**
+
+```python
+# Load the sys module to reach the standard streams
+import sys
 
 # Writing to sys.stdout is what print() does by default
 print("to the screen", file=sys.stdout)
+```
+
+**Output**
+
+```text
+to the screen
+```
+
+**Example: `sys.stdout.write()` is the lower-level way: no sep, no automatic new line**
+
+```python
+# Load the sys module to reach the standard streams
+import sys
 
 # sys.stdout.write() is the lower-level way: no sep, no automatic new line
 sys.stdout.write("written directly\n")
@@ -401,6 +598,19 @@ with open("greeting.txt", "w") as out_file:
 
     # sep and end still work when printing to a file
     print("a", "b", "c", sep=",", file=out_file)
+```
+
+**Output**
+
+```text
+written directly
+```
+
+**Example: Open the same file for reading**
+
+```python
+# Load the sys module to reach the standard streams
+import sys
 
 # Open the same file for reading
 with open("greeting.txt") as in_file:
@@ -412,9 +622,6 @@ with open("greeting.txt") as in_file:
 **Output**
 
 ```text
-to the screen
-to the screen
-written directly
 Hello from a file!
 a,b,c
 ```
@@ -466,12 +673,27 @@ sequenceDiagram
     Code->>Screen: "Loading..." (flush=True) goes straight out
 ```
 
+**Example: Show the message at once, even though there is no new line yet**
+
 ```python
 # Load the time module to create a short pause
 import time
 
 # Show the message at once, even though there is no new line yet
 print("Downloading", end="", flush=True)
+```
+
+**Output**
+
+```text
+Downloading
+```
+
+**Example: Print three dots, one at a time**
+
+```python
+# Load the time module to create a short pause
+import time
 
 # Print three dots, one at a time
 for step in range(3):
@@ -481,6 +703,19 @@ for step in range(3):
 
     # Each dot appears immediately
     print(".", end="", flush=True)
+```
+
+**Output**
+
+```text
+...
+```
+
+**Example: Finish the line**
+
+```python
+# Load the time module to create a short pause
+import time
 
 # Finish the line
 print(" done")
@@ -489,12 +724,14 @@ print(" done")
 **Output**
 
 ```text
-Downloading... done
+ done
 ```
 
 ## 6. Formatting output: a quick recap
 
 [Topic 03.1](../03.1%20Strings/README.md#15-formatting-with-f-strings) covers formatting in depth. Here are the patterns you will use most when printing results.
+
+**Example: Put values into text with an f-string**
 
 ```python
 # A name to show
@@ -508,30 +745,201 @@ rate = 0.075
 
 # Put values into text with an f-string
 print(f"Customer: {name}")
+```
+
+**Output**
+
+```text
+Customer: Asha
+```
+
+**Example: Exactly 2 decimal places**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # Exactly 2 decimal places
 print(f"Price: {price:.2f}")
+```
+
+**Output**
+
+```text
+Price: 1234.50
+```
+
+**Example: Thousands separator and 2 decimals**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # Thousands separator and 2 decimals
 print(f"Price: {price:,.2f}")
+```
+
+**Output**
+
+```text
+Price: 1,234.50
+```
+
+**Example: Percentage with 1 decimal place**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # Percentage with 1 decimal place
 print(f"Tax rate: {rate:.1%}")
+```
+
+**Output**
+
+```text
+Tax rate: 7.5%
+```
+
+**Example: Left align in 10 characters, then a value**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # Left align in 10 characters, then a value
 print(f"{'Item':<10}|")
+```
+
+**Output**
+
+```text
+Item      |
+```
+
+**Example: Right align in 10 characters**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # Right align in 10 characters
 print(f"{'Total':>10}|")
+```
+
+**Output**
+
+```text
+     Total|
+```
+
+**Example: Centre a title with a fill character**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # Centre a title with a fill character
 print(f"{' BILL ':=^24}")
+```
+
+**Output**
+
+```text
+========= BILL =========
+```
+
+**Example: Zero padding for an invoice number**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # Zero padding for an invoice number
 print(f"Invoice #{42:05d}")
+```
+
+**Output**
+
+```text
+Invoice #00042
+```
+
+**Example: The same result with the older % style**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # The same result with the older % style
 print("Price: %.2f" % price)
+```
+
+**Output**
+
+```text
+Price: 1234.50
+```
+
+**Example: The same result with str.format()**
+
+```python
+# A name to show
+name = "Asha"
+
+# A price with many decimals
+price = 1234.5
+
+# A percentage stored as a fraction
+rate = 0.075
 
 # The same result with str.format()
 print("Price: {:.2f}".format(price))
@@ -540,15 +948,6 @@ print("Price: {:.2f}".format(price))
 **Output**
 
 ```text
-Customer: Asha
-Price: 1234.50
-Price: 1,234.50
-Tax rate: 7.5%
-Item      |
-     Total|
-========= BILL =========
-Invoice #00042
-Price: 1234.50
 Price: 1234.50
 ```
 
@@ -923,13 +1322,35 @@ journey
 
 `eval()` takes a string and **runs it as Python code**. Some old tutorials use `eval(input())` to read numbers or lists. This is **dangerous**: the user can type any Python code, and your program will run it, including code that deletes files or reads secrets.
 
+**Example: `eval()` runs a string as Python code and returns the result**
+
 ```python
 # eval() runs a string as Python code and returns the result
 print(eval("2 + 3 * 4"))
+```
 
+**Output**
+
+```text
+14
+```
+
+**Example: It can build a list from text**
+
+```python
 # It can build a list from text
 print(eval("[1, 2, 3]"))
+```
 
+**Output**
+
+```text
+[1, 2, 3]
+```
+
+**Example: But it runs ANY expression, including function calls**
+
+```python
 # But it runs ANY expression, including function calls
 print(eval("len('hello') * 100"))
 ```
@@ -937,8 +1358,6 @@ print(eval("len('hello') * 100"))
 **Output**
 
 ```text
-14
-[1, 2, 3]
 500
 ```
 
@@ -958,18 +1377,59 @@ If `eval()` can call `len()`, it can call anything else, for example a function 
 <tr><td>Data from other programs</td><td><code>json.loads(text)</code></td><td>Accepts only JSON data (Topic 23.1)</td></tr>
 </table>
 
+**Example: Safe: a list written as text becomes a real list**
+
 ```python
 # Load the ast module, which has a safe evaluator for literal values
 import ast
 
 # Safe: a list written as text becomes a real list
 print(ast.literal_eval("[1, 2, 3]"))
+```
+
+**Output**
+
+```text
+[1, 2, 3]
+```
+
+**Example: Safe: a dictionary written as text**
+
+```python
+# Load the ast module, which has a safe evaluator for literal values
+import ast
 
 # Safe: a dictionary written as text
 print(ast.literal_eval("{'a': 1, 'b': 2}"))
+```
+
+**Output**
+
+```text
+{'a': 1, 'b': 2}
+```
+
+**Example: Safe: a tuple written as text**
+
+```python
+# Load the ast module, which has a safe evaluator for literal values
+import ast
 
 # Safe: a tuple written as text
 print(ast.literal_eval("(4, 5)"))
+```
+
+**Output**
+
+```text
+(4, 5)
+```
+
+**Example: Try something that is not a plain literal**
+
+```python
+# Load the ast module, which has a safe evaluator for literal values
+import ast
 
 # Try something that is not a plain literal
 try:
@@ -987,9 +1447,6 @@ except ValueError:
 **Output**
 
 ```text
-[1, 2, 3]
-{'a': 1, 'b': 2}
-(4, 5)
 Refused: function calls are not allowed
 ```
 

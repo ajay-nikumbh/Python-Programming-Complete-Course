@@ -187,6 +187,8 @@ The errors Python gives for the invalid examples:
 
 You can **write** a number in any of the four forms, but the PVM always **shows** it in decimal.
 
+**Example: Print each value; Python shows them in decimal**
+
 ```python
 # Decimal 10
 a = 10
@@ -202,12 +204,78 @@ d = 0B10
 
 # Print each value; Python shows them in decimal
 print(a)
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: Print the octal value**
+
+```python
+# Decimal 10
+a = 10
+
+# Octal 10, which is 1 x 8 + 0 = 8
+b = 0o10
+
+# Hexadecimal 10, which is 1 x 16 + 0 = 16
+c = 0X10
+
+# Binary 10, which is 1 x 2 + 0 = 2
+d = 0B10
 
 # Print the octal value
 print(b)
+```
+
+**Output**
+
+```text
+8
+```
+
+**Example: Print the hexadecimal value**
+
+```python
+# Decimal 10
+a = 10
+
+# Octal 10, which is 1 x 8 + 0 = 8
+b = 0o10
+
+# Hexadecimal 10, which is 1 x 16 + 0 = 16
+c = 0X10
+
+# Binary 10, which is 1 x 2 + 0 = 2
+d = 0B10
 
 # Print the hexadecimal value
 print(c)
+```
+
+**Output**
+
+```text
+16
+```
+
+**Example: Print the binary value**
+
+```python
+# Decimal 10
+a = 10
+
+# Octal 10, which is 1 x 8 + 0 = 8
+b = 0o10
+
+# Hexadecimal 10, which is 1 x 16 + 0 = 16
+c = 0X10
+
+# Binary 10, which is 1 x 2 + 0 = 2
+d = 0B10
 
 # Print the binary value
 print(d)
@@ -216,9 +284,6 @@ print(d)
 **Output**
 
 ```text
-10
-8
-16
 2
 ```
 
@@ -258,13 +323,35 @@ Python has three built-in functions to convert a number **from any base** into a
 
 To go the other way, from text in any base back to an int, give `int()` a second argument, the **base**:
 
+**Example: Read the text "1111" as a binary number**
+
 ```python
 # Read the text "1111" as a binary number
 print(int("1111", 2))
+```
 
+**Output**
+
+```text
+15
+```
+
+**Example: Read the text "ff" as a hexadecimal number**
+
+```python
 # Read the text "ff" as a hexadecimal number
 print(int("ff", 16))
+```
 
+**Output**
+
+```text
+255
+```
+
+**Example: Base 0 means "look at the prefix to decide the base"**
+
+```python
 # Base 0 means "look at the prefix to decide the base"
 print(int("0B1111", 0))
 ```
@@ -272,8 +359,6 @@ print(int("0B1111", 0))
 **Output**
 
 ```text
-15
-255
 15
 ```
 
@@ -299,18 +384,59 @@ print(type(f))
 
 You can write a float using `e` or `E`, which means "times 10 to the power of".
 
+**Example: Print it**
+
 ```python
 # 1.2e3 means 1.2 x 10 to the power 3
 f = 1.2e3
 
 # Print it
 print(f)
+```
+
+**Output**
+
+```text
+1200.0
+```
+
+**Example: Capital E works the same way**
+
+```python
+# 1.2e3 means 1.2 x 10 to the power 3
+f = 1.2e3
 
 # Capital E works the same way
 print(1.2E3)
+```
+
+**Output**
+
+```text
+1200.0
+```
+
+**Example: A negative power makes a small number: 5 x 10 to the power -3**
+
+```python
+# 1.2e3 means 1.2 x 10 to the power 3
+f = 1.2e3
 
 # A negative power makes a small number: 5 x 10 to the power -3
 print(5e-3)
+```
+
+**Output**
+
+```text
+0.005
+```
+
+**Example: A very large number, written in a short form**
+
+```python
+# 1.2e3 means 1.2 x 10 to the power 3
+f = 1.2e3
 
 # A very large number, written in a short form
 print(6.02e23)
@@ -319,9 +445,6 @@ print(6.02e23)
 **Output**
 
 ```text
-1200.0
-1200.0
-0.005
 6.02e+23
 ```
 
@@ -407,6 +530,8 @@ SyntaxError: invalid binary literal
 
 ### Operations on complex numbers
 
+**Example: Print the result**
+
 ```python
 # First complex number
 a = 10 + 1.5j
@@ -419,9 +544,47 @@ c = a + b
 
 # Print the result
 print(c)
+```
+
+**Output**
+
+```text
+(30+4j)
+```
+
+**Example: Check the type**
+
+```python
+# First complex number
+a = 10 + 1.5j
+
+# Second complex number
+b = 20 + 2.5j
+
+# Add them: real parts add, imaginary parts add
+c = a + b
 
 # Check the type
 print(type(c))
+```
+
+**Output**
+
+```text
+<class 'complex'>
+```
+
+**Example: Multiply two complex numbers**
+
+```python
+# First complex number
+a = 10 + 1.5j
+
+# Second complex number
+b = 20 + 2.5j
+
+# Add them: real parts add, imaginary parts add
+c = a + b
 
 # Multiply two complex numbers
 print((2 + 3j) * (4 + 5j))
@@ -430,8 +593,6 @@ print((2 + 3j) * (4 + 5j))
 **Output**
 
 ```text
-(30+4j)
-<class 'complex'>
 (-7+22j)
 ```
 
@@ -441,15 +602,43 @@ print((2 + 3j) * (4 + 5j))
 
 A complex number has two built-in **attributes**: `real` and `imag`.
 
+**Example: The real part**
+
 ```python
 # A complex number
 c = 10.5 + 3.6j
 
 # The real part
 print(c.real)
+```
+
+**Output**
+
+```text
+10.5
+```
+
+**Example: The imaginary part (without the j)**
+
+```python
+# A complex number
+c = 10.5 + 3.6j
 
 # The imaginary part (without the j)
 print(c.imag)
+```
+
+**Output**
+
+```text
+3.6
+```
+
+**Example: Both parts are stored as floats**
+
+```python
+# A complex number
+c = 10.5 + 3.6j
 
 # Both parts are stored as floats
 print(type(c.real))
@@ -458,8 +647,6 @@ print(type(c.real))
 **Output**
 
 ```text
-10.5
-3.6
 <class 'float'>
 ```
 
@@ -500,16 +687,48 @@ True
 
 Internally, Python stores `True` as `1` and `False` as `0`. So you can even do arithmetic with them:
 
+**Example: 1 + 1**
+
 ```python
 # 1 + 1
 print(True + True)
+```
 
+**Output**
+
+```text
+2
+```
+
+**Example: 1 - 0**
+
+```python
 # 1 - 0
 print(True - False)
+```
 
+**Output**
+
+```text
+1
+```
+
+**Example: 1 x 10**
+
+```python
 # 1 x 10
 print(True * 10)
+```
 
+**Output**
+
+```text
+10
+```
+
+**Example: Bool is actually a special kind of int**
+
+```python
 # bool is actually a special kind of int
 print(isinstance(True, int))
 ```
@@ -517,9 +736,6 @@ print(isinstance(True, int))
 **Output**
 
 ```text
-2
-1
-10
 True
 ```
 
@@ -922,6 +1138,8 @@ These five types are called the **fundamental data types**: `int`, `float`, `com
 
 When a new object is needed, the PVM does not always create one straight away. It first checks whether an object with the **same content already exists**. If it does, the PVM **reuses** it. This saves memory and time.
 
+**Example: Same object?**
+
 ```python
 # Two names for the int 10
 a = 10
@@ -931,6 +1149,22 @@ b = 10
 
 # Same object?
 print(a is b)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Two names for True**
+
+```python
+# Two names for the int 10
+a = 10
+
+# Python reuses the existing 10 object
+b = 10
 
 # Two names for True
 a = True
@@ -940,6 +1174,22 @@ b = True
 
 # Same object?
 print(a is b)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Two names for the same short text**
+
+```python
+# Two names for the int 10
+a = 10
+
+# Python reuses the existing 10 object
+b = 10
 
 # Two names for the same short text
 a = 'durga'
@@ -954,8 +1204,6 @@ print(a is b)
 **Output**
 
 ```text
-True
-True
 True
 ```
 
@@ -975,6 +1223,8 @@ But sharing creates a risk: if `a` and `b` share one object, and you could **cha
 
 `bytes` represents a group of **byte numbers**, like an array. Each item must be a whole number from **0 to 255**.
 
+**Example: Check the type**
+
 ```python
 # A list of numbers
 x = [10, 20, 30, 40]
@@ -984,12 +1234,60 @@ b = bytes(x)
 
 # Check the type
 print(type(b))
+```
+
+**Output**
+
+```text
+<class 'bytes'>
+```
+
+**Example: First item**
+
+```python
+# A list of numbers
+x = [10, 20, 30, 40]
+
+# Convert the list to bytes
+b = bytes(x)
 
 # First item
 print(b[0])
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: Last item**
+
+```python
+# A list of numbers
+x = [10, 20, 30, 40]
+
+# Convert the list to bytes
+b = bytes(x)
 
 # Last item
 print(b[-1])
+```
+
+**Output**
+
+```text
+40
+```
+
+**Example: Go through every item**
+
+```python
+# A list of numbers
+x = [10, 20, 30, 40]
+
+# Convert the list to bytes
+b = bytes(x)
 
 # Go through every item
 for i in b:
@@ -1001,9 +1299,6 @@ for i in b:
 **Output**
 
 ```text
-<class 'bytes'>
-10
-40
 10
 20
 30

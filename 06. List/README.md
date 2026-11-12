@@ -330,57 +330,167 @@ A list uses **zero-based** indexing: the first element has index `0`. It support
 
 Notice that `10` appears twice, at index `0` and index `5`. The index is what tells them apart.
 
+**Example: First element**
+
 ```python
 # The list from the table above
 data = [10, "A", "B", 20, 30, 10]
 
-# 1. First element
-print(1, data[0])
-
-# 2. Second element
-print(2, data[1])
-
-# 3. Last element
-print(3, data[-1])
-
-# 4. Second last element
-print(4, data[-2])
-
-# 5. First element counted from the right
-print(5, data[-6])
-
-# 6. The two 10s are at different indexes
-print(6, data[0], data[5])
-
-# 7. Last element using the length
-print(7, data[len(data) - 1])
-
-# 8. An index stored in a variable
-position = 3
-
-# Use the variable as the index
-print(8, data[position])
-
-# 9. The item at index 2 is the string "B"; [0] takes its first character
-print(9, data[2][0])
-
-# 10. Indexes work on a list written directly
-print(10, [5, 6, 7][1])
+# First element
+print(data[0])
 ```
 
 **Output**
 
 ```text
-1 10
-2 A
-3 10
-4 30
-5 10
-6 10 10
-7 10
-8 20
-9 B
-10 6
+10
+```
+
+**Example: Second element**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# Second element
+print(data[1])
+```
+
+**Output**
+
+```text
+A
+```
+
+**Example: Last element**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# Last element
+print(data[-1])
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: Second last element**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# Second last element
+print(data[-2])
+```
+
+**Output**
+
+```text
+30
+```
+
+**Example: First element counted from the right**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# First element counted from the right
+print(data[-6])
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: The two 10s are at different indexes**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# The two 10s are at different indexes
+print(data[0], data[5])
+```
+
+**Output**
+
+```text
+10 10
+```
+
+**Example: Last element using the length**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# Last element using the length
+print(data[len(data) - 1])
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: An index stored in a variable**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# An index stored in a variable
+position = 3
+
+# Use the variable as the index
+print(data[position])
+```
+
+**Output**
+
+```text
+20
+```
+
+**Example: The item at index 2 is the string "B"; [0] takes its first character**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# The item at index 2 is the string "B"; [0] takes its first character
+print(data[2][0])
+```
+
+**Output**
+
+```text
+B
+```
+
+**Example: Indexes work on a list written directly**
+
+```python
+# The list from the table above
+data = [10, "A", "B", 20, 30, 10]
+
+# Indexes work on a list written directly
+print([5, 6, 7][1])
+```
+
+**Output**
+
+```text
+6
 ```
 
 An index outside the list raises an error:
@@ -431,21 +541,75 @@ The highlighted boxes show `n[2:7:2]`: start at index 2, jump by 2, and stop bef
 
 The examples from the notes:
 
+**Example: From index 2 up to 7, jumping by 2**
+
 ```python
 # The numbers 1 to 10
 n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # From index 2 up to 7, jumping by 2
 print(n[2:7:2])
+```
+
+**Output**
+
+```text
+[3, 5, 7]
+```
+
+**Example: From index 4 to the end, jumping by 2**
+
+```python
+# The numbers 1 to 10
+n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # From index 4 to the end, jumping by 2
 print(n[4::2])
+```
+
+**Output**
+
+```text
+[5, 7, 9]
+```
+
+**Example: From index 3 up to 7**
+
+```python
+# The numbers 1 to 10
+n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # From index 3 up to 7
 print(n[3:7])
+```
+
+**Output**
+
+```text
+[4, 5, 6, 7]
+```
+
+**Example: From index 8 backwards down to index 2 (not included), jumping by 2**
+
+```python
+# The numbers 1 to 10
+n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # From index 8 backwards down to index 2 (not included), jumping by 2
 print(n[8:2:-2])
+```
+
+**Output**
+
+```text
+[9, 7, 5]
+```
+
+**Example: A stop past the end is fine; the slice stops at the end**
+
+```python
+# The numbers 1 to 10
+n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # A stop past the end is fine; the slice stops at the end
 print(n[4:100])
@@ -454,71 +618,201 @@ print(n[4:100])
 **Output**
 
 ```text
-[3, 5, 7]
-[5, 7, 9]
-[4, 5, 6, 7]
-[9, 7, 5]
 [5, 6, 7, 8, 9, 10]
 ```
 
 More slicing variations:
 
+**Example: The first three items**
+
 ```python
 # A list of letters
 letters = ["a", "b", "c", "d", "e", "f"]
 
-# 1. The first three items
-print(1, letters[:3])
-
-# 2. Everything from index 3
-print(2, letters[3:])
-
-# 3. The last two items
-print(3, letters[-2:])
-
-# 4. Everything except the last item
-print(4, letters[:-1])
-
-# 5. Everything except the first and last items
-print(5, letters[1:-1])
-
-# 6. Every second item
-print(6, letters[::2])
-
-# 7. Every second item starting at index 1
-print(7, letters[1::2])
-
-# 8. The whole list reversed
-print(8, letters[::-1])
-
-# 9. A full copy of the list
-print(9, letters[:])
-
-# 10. Start after stop gives an empty list
-print(10, letters[4:2])
-
-# 11. Negative start and stop
-print(11, letters[-4:-1])
-
-# 12. The last three items in reverse
-print(12, letters[:-4:-1])
+# The first three items
+print(letters[:3])
 ```
 
 **Output**
 
 ```text
-1 ['a', 'b', 'c']
-2 ['d', 'e', 'f']
-3 ['e', 'f']
-4 ['a', 'b', 'c', 'd', 'e']
-5 ['b', 'c', 'd', 'e']
-6 ['a', 'c', 'e']
-7 ['b', 'd', 'f']
-8 ['f', 'e', 'd', 'c', 'b', 'a']
-9 ['a', 'b', 'c', 'd', 'e', 'f']
-10 []
-11 ['c', 'd', 'e']
-12 ['f', 'e', 'd']
+['a', 'b', 'c']
+```
+
+**Example: Everything from index 3**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# Everything from index 3
+print(letters[3:])
+```
+
+**Output**
+
+```text
+['d', 'e', 'f']
+```
+
+**Example: The last two items**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# The last two items
+print(letters[-2:])
+```
+
+**Output**
+
+```text
+['e', 'f']
+```
+
+**Example: Everything except the last item**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# Everything except the last item
+print(letters[:-1])
+```
+
+**Output**
+
+```text
+['a', 'b', 'c', 'd', 'e']
+```
+
+**Example: Everything except the first and last items**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# Everything except the first and last items
+print(letters[1:-1])
+```
+
+**Output**
+
+```text
+['b', 'c', 'd', 'e']
+```
+
+**Example: Every second item**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# Every second item
+print(letters[::2])
+```
+
+**Output**
+
+```text
+['a', 'c', 'e']
+```
+
+**Example: Every second item starting at index 1**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# Every second item starting at index 1
+print(letters[1::2])
+```
+
+**Output**
+
+```text
+['b', 'd', 'f']
+```
+
+**Example: The whole list reversed**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# The whole list reversed
+print(letters[::-1])
+```
+
+**Output**
+
+```text
+['f', 'e', 'd', 'c', 'b', 'a']
+```
+
+**Example: A full copy of the list**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# A full copy of the list
+print(letters[:])
+```
+
+**Output**
+
+```text
+['a', 'b', 'c', 'd', 'e', 'f']
+```
+
+**Example: Start after stop gives an empty list**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# Start after stop gives an empty list
+print(letters[4:2])
+```
+
+**Output**
+
+```text
+[]
+```
+
+**Example: Negative start and stop**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# Negative start and stop
+print(letters[-4:-1])
+```
+
+**Output**
+
+```text
+['c', 'd', 'e']
+```
+
+**Example: The last three items in reverse**
+
+```python
+# A list of letters
+letters = ["a", "b", "c", "d", "e", "f"]
+
+# The last three items in reverse
+print(letters[:-4:-1])
+```
+
+**Output**
+
+```text
+['f', 'e', 'd']
 ```
 
 > Like strings, a **slice never raises IndexError**. Only a single index outside the list does.
@@ -727,41 +1021,117 @@ C is available at positive index:  2 and at negative index:  -1
 
 ### More traversal patterns
 
+**Example: `Enumerate()` gives the index and the item together**
+
 ```python
 # The list to traverse
 fruits = ["apple", "banana", "cherry"]
 
-# 1. enumerate() gives the index and the item together
+# Enumerate() gives the index and the item together
 for index, fruit in enumerate(fruits):
 
     # Show both
-    print(1, index, fruit)
+    print(index, fruit)
+```
 
-# 2. enumerate() can start counting at 1
+**Output**
+
+```text
+0 apple
+1 banana
+2 cherry
+```
+
+**Example: `Enumerate()` can start counting at 1**
+
+```python
+# The list to traverse
+fruits = ["apple", "banana", "cherry"]
+
+# Enumerate() can start counting at 1
 for number, fruit in enumerate(fruits, start=1):
 
     # Show a numbered list
-    print(2, f"{number}. {fruit}")
+    print(f"{number}. {fruit}")
+```
 
-# 3. reversed() visits the items from the last to the first
+**Output**
+
+```text
+1. apple
+2. banana
+3. cherry
+```
+
+**Example: `Reversed()` visits the items from the last to the first**
+
+```python
+# The list to traverse
+fruits = ["apple", "banana", "cherry"]
+
+# Reversed() visits the items from the last to the first
 for fruit in reversed(fruits):
 
     # Show each fruit, last first
-    print(3, fruit)
+    print(fruit)
+```
 
-# 4. Visit every second item using a slice
+**Output**
+
+```text
+cherry
+banana
+apple
+```
+
+**Example: Visit every second item using a slice**
+
+```python
+# The list to traverse
+fruits = ["apple", "banana", "cherry"]
+
+# Visit every second item using a slice
 for fruit in fruits[::2]:
 
     # Show the items at index 0 and 2
-    print(4, fruit)
+    print(fruit)
+```
 
-# 5. zip() walks two lists side by side
+**Output**
+
+```text
+apple
+cherry
+```
+
+**Example: `Zip()` walks two lists side by side**
+
+```python
+# The list to traverse
+fruits = ["apple", "banana", "cherry"]
+
+# Zip() walks two lists side by side
 for fruit, price in zip(fruits, [40, 10, 120]):
 
     # Show the pair
-    print(5, fruit, price)
+    print(fruit, price)
+```
 
-# 6. Collect a running total while traversing
+**Output**
+
+```text
+apple 40
+banana 10
+cherry 120
+```
+
+**Example: Collect a running total while traversing**
+
+```python
+# The list to traverse
+fruits = ["apple", "banana", "cherry"]
+
+# Collect a running total while traversing
 total = 0
 
 # Visit each price
@@ -771,27 +1141,13 @@ for price in [40, 10, 120]:
     total += price
 
 # Show the final total
-print(6, total)
+print(total)
 ```
 
 **Output**
 
 ```text
-1 0 apple
-1 1 banana
-1 2 cherry
-2 1. apple
-2 2. banana
-2 3. cherry
-3 cherry
-3 banana
-3 apple
-4 apple
-4 cherry
-5 apple 40
-5 banana 10
-5 cherry 120
-6 170
+170
 ```
 
 <table width="100%">
@@ -863,18 +1219,59 @@ print(6, len(fruits) == 0)
 
 The example from the notes:
 
+**Example: 1 appears once**
+
 ```python
 # A list with repeated values
 n = [1, 2, 2, 2, 2, 3, 3]
 
 # 1 appears once
 print(n.count(1))
+```
+
+**Output**
+
+```text
+1
+```
+
+**Example: 2 appears four times**
+
+```python
+# A list with repeated values
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 2 appears four times
 print(n.count(2))
+```
+
+**Output**
+
+```text
+4
+```
+
+**Example: 3 appears twice**
+
+```python
+# A list with repeated values
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 3 appears twice
 print(n.count(3))
+```
+
+**Output**
+
+```text
+2
+```
+
+**Example: 4 does not appear at all**
+
+```python
+# A list with repeated values
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 4 does not appear at all
 print(n.count(4))
@@ -883,32 +1280,96 @@ print(n.count(4))
 **Output**
 
 ```text
-1
-4
-2
 0
 ```
 
 More `count()` variations:
 
+**Example: Count how many times the word be appears**
+
 ```python
-# 1. Count a word in a list of words
+# Count a word in a list of words
 words = "to be or not to be".split()
 
 # Count how many times the word be appears
-print(1, words.count("be"))
+print(words.count("be"))
+```
+
+**Output**
+
+```text
+2
+```
+
+**Example: `count()` is case sensitive for strings**
+
+```python
+# Count a word in a list of words
+words = "to be or not to be".split()
 
 # 2. count() is case sensitive for strings
 print(2, ["A", "a", "A"].count("a"))
+```
+
+**Output**
+
+```text
+2 1
+```
+
+**Example: True counts as equal to 1, so it is counted too**
+
+```python
+# Count a word in a list of words
+words = "to be or not to be".split()
 
 # 3. True counts as equal to 1, so it is counted too
 print(3, [1, True, 1.0, "1"].count(1))
+```
+
+**Output**
+
+```text
+3 3
+```
+
+**Example: Count a nested list as a whole item**
+
+```python
+# Count a word in a list of words
+words = "to be or not to be".split()
 
 # 4. Count a nested list as a whole item
 print(4, [[1, 2], [1, 2], 3].count([1, 2]))
+```
+
+**Output**
+
+```text
+4 2
+```
+
+**Example: `count()` does not look inside nested lists**
+
+```python
+# Count a word in a list of words
+words = "to be or not to be".split()
 
 # 5. count() does not look inside nested lists
 print(5, [[1, 2], 3].count(1))
+```
+
+**Output**
+
+```text
+5 0
+```
+
+**Example: Count how many marks are full marks**
+
+```python
+# Count a word in a list of words
+words = "to be or not to be".split()
 
 # 6. Count how many marks are full marks
 marks = [100, 95, 100, 88]
@@ -920,11 +1381,6 @@ print(6, marks.count(100))
 **Output**
 
 ```text
-1 2
-2 1
-3 3
-4 2
-5 0
 6 2
 ```
 
@@ -932,15 +1388,43 @@ print(6, marks.count(100))
 
 `index()` returns the index of the **first** occurrence of the item.
 
+**Example: 1 is first found at index 0**
+
 ```python
 # A list with repeated values
 n = [1, 2, 2, 2, 2, 3, 3]
 
 # 1 is first found at index 0
 print(n.index(1))
+```
+
+**Output**
+
+```text
+0
+```
+
+**Example: 2 is first found at index 1**
+
+```python
+# A list with repeated values
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 2 is first found at index 1
 print(n.index(2))
+```
+
+**Output**
+
+```text
+1
+```
+
+**Example: 3 is first found at index 5**
+
+```python
+# A list with repeated values
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 3 is first found at index 5
 print(n.index(3))
@@ -949,8 +1433,6 @@ print(n.index(3))
 **Output**
 
 ```text
-0
-1
 5
 ```
 
@@ -972,21 +1454,75 @@ ValueError: 4 is not in list
 
 Check with `in` first to avoid the error:
 
+**Example: 1. in tells us 4 is missing**
+
 ```python
 # A list of numbers
 n = [1, 2, 2, 2, 2, 3, 3]
 
 # 1. in tells us 4 is missing
 print(1, 4 in n)
+```
+
+**Output**
+
+```text
+1 False
+```
+
+**Example: 2. Look for 4 only if it is present**
+
+```python
+# A list of numbers
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 2. Look for 4 only if it is present
 print(2, n.index(4) if 4 in n else "4 is not present")
+```
+
+**Output**
+
+```text
+2 4 is not present
+```
+
+**Example: 3. index() with a start position: first 2 at or after index 3**
+
+```python
+# A list of numbers
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 3. index() with a start position: first 2 at or after index 3
 print(3, n.index(2, 3))
+```
+
+**Output**
+
+```text
+3 3
+```
+
+**Example: 4. index() with start and stop: search only n[5:7]**
+
+```python
+# A list of numbers
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 4. index() with start and stop: search only n[5:7]
 print(4, n.index(3, 5, 7))
+```
+
+**Output**
+
+```text
+4 5
+```
+
+**Example: 5. Find all positions of a value with enumerate**
+
+```python
+# A list of numbers
+n = [1, 2, 2, 2, 2, 3, 3]
 
 # 5. Find all positions of a value with enumerate
 print(5, [i for i, value in enumerate(n) if value == 2])
@@ -995,10 +1531,6 @@ print(5, [i for i, value in enumerate(n) if value == 2])
 **Output**
 
 ```text
-1 False
-2 4 is not present
-3 3
-4 5
 5 [1, 2, 3, 4]
 ```
 
@@ -1756,6 +2288,8 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 
 ### Sorting in reverse order
 
+**Example: Show the ascending order**
+
 ```python
 # Numbers in random order
 n = [40, 10, 30, 20]
@@ -1765,12 +2299,44 @@ n.sort()
 
 # Show the ascending order
 print(n)
+```
+
+**Output**
+
+```text
+[10, 20, 30, 40]
+```
+
+**Example: `reverse=True` sorts in descending order**
+
+```python
+# Numbers in random order
+n = [40, 10, 30, 20]
+
+# Default sort: ascending
+n.sort()
 
 # reverse=True sorts in descending order
 n.sort(reverse=True)
 
 # Show the descending order
 print(n)
+```
+
+**Output**
+
+```text
+[40, 30, 20, 10]
+```
+
+**Example: `reverse=False` is the default: ascending again**
+
+```python
+# Numbers in random order
+n = [40, 10, 30, 20]
+
+# Default sort: ascending
+n.sort()
 
 # reverse=False is the default: ascending again
 n.sort(reverse=False)
@@ -1782,8 +2348,6 @@ print(n)
 **Output**
 
 ```text
-[10, 20, 30, 40]
-[40, 30, 20, 10]
 [10, 20, 30, 40]
 ```
 
@@ -2091,34 +2655,84 @@ c = a + 40
 TypeError: can only concatenate list (not "int") to list
 ```
 
+**Example: Wrap the number in a list to make it valid**
+
 ```python
 # A list
 a = [10, 20, 30]
 
-# 1. Wrap the number in a list to make it valid
-print(1, a + [40])
-
-# 2. + creates a new list; a is unchanged
-print(2, a)
-
-# 3. Joining an empty list changes nothing
-print(3, a + [])
-
-# 4. Join three lists
-print(4, [1] + [2, 3] + [4])
-
-# 5. Join lists of different types
-print(5, ["a"] + [1, 2.5])
+# Wrap the number in a list to make it valid
+print(a + [40])
 ```
 
 **Output**
 
 ```text
-1 [10, 20, 30, 40]
-2 [10, 20, 30]
-3 [10, 20, 30]
-4 [1, 2, 3, 4]
-5 ['a', 1, 2.5]
+[10, 20, 30, 40]
+```
+
+**Example: + creates a new list; a is unchanged**
+
+```python
+# A list
+a = [10, 20, 30]
+
+# + creates a new list; a is unchanged
+print(a)
+```
+
+**Output**
+
+```text
+[10, 20, 30]
+```
+
+**Example: Joining an empty list changes nothing**
+
+```python
+# A list
+a = [10, 20, 30]
+
+# Joining an empty list changes nothing
+print(a + [])
+```
+
+**Output**
+
+```text
+[10, 20, 30]
+```
+
+**Example: Join three lists**
+
+```python
+# A list
+a = [10, 20, 30]
+
+# Join three lists
+print([1] + [2, 3] + [4])
+```
+
+**Output**
+
+```text
+[1, 2, 3, 4]
+```
+
+**Example: Join lists of different types**
+
+```python
+# A list
+a = [10, 20, 30]
+
+# Join lists of different types
+print(["a"] + [1, 2.5])
+```
+
+**Output**
+
+```text
+['a', 1, 2.5]
 ```
 
 ### 2. Repetition (*)
@@ -2140,37 +2754,75 @@ print(y)
 [10, 20, 30, 10, 20, 30, 10, 20, 30]
 ```
 
+**Example: A list of five zeros**
+
 ```python
-# 1. A list of five zeros
-print(1, [0] * 5)
+# A list of five zeros
+print([0] * 5)
+```
 
-# 2. The number can come first
-print(2, 3 * ["ab"])
+**Output**
 
-# 3. Repeating 0 times gives an empty list
-print(3, [1, 2] * 0)
+```text
+[0, 0, 0, 0, 0]
+```
 
-# 4. A row of dashes for a table
-print(4, "".join(["-"] * 10))
+**Example: The number can come first**
 
-# 5. Trap: repeating a nested list repeats the SAME inner list
+```python
+# The number can come first
+print(3 * ["ab"])
+```
+
+**Output**
+
+```text
+['ab', 'ab', 'ab']
+```
+
+**Example: Repeating 0 times gives an empty list**
+
+```python
+# Repeating 0 times gives an empty list
+print([1, 2] * 0)
+```
+
+**Output**
+
+```text
+[]
+```
+
+**Example: A row of dashes for a table**
+
+```python
+# A row of dashes for a table
+print("".join(["-"] * 10))
+```
+
+**Output**
+
+```text
+----------
+```
+
+**Example: Trap: repeating a nested list repeats the SAME inner list**
+
+```python
+# Trap: repeating a nested list repeats the SAME inner list
 grid = [[0] * 2] * 2
 
 # Change the first cell of the first row
 grid[0][0] = 9
 
 # Show grid after this change
-print(5, grid)
+print(grid)
 ```
 
 **Output**
 
 ```text
-1 [0, 0, 0, 0, 0]
-2 ['ab', 'ab', 'ab']
-3 []
-4 ----------
-5 [[9, 0], [9, 0]]
+[[9, 0], [9, 0]]
 ```
 
 > Trap 5 is explained in [Topic 02.1](../02.1%20Variables%20and%20memory%20model/README.md#trap-2-building-a-grid-with-). Use a list comprehension to build grids (Section 15).
@@ -2178,6 +2830,8 @@ print(5, grid)
 ### 3. Comparing lists
 
 `==` and `!=` check three things: the **number** of elements, their **order**, and their **content** (case sensitive for strings).
+
+**Example: X and y are equal**
 
 ```python
 # Two equal lists
@@ -2191,9 +2845,47 @@ z = ["DOG", "CAT", "RAT"]
 
 # x and y are equal
 print(x == y)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Capital letters make z different**
+
+```python
+# Two equal lists
+x = ["Dog", "Cat", "Rat"]
+
+# Same items, same order
+y = ["Dog", "Cat", "Rat"]
+
+# Same items in capital letters
+z = ["DOG", "CAT", "RAT"]
 
 # Capital letters make z different
 print(x == z)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: `!=` is the opposite of ==**
+
+```python
+# Two equal lists
+x = ["Dog", "Cat", "Rat"]
+
+# Same items, same order
+y = ["Dog", "Cat", "Rat"]
+
+# Same items in capital letters
+z = ["DOG", "CAT", "RAT"]
 
 # != is the opposite of ==
 print(x != z)
@@ -2203,41 +2895,77 @@ print(x != z)
 
 ```text
 True
+```
+
+**Example: Same items, different order: not equal**
+
+```python
+# Same items, different order: not equal
+print([1, 2, 3] == [3, 2, 1])
+```
+
+**Output**
+
+```text
 False
+```
+
+**Example: Different lengths: not equal**
+
+```python
+# Different lengths: not equal
+print([1, 2] == [1, 2, 3])
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: 1 and 1.0 compare equal**
+
+```python
+# 1 and 1.0 compare equal
+print([1, 2] == [1.0, 2.0])
+```
+
+**Output**
+
+```text
 True
 ```
 
+**Example: Nested lists are compared inside too**
+
 ```python
-# 1. Same items, different order: not equal
-print(1, [1, 2, 3] == [3, 2, 1])
+# Nested lists are compared inside too
+print([[1, 2], 3] == [[1, 2], 3])
+```
 
-# 2. Different lengths: not equal
-print(2, [1, 2] == [1, 2, 3])
+**Output**
 
-# 3. 1 and 1.0 compare equal
-print(3, [1, 2] == [1.0, 2.0])
+```text
+True
+```
 
-# 4. Nested lists are compared inside too
-print(4, [[1, 2], 3] == [[1, 2], 3])
+**Example: Equal lists can still be different objects**
 
-# 5. Equal lists can still be different objects
+```python
+# Equal lists can still be different objects
 a = [1, 2]
 
 # A second, separate list with the same values
 b = [1, 2]
 
 # Same values, but not the same object
-print(5, a == b, a is b)
+print(a == b, a is b)
 ```
 
 **Output**
 
 ```text
-1 False
-2 False
-3 True
-4 True
-5 True False
+True False
 ```
 
 `<`, `<=`, `>` and `>=` compare lists **element by element** from the left, like words in a dictionary. The first pair that differs decides the result.
@@ -2245,6 +2973,8 @@ print(5, a == b, a is b)
 > **Correction:** the notes say "only the first element comparison will be performed". That is only true when the first elements are different. If they are equal, Python moves on to the second element, then the third, and so on.
 
 The examples from the notes (the first elements already differ):
+
+**Example: 50 > 40, so x > y**
 
 ```python
 # 50 versus 40 decides the result
@@ -2255,12 +2985,60 @@ y = [40, 50, 60, 100, 200]
 
 # 50 > 40, so x > y
 print(x > y)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Greater, so also greater-or-equal**
+
+```python
+# 50 versus 40 decides the result
+x = [50, 20, 30]
+
+# The length does not matter here
+y = [40, 50, 60, 100, 200]
 
 # Greater, so also greater-or-equal
 print(x >= y)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Not less**
+
+```python
+# 50 versus 40 decides the result
+x = [50, 20, 30]
+
+# The length does not matter here
+y = [40, 50, 60, 100, 200]
 
 # Not less
 print(x < y)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: Not less-or-equal**
+
+```python
+# 50 versus 40 decides the result
+x = [50, 20, 30]
+
+# The length does not matter here
+y = [40, 50, 60, 100, 200]
 
 # Not less-or-equal
 print(x <= y)
@@ -2269,11 +3047,10 @@ print(x <= y)
 **Output**
 
 ```text
-True
-True
-False
 False
 ```
+
+**Example: "D" comes before "R", so x is not greater**
 
 ```python
 # "Dog" versus "Rat" decides the result
@@ -2284,12 +3061,60 @@ y = ["Rat", "Cat", "Dog"]
 
 # "D" comes before "R", so x is not greater
 print(x > y)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: Not greater-or-equal either**
+
+```python
+# "Dog" versus "Rat" decides the result
+x = ["Dog", "Cat", "Rat"]
+
+# The other list
+y = ["Rat", "Cat", "Dog"]
 
 # Not greater-or-equal either
 print(x >= y)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: X is less than y**
+
+```python
+# "Dog" versus "Rat" decides the result
+x = ["Dog", "Cat", "Rat"]
+
+# The other list
+y = ["Rat", "Cat", "Dog"]
 
 # x is less than y
 print(x < y)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: And less-or-equal**
+
+```python
+# "Dog" versus "Rat" decides the result
+x = ["Dog", "Cat", "Rat"]
+
+# The other list
+y = ["Rat", "Cat", "Dog"]
 
 # And less-or-equal
 print(x <= y)
@@ -2298,43 +3123,87 @@ print(x <= y)
 **Output**
 
 ```text
-False
-False
-True
 True
 ```
 
 When the first elements are equal, the comparison continues:
 
+**Example: First elements equal, the second elements decide: 2 < 5**
+
 ```python
-# 1. First elements equal, the second elements decide: 2 < 5
-print(1, [1, 2, 99] < [1, 5, 0])
-
-# 2. All equal so far, the third elements decide: 3 < 4
-print(2, [1, 2, 3] < [1, 2, 4])
-
-# 3. One list is the start of the other: the shorter one is smaller
-print(3, [1, 2] < [1, 2, 0])
-
-# 4. Fully equal lists are not less than each other
-print(4, [1, 2] < [1, 2])
-
-# 5. But they are less-or-equal
-print(5, [1, 2] <= [1, 2])
-
-# 6. Strings inside are compared by character codes
-print(6, ["apple", "x"] < ["apricot", "a"])
+# First elements equal, the second elements decide: 2 < 5
+print([1, 2, 99] < [1, 5, 0])
 ```
 
 **Output**
 
 ```text
-1 True
-2 True
-3 True
-4 False
-5 True
-6 True
+True
+```
+
+**Example: All equal so far, the third elements decide: 3 < 4**
+
+```python
+# All equal so far, the third elements decide: 3 < 4
+print([1, 2, 3] < [1, 2, 4])
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: One list is the start of the other: the shorter one is smaller**
+
+```python
+# One list is the start of the other: the shorter one is smaller
+print([1, 2] < [1, 2, 0])
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Fully equal lists are not less than each other**
+
+```python
+# Fully equal lists are not less than each other
+print([1, 2] < [1, 2])
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: But they are less-or-equal**
+
+```python
+# But they are less-or-equal
+print([1, 2] <= [1, 2])
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Strings inside are compared by character codes**
+
+```python
+# Strings inside are compared by character codes
+print(["apple", "x"] < ["apricot", "a"])
+```
+
+**Output**
+
+```text
+True
 ```
 
 ```mermaid
@@ -2351,18 +3220,59 @@ sequenceDiagram
 
 ## 13. Membership operators: in and not in
 
+**Example: 10 is in the list**
+
 ```python
 # A list of numbers
 n = [10, 20, 30, 40]
 
 # 10 is in the list
 print(10 in n)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: So "10 not in n" is False**
+
+```python
+# A list of numbers
+n = [10, 20, 30, 40]
 
 # so "10 not in n" is False
 print(10 not in n)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: 50 is not in the list**
+
+```python
+# A list of numbers
+n = [10, 20, 30, 40]
 
 # 50 is not in the list
 print(50 in n)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: So "50 not in n" is True**
+
+```python
+# A list of numbers
+n = [10, 20, 30, 40]
 
 # so "50 not in n" is True
 print(50 not in n)
@@ -2371,9 +3281,6 @@ print(50 not in n)
 **Output**
 
 ```text
-True
-False
-False
 True
 ```
 
@@ -2427,21 +3334,75 @@ print(7, fruits)
 
 A list inside another list is called a **nested list**. You reach an inner element with **two indexes**, like a two-dimensional array.
 
+**Example: The whole nested list**
+
 ```python
 # A list whose third item is another list
 n = [10, 20, [30, 40]]
 
 # The whole nested list
 print(n)
+```
+
+**Output**
+
+```text
+[10, 20, [30, 40]]
+```
+
+**Example: The first element**
+
+```python
+# A list whose third item is another list
+n = [10, 20, [30, 40]]
 
 # The first element
 print(n[0])
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: The third element is a list**
+
+```python
+# A list whose third item is another list
+n = [10, 20, [30, 40]]
 
 # The third element is a list
 print(n[2])
+```
+
+**Output**
+
+```text
+[30, 40]
+```
+
+**Example: The first element of the inner list**
+
+```python
+# A list whose third item is another list
+n = [10, 20, [30, 40]]
 
 # The first element of the inner list
 print(n[2][0])
+```
+
+**Output**
+
+```text
+30
+```
+
+**Example: The second element of the inner list**
+
+```python
+# A list whose third item is another list
+n = [10, 20, [30, 40]]
 
 # The second element of the inner list
 print(n[2][1])
@@ -2450,10 +3411,6 @@ print(n[2][1])
 **Output**
 
 ```text
-[10, 20, [30, 40]]
-10
-[30, 40]
-30
 40
 ```
 
@@ -2473,24 +3430,80 @@ A **matrix** (a grid of rows and columns) can be stored as a list of rows.
 <tr><td align="center"><b>row 2</b></td><td align="center">70<br/><code>n[2][0]</code></td><td align="center">80<br/><code>n[2][1]</code></td><td align="center">90<br/><code>n[2][2]</code></td></tr>
 </table>
 
+**Example: Show the whole nested list**
+
 ```python
 # A 3 x 3 matrix stored as a list of rows
 n = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
 
 # Show the whole nested list
 print(n)
+```
+
+**Output**
+
+```text
+[[10, 20, 30], [40, 50, 60], [70, 80, 90]]
+```
+
+**Example: Heading for the row-wise view**
+
+```python
+# A 3 x 3 matrix stored as a list of rows
+n = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
 
 # Heading for the row-wise view
 print("Elements by Row wise:")
+```
+
+**Output**
+
+```text
+Elements by Row wise:
+```
+
+**Example: Each item of n is one row**
+
+```python
+# A 3 x 3 matrix stored as a list of rows
+n = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
 
 # Each item of n is one row
 for r in n:
 
     # Show one row as a list
     print(r)
+```
+
+**Output**
+
+```text
+[10, 20, 30]
+[40, 50, 60]
+[70, 80, 90]
+```
+
+**Example: Heading for the matrix view**
+
+```python
+# A 3 x 3 matrix stored as a list of rows
+n = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
 
 # Heading for the matrix view
 print("Elements by Matrix style:")
+```
+
+**Output**
+
+```text
+Elements by Matrix style:
+```
+
+**Example: I goes over the row numbers 0, 1, 2**
+
+```python
+# A 3 x 3 matrix stored as a list of rows
+n = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
 
 # i goes over the row numbers 0, 1, 2
 for i in range(len(n)):
@@ -2508,12 +3521,6 @@ for i in range(len(n)):
 **Output**
 
 ```text
-[[10, 20, 30], [40, 50, 60], [70, 80, 90]]
-Elements by Row wise:
-[10, 20, 30]
-[40, 50, 60]
-[70, 80, 90]
-Elements by Matrix style:
 10 20 30 
 40 50 60 
 70 80 90 
@@ -2726,40 +3733,152 @@ print(pairs)
 
 More list comprehension variations:
 
+**Example: 1. Double every number**
+
 ```python
 # 1. Double every number
 print(1, [n * 2 for n in [1, 2, 3]])
+```
 
+**Output**
+
+```text
+1 [2, 4, 6]
+```
+
+**Example: 2. Keep only odd numbers**
+
+```python
 # 2. Keep only odd numbers
 print(2, [n for n in range(10) if n % 2 == 1])
+```
 
+**Output**
+
+```text
+2 [1, 3, 5, 7, 9]
+```
+
+**Example: 3. Convert text to numbers**
+
+```python
 # 3. Convert text to numbers
 print(3, [int(t) for t in ["4", "5", "6"]])
+```
 
+**Output**
+
+```text
+3 [4, 5, 6]
+```
+
+**Example: 4. Clean a list of strings**
+
+```python
 # 4. Clean a list of strings
 print(4, [s.strip().lower() for s in ["  Apple", "BANANA "]])
+```
 
+**Output**
+
+```text
+4 ['apple', 'banana']
+```
+
+**Example: 5. An if-else INSIDE the expression (comes before for)**
+
+```python
 # 5. An if-else INSIDE the expression (comes before for)
 print(5, ["even" if n % 2 == 0 else "odd" for n in range(5)])
+```
 
+**Output**
+
+```text
+5 ['even', 'odd', 'even', 'odd', 'even']
+```
+
+**Example: 6. Lengths of words**
+
+```python
 # 6. Lengths of words
 print(6, [len(w) for w in ["hi", "hello", "hey"]])
+```
 
+**Output**
+
+```text
+6 [2, 5, 3]
+```
+
+**Example: 7. Characters of a string that are vowels**
+
+```python
 # 7. Characters of a string that are vowels
 print(7, [ch for ch in "programming" if ch in "aeiou"])
+```
 
+**Output**
+
+```text
+7 ['o', 'a', 'i']
+```
+
+**Example: 8. Two for clauses: every pair of items**
+
+```python
 # 8. Two for clauses: every pair of items
 print(8, [(a, b) for a in [1, 2] for b in ["x", "y"]])
+```
 
+**Output**
+
+```text
+8 [(1, 'x'), (1, 'y'), (2, 'x'), (2, 'y')]
+```
+
+**Example: 9. Flatten a nested list**
+
+```python
 # 9. Flatten a nested list
 print(9, [x for row in [[1, 2], [3, 4]] for x in row])
+```
 
+**Output**
+
+```text
+9 [1, 2, 3, 4]
+```
+
+**Example: 10. Words longer than 3 letters**
+
+```python
 # 10. Words longer than 3 letters
 print(10, [w for w in "a big red balloon".split() if len(w) > 3])
+```
 
+**Output**
+
+```text
+10 ['balloon']
+```
+
+**Example: 11. Replace negative numbers with 0**
+
+```python
 # 11. Replace negative numbers with 0
 print(11, [n if n > 0 else 0 for n in [5, -2, 8, -7]])
+```
 
+**Output**
+
+```text
+11 [5, 0, 8, 0]
+```
+
+**Example: 12. Build a 3 x 3 grid of zeros correctly**
+
+```python
 # 12. Build a 3 x 3 grid of zeros correctly
 print(12, [[0] * 3 for _ in range(3)])
 ```
@@ -2767,17 +3886,6 @@ print(12, [[0] * 3 for _ in range(3)])
 **Output**
 
 ```text
-1 [2, 4, 6]
-2 [1, 3, 5, 7, 9]
-3 [4, 5, 6]
-4 ['apple', 'banana']
-5 ['even', 'odd', 'even', 'odd', 'even']
-6 [2, 5, 3]
-7 ['o', 'a', 'i']
-8 [(1, 'x'), (1, 'y'), (2, 'x'), (2, 'y')]
-9 [1, 2, 3, 4]
-10 ['balloon']
-11 [5, 0, 8, 0]
 12 [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 ```
 

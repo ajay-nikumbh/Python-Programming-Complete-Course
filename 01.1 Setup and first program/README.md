@@ -494,6 +494,8 @@ You will study every operator in depth in [Topic 04](../04.%20Operators/README.m
 
 An **f-string** puts values straight into text. Write the letter `f` before the opening quote and put variables or calculations inside `{ }`.
 
+**Example: Put both values inside the text**
+
 ```python
 # Store a name
 name = "Asha"
@@ -503,9 +505,41 @@ age = 25
 
 # Put both values inside the text
 print(f"{name} is {age} years old.")
+```
+
+**Output**
+
+```text
+Asha is 25 years old.
+```
+
+**Example: Any calculation can go inside the braces**
+
+```python
+# Store a name
+name = "Asha"
+
+# Store an age
+age = 25
 
 # Any calculation can go inside the braces
 print(f"Next year {name} will be {age + 1}.")
+```
+
+**Output**
+
+```text
+Next year Asha will be 26.
+```
+
+**Example: Format a number with a thousands separator and 2 decimal places**
+
+```python
+# Store a name
+name = "Asha"
+
+# Store an age
+age = 25
 
 # Format a number with a thousands separator and 2 decimal places
 print(f"Price: {1234.5678:,.2f}")
@@ -514,8 +548,6 @@ print(f"Price: {1234.5678:,.2f}")
 **Output**
 
 ```text
-Asha is 25 years old.
-Next year Asha will be 26.
 Price: 1,234.57
 ```
 

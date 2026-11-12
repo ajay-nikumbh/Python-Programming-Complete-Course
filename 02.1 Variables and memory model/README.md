@@ -236,6 +236,8 @@ Python has two different ways to compare:
 <tr><td><code>is</code></td><td>Are they the <b>same object</b>?</td><td>The identities: <code>a is b</code> means <code>id(a) == id(b)</code></td><td>Checking for <code>None</code>, <code>True</code> or <code>False</code>, and checking if two names share one object</td></tr>
 </table>
 
+**Example: Same values?**
+
 ```python
 # Create a list
 list1 = [1, 2, 3]
@@ -248,9 +250,47 @@ list3 = list1
 
 # Same values?
 print(list1 == list2)
+```
+
+**Output**
+
+```text
+True
+```
+
+**Example: Same object?**
+
+```python
+# Create a list
+list1 = [1, 2, 3]
+
+# Create a second, separate list with the same values
+list2 = [1, 2, 3]
+
+# Put a second label on the first list
+list3 = list1
 
 # Same object?
 print(list1 is list2)
+```
+
+**Output**
+
+```text
+False
+```
+
+**Example: Same object?**
+
+```python
+# Create a list
+list1 = [1, 2, 3]
+
+# Create a second, separate list with the same values
+list2 = [1, 2, 3]
+
+# Put a second label on the first list
+list3 = list1
 
 # Same object?
 print(list1 is list3)
@@ -259,8 +299,6 @@ print(list1 is list3)
 **Output**
 
 ```text
-True
-False
 True
 ```
 
@@ -833,36 +871,103 @@ print(MAX_MARKS)
 
 Python can assign many names in one line.
 
+**Example: Print both**
+
 ```python
 # Give values to two names at once
 a, b = 5, 10
 
 # Print both
 print(a, b)
+```
+
+**Output**
+
+```text
+5 10
+```
+
+**Example: Swap the values, with no temporary variable**
+
+```python
+# Give values to two names at once
+a, b = 5, 10
 
 # Swap the values, with no temporary variable
 a, b = b, a
 
 # Print the swapped values
 print(a, b)
+```
+
+**Output**
+
+```text
+10 5
+```
+
+**Example: Give the same value to three names**
+
+```python
+# Give values to two names at once
+a, b = 5, 10
 
 # Give the same value to three names
 x = y = z = 0
 
 # Print all three
 print(x, y, z)
+```
+
+**Output**
+
+```text
+0 0 0
+```
+
+**Example: Take the first item, and collect the rest into a list**
+
+```python
+# Give values to two names at once
+a, b = 5, 10
 
 # Take the first item, and collect the rest into a list
 first, *rest = [10, 20, 30, 40]
 
 # Print the two parts
 print(first, rest)
+```
+
+**Output**
+
+```text
+10 [20, 30, 40]
+```
+
+**Example: Collect everything except the last item, and take the last item**
+
+```python
+# Give values to two names at once
+a, b = 5, 10
 
 # Collect everything except the last item, and take the last item
 *start, last = [10, 20, 30, 40]
 
 # Print the two parts
 print(start, last)
+```
+
+**Output**
+
+```text
+[10, 20, 30] 40
+```
+
+**Example: Unpack a nested structure: a name and a pair of coordinates**
+
+```python
+# Give values to two names at once
+a, b = 5, 10
 
 # Unpack a nested structure: a name and a pair of coordinates
 name, (lat, lon) = ("Pune", (18.52, 73.86))
@@ -874,11 +979,6 @@ print(name, lat, lon)
 **Output**
 
 ```text
-5 10
-10 5
-0 0 0
-10 [20, 30, 40]
-[10, 20, 30] 40
 Pune 18.52 73.86
 ```
 

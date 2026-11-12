@@ -160,6 +160,8 @@ Python sees `123` and expects a number. When it meets the letters `total` straig
 
 ### Rule 3: Identifiers are case sensitive
 
+**Example: Print each of the three names**
+
 ```python
 # A name in small letters
 total = 10
@@ -172,9 +174,47 @@ Total = 55
 
 # Print each of the three names
 print(total)
+```
+
+**Output**
+
+```text
+10
+```
+
+**Example: Print the capital letters version**
+
+```python
+# A name in small letters
+total = 10
+
+# The same word in capital letters is a different name
+TOTAL = 999
+
+# Only the first letter is capital; this is a third, different name
+Total = 55
 
 # Print the capital letters version
 print(TOTAL)
+```
+
+**Output**
+
+```text
+999
+```
+
+**Example: Print the mixed version**
+
+```python
+# A name in small letters
+total = 10
+
+# The same word in capital letters is a different name
+TOTAL = 999
+
+# Only the first letter is capital; this is a third, different name
+Total = 55
 
 # Print the mixed version
 print(Total)
@@ -183,8 +223,6 @@ print(Total)
 **Output**
 
 ```text
-10
-999
 55
 ```
 
@@ -551,18 +589,59 @@ print(len(keyword.kwlist))
 
 Newer versions of Python also have **soft keywords**. They act like keywords only in a special place, and work as normal names everywhere else. This lets Python add new features without breaking old programs that already used those words as names.
 
+**Example: Print the list of soft keywords**
+
 ```python
 # Load the keyword module
 import keyword
 
 # Print the list of soft keywords
 print(keyword.softkwlist)
+```
+
+**Output** (Python 3.12)
+
+```text
+['_', 'case', 'match', 'type']
+```
+
+**Example: Match is a soft keyword, so it is NOT in the normal keyword list**
+
+```python
+# Load the keyword module
+import keyword
 
 # match is a soft keyword, so it is NOT in the normal keyword list
 print(keyword.iskeyword("match"))
+```
+
+**Output** (Python 3.12)
+
+```text
+False
+```
+
+**Example: But Python knows it is a soft keyword**
+
+```python
+# Load the keyword module
+import keyword
 
 # But Python knows it is a soft keyword
 print(keyword.issoftkeyword("match"))
+```
+
+**Output** (Python 3.12)
+
+```text
+True
+```
+
+**Example: Outside a match statement, match can still be used as a normal name**
+
+```python
+# Load the keyword module
+import keyword
 
 # Outside a match statement, match can still be used as a normal name
 match = 5
@@ -574,9 +653,6 @@ print(match)
 **Output** (Python 3.12)
 
 ```text
-['_', 'case', 'match', 'type']
-False
-True
 5
 ```
 
