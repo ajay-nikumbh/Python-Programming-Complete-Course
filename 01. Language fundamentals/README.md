@@ -19,7 +19,8 @@ This topic answers the first questions every learner has: what Python is, where 
 9. [Flavors of Python](#9-flavors-of-python)
 10. [Python versions](#10-python-versions)
 11. [Quick revision](#11-quick-revision)
-12. [Practice questions](#12-practice-questions)
+12. [Interview questions](#12-interview-questions)
+13. [Practice questions](#13-practice-questions)
 
 ## 1. What is Python?
 
@@ -27,10 +28,17 @@ This topic answers the first questions every learner has: what Python is, where 
 
 These two words are worth understanding properly:
 
-| Term | Simple meaning | Example |
-|------|----------------|---------|
-| **General purpose** | Not built for one job only. You can use it to make many kinds of software. | Websites, games, data analysis, automation scripts, machine learning |
-| **High level** | Close to human language, far from machine language. The language handles hardware details for you. | You write `print("Hi")`. You do not manage memory or CPU registers. |
+<table width="100%">
+<tr>
+<th align="left" width="14%">Term</th>
+<th align="left" width="28%">Simple meaning</th>
+<th align="left" width="24%">Example</th>
+<th align="left" width="16%">Opposite</th>
+<th align="left" width="18%">Why it matters</th>
+</tr>
+<tr><td align="left" valign="top"><b>General purpose</b></td><td align="left" valign="top">Not built for one job only. You can use it to make many kinds of software.</td><td align="left" valign="top">Websites, games, data analysis, automation scripts, machine learning</td><td align="left" valign="top">Special purpose language, such as SQL (only for databases)</td><td align="left" valign="top">Learn one language and use it in many jobs</td></tr>
+<tr><td align="left" valign="top"><b>High level</b></td><td align="left" valign="top">Close to human language, far from machine language. The language handles hardware details for you.</td><td align="left" valign="top">You write <code>print("Hi")</code>. You do not manage memory or CPU registers.</td><td align="left" valign="top">Low level language, such as assembly</td><td align="left" valign="top">You focus on the problem, not on the machine</td></tr>
+</table>
 
 The levels of programming languages, from the machine up to the programmer:
 
@@ -232,13 +240,20 @@ flowchart LR
     ABC["C and ABC"] -->|"Most of the syntax"| P
 ```
 
-| Feature | Taken from | What it means for you |
-|---------|-----------|------------------------|
-| Functional programming features | C | Write a program as a set of functions, each doing one job |
-| Object oriented programming features | C++ | Model real things as classes and objects (Topics 26 to 29) |
-| Scripting language features | Perl and Shell Script | Write short programs that automate everyday tasks |
-| Modular programming features | Modula-3 | Split a big program into small files called modules (Topic 11) |
-| Most of the syntax | C and ABC | ABC was a teaching language Guido worked on before Python. Its clean, indentation based style shaped Python. |
+<table width="100%">
+<tr>
+<th align="left" width="20%">Feature</th>
+<th align="left" width="14%">Taken from</th>
+<th align="left" width="32%">What it means for you</th>
+<th align="left" width="18%">Python example</th>
+<th align="left" width="16%">Learn it in</th>
+</tr>
+<tr><td align="left" valign="top">Functional programming features</td><td align="left" valign="top">C</td><td align="left" valign="top">Write a program as a set of functions, each doing one job</td><td align="left" valign="top"><code>def add(a, b):</code></td><td align="left" valign="top">Topic 10</td></tr>
+<tr><td align="left" valign="top">Object oriented programming features</td><td align="left" valign="top">C++</td><td align="left" valign="top">Model real things as classes and objects</td><td align="left" valign="top"><code>class Student:</code></td><td align="left" valign="top">Topics 26 to 29</td></tr>
+<tr><td align="left" valign="top">Scripting language features</td><td align="left" valign="top">Perl and Shell Script</td><td align="left" valign="top">Write short programs that automate everyday tasks</td><td align="left" valign="top">A 5-line script that renames files</td><td align="left" valign="top">Topics 13 and 20</td></tr>
+<tr><td align="left" valign="top">Modular programming features</td><td align="left" valign="top">Modula-3</td><td align="left" valign="top">Split a big program into small files called modules</td><td align="left" valign="top"><code>import math</code></td><td align="left" valign="top">Topics 11 and 12</td></tr>
+<tr><td align="left" valign="top">Most of the syntax</td><td align="left" valign="top">C and ABC</td><td align="left" valign="top">ABC was a teaching language Guido worked on before Python. Its clean, indentation based style shaped Python.</td><td align="left" valign="top"><code>if</code>, <code>while</code>, indentation for blocks</td><td align="left" valign="top">Topic 05</td></tr>
+</table>
 
 > **Note:** C is usually called a *procedural* language. The notes call these "functional programming features" because in C you build a program out of functions. Python also has true functional programming tools such as `lambda`, `map()` and `filter()`, which came from languages like Lisp and Haskell. You will learn them in Topics 10 and 10.1.
 
@@ -259,17 +274,24 @@ flowchart TD
     P --> IOT["Internet of Things (IoT)"]
 ```
 
-| Area | What you build | Popular tools |
-|------|---------------|---------------|
-| Desktop applications | Programs with windows and buttons | Tkinter, PyQt |
-| Web applications | Websites and web APIs | Django, Flask, FastAPI |
-| Database applications | Programs that store and read data | sqlite3, MySQL and PostgreSQL drivers (Topic 23) |
-| Network programming | Programs that talk over a network | socket, requests |
-| Games | 2D games | Pygame |
-| Data analysis | Reports, charts and statistics from data | pandas, NumPy, Matplotlib |
-| Machine learning | Programs that learn from data | scikit-learn, TensorFlow, PyTorch |
-| Artificial intelligence | Language, vision and decision systems | PyTorch, Hugging Face libraries |
-| IoT | Code for small devices and sensors | MicroPython on Raspberry Pi and microcontrollers |
+<table width="100%">
+<tr>
+<th align="left" width="17%">Area</th>
+<th align="left" width="23%">What you build</th>
+<th align="left" width="22%">Popular tools</th>
+<th align="left" width="22%">Real-world example</th>
+<th align="left" width="16%">Course topic</th>
+</tr>
+<tr><td align="left" valign="top">Desktop applications</td><td align="left" valign="top">Programs with windows and buttons</td><td align="left" valign="top">Tkinter, PyQt</td><td align="left" valign="top">Dropbox desktop client</td><td align="left" valign="top">Extra study</td></tr>
+<tr><td align="left" valign="top">Web applications</td><td align="left" valign="top">Websites and web APIs</td><td align="left" valign="top">Django, Flask, FastAPI</td><td align="left" valign="top">Instagram (built on Django)</td><td align="left" valign="top">Extra study</td></tr>
+<tr><td align="left" valign="top">Database applications</td><td align="left" valign="top">Programs that store and read data</td><td align="left" valign="top">sqlite3, MySQL and PostgreSQL drivers</td><td align="left" valign="top">Inventory or billing systems</td><td align="left" valign="top">Topic 23</td></tr>
+<tr><td align="left" valign="top">Network programming</td><td align="left" valign="top">Programs that talk over a network</td><td align="left" valign="top">socket, requests</td><td align="left" valign="top">Chat servers, API clients</td><td align="left" valign="top">Topic 23.1</td></tr>
+<tr><td align="left" valign="top">Games</td><td align="left" valign="top">2D games</td><td align="left" valign="top">Pygame</td><td align="left" valign="top">Small arcade and puzzle games</td><td align="left" valign="top">Extra study</td></tr>
+<tr><td align="left" valign="top">Data analysis</td><td align="left" valign="top">Reports, charts and statistics from data</td><td align="left" valign="top">pandas, NumPy, Matplotlib</td><td align="left" valign="top">Sales and finance reports</td><td align="left" valign="top">Extra study</td></tr>
+<tr><td align="left" valign="top">Machine learning</td><td align="left" valign="top">Programs that learn from data</td><td align="left" valign="top">scikit-learn, TensorFlow, PyTorch</td><td align="left" valign="top">Movie and product recommendations</td><td align="left" valign="top">Extra study</td></tr>
+<tr><td align="left" valign="top">Artificial intelligence</td><td align="left" valign="top">Language, vision and decision systems</td><td align="left" valign="top">PyTorch, Hugging Face libraries</td><td align="left" valign="top">Speech and image recognition</td><td align="left" valign="top">Extra study</td></tr>
+<tr><td align="left" valign="top">IoT</td><td align="left" valign="top">Code for small devices and sensors</td><td align="left" valign="top">MicroPython</td><td align="left" valign="top">Home automation with a Raspberry Pi</td><td align="left" valign="top">Extra study</td></tr>
+</table>
 
 **Who uses Python?**
 
@@ -572,10 +594,16 @@ print(max(marks))
 
 No language is perfect. Python has two main limitations:
 
-| Limitation | Why | What people do about it |
-|-----------|-----|------------------------|
-| **Performance is lower** than C or Java | Python is an interpreted language. The PVM runs bytecode step by step, which is slower than running native machine code. | Use libraries written in C (such as NumPy), or use PyPy (see flavors below) |
-| **Not commonly used for mobile applications** | Android and iOS are built around Java/Kotlin and Swift. | Frameworks such as Kivy and BeeWare can build mobile apps in Python, but they are less common |
+<table width="100%">
+<tr>
+<th align="left" width="18%">Limitation</th>
+<th align="left" width="30%">Why</th>
+<th align="left" width="30%">What people do about it</th>
+<th align="left" width="22%">Does it matter for a beginner?</th>
+</tr>
+<tr><td align="left" valign="top"><b>Performance is lower</b> than C or Java</td><td align="left" valign="top">Python is an interpreted language. The PVM runs bytecode step by step, which is slower than running native machine code.</td><td align="left" valign="top">Use libraries written in C (such as NumPy), or use PyPy (see flavors below)</td><td align="left" valign="top">Not really. Learning programs are small, so the speed difference is too small to notice.</td></tr>
+<tr><td align="left" valign="top"><b>Not commonly used for mobile applications</b></td><td align="left" valign="top">Android and iOS are built around Java/Kotlin and Swift.</td><td align="left" valign="top">Frameworks such as Kivy and BeeWare can build mobile apps in Python, but they are less common</td><td align="left" valign="top">No. Learn Python for web, data and automation. Pick a mobile language later if needed.</td></tr>
+</table>
 
 ## 9. Flavors of Python
 
@@ -591,14 +619,21 @@ flowchart TD
     P --> AP["Anaconda Python<br/>For large data processing"]
 ```
 
-| Flavor | Built for | Key point |
-|--------|-----------|-----------|
-| **CPython** | C language applications | The **standard** flavor. When you download Python from python.org, you get CPython. |
-| **Jython** or **JPython** | Java applications | Runs on the **JVM** (Java Virtual Machine) |
-| **IronPython** | C# and the .NET platform | Works with .NET libraries |
-| **PyPy** | Speed | Has a **JIT (Just In Time) compiler** inside its PVM, so programs usually run faster |
-| **RubyPython** | Ruby platforms | Lets Ruby programs use Python |
-| **Anaconda Python** | Large volumes of data | Specially designed for data processing. It comes with many data science libraries already installed. |
+<table width="100%">
+<tr>
+<th align="left" width="14%">Flavor</th>
+<th align="left" width="16%">Built for</th>
+<th align="left" width="34%">Key point</th>
+<th align="left" width="16%">Runs on</th>
+<th align="left" width="20%">Typical user</th>
+</tr>
+<tr><td align="left" valign="top"><b>CPython</b></td><td align="left" valign="top">C language applications</td><td align="left" valign="top">The <b>standard</b> flavor. When you download Python from python.org, you get CPython.</td><td align="left" valign="top">Windows, macOS, Linux</td><td align="left" valign="top">Almost everyone, including this course</td></tr>
+<tr><td align="left" valign="top"><b>Jython</b> or <b>JPython</b></td><td align="left" valign="top">Java applications</td><td align="left" valign="top">Runs on the <b>JVM</b> (Java Virtual Machine)</td><td align="left" valign="top">JVM</td><td align="left" valign="top">Teams that need Python inside Java systems</td></tr>
+<tr><td align="left" valign="top"><b>IronPython</b></td><td align="left" valign="top">C# and the .NET platform</td><td align="left" valign="top">Works with .NET libraries</td><td align="left" valign="top">.NET runtime</td><td align="left" valign="top">Teams that build on Microsoft .NET</td></tr>
+<tr><td align="left" valign="top"><b>PyPy</b></td><td align="left" valign="top">Speed</td><td align="left" valign="top">Has a <b>JIT (Just In Time) compiler</b> inside its PVM, so programs usually run faster</td><td align="left" valign="top">Windows, macOS, Linux</td><td align="left" valign="top">People with long running, slow Python programs</td></tr>
+<tr><td align="left" valign="top"><b>RubyPython</b></td><td align="left" valign="top">Ruby platforms</td><td align="left" valign="top">Lets Ruby programs use Python</td><td align="left" valign="top">Ruby runtime</td><td align="left" valign="top">Ruby developers who need a Python library</td></tr>
+<tr><td align="left" valign="top"><b>Anaconda Python</b></td><td align="left" valign="top">Large volumes of data</td><td align="left" valign="top">Specially designed for data processing. It comes with many data science libraries already installed.</td><td align="left" valign="top">Windows, macOS, Linux</td><td align="left" valign="top">Data analysts and data scientists</td></tr>
+</table>
 
 > **Note:** Strictly speaking, Anaconda is a *distribution* (CPython plus many extra libraries and tools), and RubyPython is a *bridge* between Ruby and Python. They are listed here because the notes include them.
 
@@ -622,20 +657,32 @@ CPython
 
 ## 10. Python versions
 
-| Version | Released |
-|---------|----------|
-| Python 1.0 | January 1994 |
-| Python 2.0 | October 2000 |
-| Python 3.0 | December 2008 |
+<table width="100%">
+<tr>
+<th align="left" width="15%">Version</th>
+<th align="left" width="18%">Released</th>
+<th align="left" width="45%">Key change</th>
+<th align="left" width="22%">Status today</th>
+</tr>
+<tr><td align="left" valign="top">Python 1.0</td><td align="left" valign="top">January 1994</td><td align="left" valign="top">First major version with functional tools like <code>lambda</code>, <code>map()</code> and <code>filter()</code></td><td align="left" valign="top">Historic, not used</td></tr>
+<tr><td align="left" valign="top">Python 2.0</td><td align="left" valign="top">October 2000</td><td align="left" valign="top">Added list comprehensions and better memory management (garbage collection)</td><td align="left" valign="top">End of life since 1 January 2020</td></tr>
+<tr><td align="left" valign="top">Python 3.0</td><td align="left" valign="top">December 2008</td><td align="left" valign="top">Cleaned up the language. <code>print()</code> became a function and text became Unicode by default.</td><td align="left" valign="top">Active. New version every October.</td></tr>
+</table>
 
 > **Important:** Python 3 is **not backward compatible** with Python 2. There is no guarantee that a Python 2 program will run in Python 3.
 
 Two common examples of the difference:
 
-| Code | Python 2 | Python 3 |
-|------|----------|----------|
-| Printing | `print "Hello"` (a statement) | `print("Hello")` (a function, brackets needed) |
-| `7 / 2` | `3` (whole number division) | `3.5` (true division) |
+<table width="100%">
+<tr>
+<th align="left" width="14%">Code</th>
+<th align="left" width="26%">Python 2</th>
+<th align="left" width="28%">Python 3</th>
+<th align="left" width="32%">Why it changed</th>
+</tr>
+<tr><td align="left" valign="top">Printing</td><td align="left" valign="top"><code>print "Hello"</code> (a statement)</td><td align="left" valign="top"><code>print("Hello")</code> (a function, brackets needed)</td><td align="left" valign="top">A function works like every other function and can take options such as <code>sep</code> and <code>end</code></td></tr>
+<tr><td align="left" valign="top"><code>7 / 2</code></td><td align="left" valign="top"><code>3</code> (whole number division)</td><td align="left" valign="top"><code>3.5</code> (true division)</td><td align="left" valign="top">Dropping the decimal part surprised beginners and caused bugs. Python 3 uses <code>//</code> for whole number division.</td></tr>
+</table>
 
 The Python 3 behaviour:
 
@@ -677,26 +724,202 @@ print(sys.version_info.major, sys.version_info.minor)
 
 ## 11. Quick revision
 
-| Question | Answer |
-|----------|--------|
-| What type of language is Python? | General purpose, high level programming language |
-| Who developed Python? | Guido van Rossum |
-| When and where? | 1989, at CWI (National Research Institute), Netherlands |
-| Official date of birth | 20 February 1991 |
-| Where does the name come from? | BBC TV show "Monty Python's Flying Circus" (1969 to 1974) |
-| Functional programming features from | C |
-| Object oriented features from | C++ |
-| Scripting features from | Perl and Shell Script |
-| Modular programming features from | Modula-3 |
-| Most of the syntax from | C and ABC |
-| Who runs Python bytecode? | PVM (Python Virtual Machine) |
-| Dynamically typed means | No type declaration; the type comes from the assigned value |
-| Main limitations | Slower performance; not common for mobile apps |
-| Standard flavor | CPython |
-| Flavor with a JIT compiler | PyPy |
-| Is Python 3 backward compatible with Python 2? | No |
+<table width="100%">
+<tr>
+<th align="left" width="6%">#</th>
+<th align="left" width="36%">Question</th>
+<th align="left" width="42%">Answer</th>
+<th align="left" width="16%">Read again</th>
+</tr>
+<tr><td align="left" valign="top">1</td><td align="left" valign="top">What type of language is Python?</td><td align="left" valign="top">General purpose, high level programming language</td><td align="left" valign="top"><a href="#1-what-is-python">Section 1</a></td></tr>
+<tr><td align="left" valign="top">2</td><td align="left" valign="top">Who developed Python?</td><td align="left" valign="top">Guido van Rossum</td><td align="left" valign="top"><a href="#2-history-of-python">Section 2</a></td></tr>
+<tr><td align="left" valign="top">3</td><td align="left" valign="top">When and where?</td><td align="left" valign="top">1989, at CWI (National Research Institute), Netherlands</td><td align="left" valign="top"><a href="#2-history-of-python">Section 2</a></td></tr>
+<tr><td align="left" valign="top">4</td><td align="left" valign="top">Official date of birth</td><td align="left" valign="top">20 February 1991</td><td align="left" valign="top"><a href="#2-history-of-python">Section 2</a></td></tr>
+<tr><td align="left" valign="top">5</td><td align="left" valign="top">Where does the name come from?</td><td align="left" valign="top">BBC TV show "Monty Python's Flying Circus" (1969 to 1974)</td><td align="left" valign="top"><a href="#3-why-the-name-python">Section 3</a></td></tr>
+<tr><td align="left" valign="top">6</td><td align="left" valign="top">Functional programming features from</td><td align="left" valign="top">C</td><td align="left" valign="top"><a href="#5-where-pythons-features-came-from">Section 5</a></td></tr>
+<tr><td align="left" valign="top">7</td><td align="left" valign="top">Object oriented features from</td><td align="left" valign="top">C++</td><td align="left" valign="top"><a href="#5-where-pythons-features-came-from">Section 5</a></td></tr>
+<tr><td align="left" valign="top">8</td><td align="left" valign="top">Scripting features from</td><td align="left" valign="top">Perl and Shell Script</td><td align="left" valign="top"><a href="#5-where-pythons-features-came-from">Section 5</a></td></tr>
+<tr><td align="left" valign="top">9</td><td align="left" valign="top">Modular programming features from</td><td align="left" valign="top">Modula-3</td><td align="left" valign="top"><a href="#5-where-pythons-features-came-from">Section 5</a></td></tr>
+<tr><td align="left" valign="top">10</td><td align="left" valign="top">Most of the syntax from</td><td align="left" valign="top">C and ABC</td><td align="left" valign="top"><a href="#5-where-pythons-features-came-from">Section 5</a></td></tr>
+<tr><td align="left" valign="top">11</td><td align="left" valign="top">Who runs Python bytecode?</td><td align="left" valign="top">PVM (Python Virtual Machine)</td><td align="left" valign="top"><a href="#7-features-of-python">Section 7</a></td></tr>
+<tr><td align="left" valign="top">12</td><td align="left" valign="top">Dynamically typed means</td><td align="left" valign="top">No type declaration; the type comes from the assigned value</td><td align="left" valign="top"><a href="#7-features-of-python">Section 7</a></td></tr>
+<tr><td align="left" valign="top">13</td><td align="left" valign="top">Main limitations</td><td align="left" valign="top">Slower performance; not common for mobile apps</td><td align="left" valign="top"><a href="#8-limitations-of-python">Section 8</a></td></tr>
+<tr><td align="left" valign="top">14</td><td align="left" valign="top">Standard flavor</td><td align="left" valign="top">CPython</td><td align="left" valign="top"><a href="#9-flavors-of-python">Section 9</a></td></tr>
+<tr><td align="left" valign="top">15</td><td align="left" valign="top">Flavor with a JIT compiler</td><td align="left" valign="top">PyPy</td><td align="left" valign="top"><a href="#9-flavors-of-python">Section 9</a></td></tr>
+<tr><td align="left" valign="top">16</td><td align="left" valign="top">Is Python 3 backward compatible with Python 2?</td><td align="left" valign="top">No</td><td align="left" valign="top"><a href="#10-python-versions">Section 10</a></td></tr>
+</table>
 
-## 12. Practice questions
+## 12. Interview questions
+
+These are common interview questions on this topic. Try to answer each one aloud first, then click it to see a model answer.
+
+<details>
+<summary><b>Q1. What is Python? Name its key features.</b></summary>
+
+Python is a general purpose, high level, interpreted programming language created by Guido van Rossum and released in 1991. Its key features are: simple syntax, free and open source, platform independent, dynamically typed, supports both procedural and object oriented programming, extensible, embeddable, and a large standard library.
+
+</details>
+
+<details>
+<summary><b>Q2. Is Python compiled or interpreted?</b></summary>
+
+Both. When you run a program, Python first **compiles** the source code into **bytecode** automatically. Then the **PVM interprets** (runs) that bytecode. Because you never run a separate compile command, Python is usually called an interpreted language.
+
+</details>
+
+<details>
+<summary><b>Q3. What is the PVM?</b></summary>
+
+The PVM (Python Virtual Machine) is the part of Python that runs bytecode. It reads one bytecode instruction at a time and carries it out on the real machine. Each operating system has its own PVM, and this is what makes Python platform independent.
+
+</details>
+
+<details>
+<summary><b>Q4. What is bytecode? What are .pyc files?</b></summary>
+
+Bytecode is a low level, platform independent set of instructions made from your source code. It is meant for the PVM, not for the CPU. When you import a module, Python saves its bytecode in a `.pyc` file inside a `__pycache__` folder. Next time, Python can skip the compile step if the source has not changed, so the program starts faster.
+
+</details>
+
+<details>
+<summary><b>Q5. Python is dynamically typed. Is it also strongly typed?</b></summary>
+
+Yes. **Dynamically typed** means the type is decided at run time from the value, so you never declare it. **Strongly typed** means Python does not silently mix incompatible types. For example, it will not add text and a number:
+
+```python
+# Store a whole number in age
+age = 25
+
+# Store some text in label
+label = "Age: "
+
+# Try to join text and a number, which Python does not allow
+print(label + age)
+```
+
+**Output** (last line of the error message)
+
+```text
+TypeError: can only concatenate str (not "int") to str
+```
+
+You must convert the number to text yourself:
+
+```python
+# Convert age to text with str(), then join the two pieces of text
+print(label + str(age))
+```
+
+**Output**
+
+```text
+Age: 25
+```
+
+</details>
+
+<details>
+<summary><b>Q6. What is the difference between Python and CPython?</b></summary>
+
+**Python** is the language: its rules and syntax. **CPython** is the standard program that runs Python code. It is written in C and is what you download from python.org. Other implementations of the same language exist, such as PyPy, Jython and IronPython.
+
+</details>
+
+<details>
+<summary><b>Q7. Why is PyPy often faster than CPython?</b></summary>
+
+PyPy has a **JIT (Just In Time) compiler**. While the program runs, it finds code that runs many times, such as loops, and turns it into fast machine code. CPython mostly runs bytecode one instruction at a time, so long running loops are slower.
+
+</details>
+
+<details>
+<summary><b>Q8. What are the main differences between Python 2 and Python 3?</b></summary>
+
+- `print` is a statement in Python 2 and a function, `print()`, in Python 3.
+- `7 / 2` gives `3` in Python 2 and `3.5` in Python 3.
+- Text is Unicode by default in Python 3.
+- Python 3 is not backward compatible with Python 2.
+- Python 2 reached end of life on 1 January 2020.
+
+</details>
+
+<details>
+<summary><b>Q9. How is Python platform independent?</b></summary>
+
+Your `.py` file is compiled into bytecode, and bytecode is the same on every platform. Each operating system has its own PVM that knows how to run that bytecode on that system. So the same program runs on Windows, macOS and Linux without changes.
+
+</details>
+
+<details>
+<summary><b>Q10. What is the difference between extensible and embedded?</b></summary>
+
+**Extensible:** a Python program uses code written in another language, such as C. Example: NumPy uses C for fast maths.
+**Embedded:** a program written in another language contains and runs Python code. Example: Blender lets users write Python scripts.
+
+</details>
+
+<details>
+<summary><b>Q11. What are the limitations of Python?</b></summary>
+
+1. It is slower than compiled languages such as C, because bytecode is interpreted.
+2. It is not commonly used for mobile apps.
+
+Also, in CPython the **GIL (Global Interpreter Lock)** lets only one thread run Python bytecode at a time, which limits multi-threaded programs that do heavy calculation. You will learn about this in Topics 25 and 25.1.
+
+</details>
+
+<details>
+<summary><b>Q12. Is everything in Python an object?</b></summary>
+
+Yes. Numbers, text, lists, functions and even classes are objects. Every object has a type and can have methods.
+
+```python
+# Print the type of the number 10
+print(type(10))
+
+# Print the type of the built-in print function
+print(type(print))
+
+# Call a method on the number 10: how many bits are needed to store it
+print((10).bit_length())
+```
+
+**Output**
+
+```text
+<class 'int'>
+<class 'builtin_function_or_method'>
+4
+```
+
+**How this program runs:** `type(10)` shows that `10` is an object of the class `int`. `type(print)` shows that even `print` is an object. `(10).bit_length()` calls a method on the number itself. `10` in binary is `1010`, which needs 4 bits.
+
+</details>
+
+<details>
+<summary><b>Q13. What does "batteries included" mean?</b></summary>
+
+It means Python comes with a large standard library, so many common tasks work out of the box. You can do maths (`math`), work with dates (`datetime`), read files, use JSON (`json`) and talk to the internet (`urllib`) without installing anything extra.
+
+</details>
+
+<details>
+<summary><b>Q14. Why is Python so popular for data science and machine learning?</b></summary>
+
+- The syntax is simple, so analysts and scientists who are not full-time programmers can use it.
+- Libraries such as NumPy, pandas, scikit-learn and PyTorch are powerful and written in fast languages under the hood (Python is extensible).
+- There is a large community, many tutorials and many ready-made tools.
+
+</details>
+
+<details>
+<summary><b>Q15. Who created Python, and where does the name come from?</b></summary>
+
+Guido van Rossum started Python in 1989 at CWI in the Netherlands, and it was released on 20 February 1991. The name comes from the BBC comedy show "Monty Python's Flying Circus", not from the snake.
+
+</details>
+
+## 13. Practice questions
 
 1. Explain the meaning of *general purpose* and *high level* with one example each.
 2. Write the "sum of two numbers" program in Python with your own two numbers. What output do you get?
