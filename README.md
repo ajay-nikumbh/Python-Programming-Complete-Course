@@ -1,4 +1,4 @@
-# Python Learning
+# Python Programming Complete Course
 
 A structured, hands-on Python curriculum that takes a learner from first principles to professional-grade programming. The course is organised into 49 topics across 8 progressive stages: core language fundamentals, data structures, modular code, error handling, file and data processing, concurrency, object-oriented design and professional practice.
 
