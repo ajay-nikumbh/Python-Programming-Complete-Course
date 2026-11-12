@@ -2338,15 +2338,15 @@ To place this order insurance must be required
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"fontFamily": "Georgia"}}}%%
 sequenceDiagram
-    participant Loop as for item in cart
-    participant Check as item > 500?
-    Loop->>Check: 10
-    Check-->>Loop: no, print 10
-    Loop->>Check: 20
-    Check-->>Loop: no, print 20
-    Loop->>Check: 600
-    Check-->>Loop: yes, print message
-    Note over Loop: break: 60 and 70 are never visited
+    participant Cart as for item in cart
+    participant Check as Price over 500
+    Cart->>Check: 10
+    Check-->>Cart: no, print 10
+    Cart->>Check: 20
+    Check-->>Cart: no, print 20
+    Cart->>Check: 600
+    Check-->>Cart: yes, print message
+    Note over Cart: break: 60 and 70 are never visited
 ```
 
 ### More break examples
@@ -3913,7 +3913,7 @@ classDiagram
         type : d f b o x X
     }
     class Example {
-        "{:*^10.3f}"
+        spec written as  *^10.3f
         fill = *
         align = ^
         width = 10

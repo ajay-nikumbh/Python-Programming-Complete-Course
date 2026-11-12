@@ -472,9 +472,9 @@ stateDiagram-v2
     state "word refers to 'Python'" as A
     state "Python builds 'J' + 'ython'" as B
     state "word refers to new object 'Jython'" as C
-    state "'Python' has no name: freed" as D
+    state "'Python' has no name, so it is freed" as D
     [*] --> A
-    A --> B: word = 'J' + word[1:]
+    A --> B: word = 'J' + rest of word
     B --> C: label moves
     C --> D: old object
     D --> [*]
@@ -641,27 +641,52 @@ classDiagram
         <<built-in type>>
     }
     class Case {
-        upper() lower() title()
-        capitalize() swapcase() casefold()
+        upper()
+        lower()
+        title()
+        capitalize()
+        swapcase()
+        casefold()
     }
     class Search {
-        find() rfind() index() rindex()
-        count() startswith() endswith()
+        find()
+        rfind()
+        index()
+        rindex()
+        count()
+        startswith()
+        endswith()
     }
     class Test {
-        isdigit() isalpha() isalnum()
-        isspace() isupper() islower() istitle()
+        isdigit()
+        isalpha()
+        isalnum()
+        isspace()
+        isupper()
+        islower()
+        istitle()
     }
     class Clean {
-        strip() lstrip() rstrip()
-        replace() removeprefix() removesuffix()
+        strip()
+        lstrip()
+        rstrip()
+        replace()
+        removeprefix()
+        removesuffix()
     }
     class Layout {
-        center() ljust() rjust() zfill()
+        center()
+        ljust()
+        rjust()
+        zfill()
     }
     class SplitJoin {
-        split() rsplit() splitlines()
-        partition() rpartition() join()
+        split()
+        rsplit()
+        splitlines()
+        partition()
+        rpartition()
+        join()
     }
     str --> Case
     str --> Search
